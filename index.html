@@ -144,44 +144,96 @@
       class="max-w-6xl mx-auto px-4 py-10 md:py-16">
       <div class="flex items-end justify-between gap-6">
         <h2 class="text-2xl md:text-3xl">Selected work</h2>
-        <span class="text-sm opacity-70">more on request</span>
+        <span class="text-sm opacity-70">click a card for live preview</span>
       </div>
+
       <div class="mt-6 grid md:grid-cols-3 gap-4">
-        <!-- Replace hrefs and titles with real projects -->
-        <!-- Work section cards -->
-        <a
-          class="group border rounded-2xl p-4 block"
-          href="/examples/artist-portfolio.html"
-          target="_blank"
-          rel="noopener">
-          <div class="aspect-[16/10] bg-white rounded-xl border"></div>
+        <button
+          type="button"
+          onclick="openProject('artist')"
+          class="group text-left border rounded-2xl p-4">
+          <img
+            src="examples/artist-thumb.png"
+            alt="Artist Portfolio example"
+            class="aspect-[16/10] w-full rounded-xl border object-cover"
+            loading="lazy" />
           <div class="mt-3 flex items-center justify-between text-sm">
             <span>Artist Portfolio — 2025</span>
-            <span class="opacity-60 group-hover:opacity-100">view →</span>
+            <span class="opacity-60 group-hover:opacity-100">preview →</span>
           </div>
-        </a>
+        </button>
 
-        <a
-          class="group border rounded-2xl p-4 block"
-          href="/examples/studio-profile.html"
-          target="_blank"
-          rel="noopener">
-          <div class="aspect-[16/10] bg-white rounded-xl border"></div>
+        <button
+          type="button"
+          onclick="openProject('studio')"
+          class="group text-left border rounded-2xl p-4">
+          <img
+            src="examples/studio-thumb.png"
+            alt="Studio Profile example"
+            class="aspect-[16/10] w-full rounded-xl border object-cover"
+            loading="lazy" />
           <div class="mt-3 flex items-center justify-between text-sm">
             <span>Studio Profile — 2025</span>
-            <span class="opacity-60 group-hover:opacity-100">view →</span>
+            <span class="opacity-60 group-hover:opacity-100">preview →</span>
           </div>
-        </a>
+        </button>
+
+        <button
+          type="button"
+          onclick="openProject('cafe')"
+          class="group text-left border rounded-2xl p-4">
+          <img
+            src="examples/cafe-thumb.png"
+            alt="Café One-Pager example"
+            class="aspect-[16/10] w-full rounded-xl border object-cover"
+            loading="lazy" />
+          <div class="mt-3 flex items-center justify-between text-sm">
+            <span>Café One‑Pager — 2025</span>
+            <span class="opacity-60 group-hover:opacity-100">preview →</span>
+          </div>
+        </button>
+
+        <button
+          type="button"
+          onclick="openProject('event')"
+          class="group text-left border rounded-2xl p-4">
+          <img
+            src="examples/event-thumb.png"
+            alt="Event Page example"
+            class="aspect-[16/10] w-full rounded-xl border object-cover"
+            loading="lazy" />
+          <div class="mt-3 flex items-center justify-between text-sm">
+            <span>Event Page — 2025</span>
+            <span class="opacity-60 group-hover:opacity-100">preview →</span>
+          </div>
+        </button>
+
+        <button
+          type="button"
+          onclick="openProject('student')"
+          class="group text-left border rounded-2xl p-4">
+          <img
+            src="examples/student-thumb.png"
+            alt="Student CV example"
+            class="aspect-[16/10] w-full rounded-xl border object-cover"
+            loading="lazy" />
+          <div class="mt-3 flex items-center justify-between text-sm">
+            <span>Student CV — 2025</span>
+            <span class="opacity-60 group-hover:opacity-100">preview →</span>
+          </div>
+        </button>
 
         <a
           class="group border rounded-2xl p-4 block"
-          href="/examples/cafe-menu.html"
-          target="_blank"
-          rel="noopener">
-          <div class="aspect-[16/10] bg-white rounded-xl border"></div>
+          href="#contact">
+          <img
+            src="examples/custom-page.png"
+            alt="Custom one-pager example"
+            class="aspect-[16/10] w-full rounded-xl border object-cover"
+            loading="lazy" />
           <div class="mt-3 flex items-center justify-between text-sm">
-            <span>Café One-Pager — 2025</span>
-            <span class="opacity-60 group-hover:opacity-100">view →</span>
+            <span>Custom brief</span>
+            <span class="opacity-60 group-hover:opacity-100">start →</span>
           </div>
         </a>
       </div>
@@ -195,6 +247,9 @@
       <p class="mt-2 text-sm opacity-80">
         Simple packages. Two rounds of edits. Hosting not included; I can set it
         up for you.
+      </p>
+      <p class="mt-2 text-sm font-medium">
+        Two discounted slots available this week.
       </p>
       <div class="mt-6 grid md:grid-cols-3 gap-4">
         <div class="border rounded-2xl p-5">
@@ -316,6 +371,12 @@
             legal details. Cookie‑light by default.
           </p>
         </div>
+        <div class="border rounded-2xl p-4">
+          <div class="font-medium">How many edits?</div>
+          <p class="mt-2 opacity-90">
+            Two rounds of edits included; more available at day rate.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -384,8 +445,8 @@
         class="flex flex-wrap items-center justify-between gap-3 border-t border-black/10 pt-4">
         <div>© 2025 one‑page studio. minimal sites, quickly.</div>
         <div class="flex gap-4">
-          <a href="/impressum.html">impressum</a>
-          <a href="/datenschutz.html">datenschutz</a>
+          <a href="#">impressum</a>
+          <a href="#">datenschutz</a>
         </div>
       </div>
     </footer>
@@ -394,6 +455,260 @@
       const btn = document.getElementById('modeToggle');
       btn?.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark-mode');
+      });
+    </script>
+
+    <!-- Work Modal -->
+    <div
+      id="workModal"
+      class="fixed inset-0 z-[60] hidden"
+      aria-hidden="true">
+      <div
+        class="absolute inset-0 bg-black/60"
+        onclick="closeProject()"
+        aria-hidden="true"></div>
+      <div
+        class="relative mx-auto my-6 max-w-6xl bg-[color:var(--bg)] rounded-2xl border shadow-xl overflow-hidden">
+        <header
+          class="flex items-center justify-between px-4 md:px-6 py-3 border-b border-black/10">
+          <div>
+            <div
+              id="modalTitle"
+              class="text-base md:text-lg font-medium">
+              Example
+            </div>
+            <div
+              id="modalTag"
+              class="text-xs opacity-70 mt-0.5">
+              live preview
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div
+              class="hidden md:flex items-center gap-1 text-xs border rounded-full p-1">
+              <button
+                type="button"
+                class="px-2 py-1 rounded-full"
+                onclick="setViewport('mobile')">
+                mobile
+              </button>
+              <button
+                type="button"
+                class="px-2 py-1 rounded-full"
+                onclick="setViewport('tablet')">
+                tablet
+              </button>
+              <button
+                type="button"
+                class="px-2 py-1 rounded-full"
+                onclick="setViewport('desktop')">
+                desktop
+              </button>
+            </div>
+            <button
+              type="button"
+              class="text-xs border px-2 py-1 rounded-full"
+              onclick="openFullDemo()">
+              open full demo
+            </button>
+            <button
+              type="button"
+              class="text-xs border px-2 py-1 rounded-full"
+              onclick="closeProject()"
+              aria-label="Close">
+              esc / close
+            </button>
+          </div>
+        </header>
+        <div class="grid md:grid-cols-3 gap-0">
+          <div class="md:col-span-2 border-r border-black/10 p-2 md:p-4">
+            <div
+              id="viewportFrame"
+              class="mx-auto rounded-xl border overflow-hidden"
+              style="width: 100%; max-width: 100%">
+              <iframe
+                id="demoFrame"
+                src="about:blank"
+                title="Live preview"
+                class="w-full"
+                style="height: 72vh"></iframe>
+            </div>
+          </div>
+          <aside class="p-4 md:p-6 text-sm">
+            <div
+              id="modalPitch"
+              class="opacity-90"></div>
+            <ul
+              id="modalHighlights"
+              class="mt-3 space-y-1 list-disc pl-5"></ul>
+            <div class="mt-4">
+              <div class="font-medium">Typical timeline</div>
+              <div
+                id="modalTimeline"
+                class="opacity-80 mt-1">
+                48 hours (content ready) · 5 business days standard
+              </div>
+            </div>
+            <div class="mt-4">
+              <div class="font-medium">From price</div>
+              <div
+                id="modalPrice"
+                class="opacity-80 mt-1">
+                from €250
+              </div>
+              <div class="opacity-70 mt-1">
+                −10% cash · −20% first 5 clients
+              </div>
+            </div>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <a
+                id="modalBook"
+                href="#contact"
+                class="border rounded-full px-4 py-2"
+                >book this template</a
+              >
+              <a
+                href="#pricing"
+                class="border rounded-full px-4 py-2"
+                >see pricing</a
+              >
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const PROJECTS = {
+        artist: {
+          title: 'Artist Portfolio',
+          tag: 'minimal portfolio for visual artists',
+          demo: 'examples/artist-portfolio.html',
+          price: 'from €250 (48‑hour option available)',
+          pitch:
+            'Clean portfolio built around works, a short statement, and a compact CV. Easy to update later.',
+          highlights: [
+            'Gallery grid with 6–12 works',
+            '100–120 word statement section',
+            'Selected CV blocks',
+            'Simple contact + social',
+          ],
+        },
+        studio: {
+          title: 'Studio Profile',
+          tag: 'architecture / creative studio one‑pager',
+          demo: 'examples/studio-profile.html',
+          price: 'from €450',
+          pitch:
+            'Compact profile with projects, services, and a clear contact panel. Great for small studios.',
+          highlights: [
+            '3 project cards',
+            'Services list',
+            'Approach paragraph',
+            'Email contact panel',
+          ],
+        },
+        cafe: {
+          title: 'Café One‑Pager',
+          tag: 'menu, hours, address, updates',
+          demo: 'examples/cafe-menu.html',
+          price: 'from €250',
+          pitch:
+            'Straightforward info page with menu, opening hours, address, and a small news area.',
+          highlights: [
+            'Menu blocks',
+            'Hours + address',
+            'Instagram handle slot',
+            'News / events card',
+          ],
+        },
+        event: {
+          title: 'Event Page',
+          tag: 'opening / talk / festival landing',
+          demo: 'examples/event-page.html',
+          price: 'from €250',
+          pitch:
+            'Clear landing with program, location, and a simple RSVP.',
+          highlights: [
+            'Program schedule',
+            'Location block',
+            'Optional RSVP form',
+            'Focus on essentials',
+          ],
+        },
+        student: {
+          title: 'Student CV',
+          tag: 'graduates · application portfolios',
+          demo: 'examples/student-cv.html',
+          price: 'from €250',
+          pitch:
+            'Crisp CV page with two featured projects, skills, and education.',
+          highlights: [
+            'Two project blurbs',
+            'Skills list',
+            'Contact panel',
+            'Education block',
+          ],
+        },
+      };
+
+      let CURRENT = null;
+      function openProject(key) {
+        const d = PROJECTS[key];
+        if (!d) return;
+        CURRENT = d;
+        document.getElementById('modalTitle').textContent = d.title;
+        document.getElementById('modalTag').textContent = d.tag;
+        document.getElementById('demoFrame').src = d.demo;
+        document.getElementById('modalPitch').textContent = d.pitch;
+        document.getElementById('modalPrice').textContent = d.price;
+        const list = document.getElementById('modalHighlights');
+        list.innerHTML = '';
+        d.highlights.forEach((t) => {
+          const li = document.createElement('li');
+          li.textContent = t;
+          list.appendChild(li);
+        });
+        const book = document.getElementById('modalBook');
+        book.href =
+          'mailto:hello@eosarchive.app?subject=' +
+          encodeURIComponent('Book: ' + d.title) +
+          '&body=' +
+          encodeURIComponent(`Hi, I'm interested in the ${d.title} template.
+Name:
+Deadline:
+Budget:
+Links:
+Notes:`);
+
+        const m = document.getElementById('workModal');
+        m.classList.remove('hidden');
+        m.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setViewport('desktop');
+      }
+      function closeProject() {
+        const m = document.getElementById('workModal');
+        m.classList.add('hidden');
+        m.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.getElementById('demoFrame').src = 'about:blank';
+      }
+      function setViewport(mode) {
+        const wrap = document.getElementById('viewportFrame');
+        if (mode === 'mobile') {
+          wrap.style.maxWidth = '390px';
+        } else if (mode === 'tablet') {
+          wrap.style.maxWidth = '820px';
+        } else {
+          wrap.style.maxWidth = '100%';
+        }
+      }
+      function openFullDemo() {
+        if (CURRENT) window.open(CURRENT.demo, '_blank');
+      }
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeProject();
       });
     </script>
   </body>
