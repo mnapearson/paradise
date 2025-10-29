@@ -203,8 +203,8 @@
         <div class="mt-6 grid md:grid-cols-3 gap-4">
           <button
             type="button"
-            onclick="openProject('artist')"
             class="group text-left border rounded-2xl p-4 flex flex-col gap-3"
+            data-project="artist"
             data-i18n-aria-label="project_artist_title">
             <img
               src="examples/artist-thumb.png"
@@ -228,8 +228,8 @@
 
           <button
             type="button"
-            onclick="openProject('studio')"
             class="group text-left border rounded-2xl p-4 flex flex-col gap-3"
+            data-project="studio"
             data-i18n-aria-label="project_studio_title">
             <img
               src="examples/studio-thumb.png"
@@ -253,8 +253,8 @@
 
           <button
             type="button"
-            onclick="openProject('cafe')"
             class="group text-left border rounded-2xl p-4 flex flex-col gap-3"
+            data-project="cafe"
             data-i18n-aria-label="project_cafe_title">
             <img
               src="examples/cafe-thumb.png"
@@ -584,7 +584,7 @@
       aria-hidden="true">
       <div
         class="absolute inset-0 bg-black/60"
-        onclick="closeProject()"
+        data-modal-close
         aria-hidden="true"></div>
       <div
         class="relative mx-auto my-6 max-w-6xl bg-[color:var(--bg)] rounded-2xl border shadow-xl overflow-hidden">
@@ -608,21 +608,21 @@
               <button
                 type="button"
                 class="px-2 py-1 rounded-full"
-                onclick="setViewport('mobile')"
+                data-viewport="mobile"
                 data-i18n="viewport_mobile">
                 Mobile
               </button>
               <button
                 type="button"
                 class="px-2 py-1 rounded-full"
-                onclick="setViewport('tablet')"
+                data-viewport="tablet"
                 data-i18n="viewport_tablet">
                 Tablet
               </button>
               <button
                 type="button"
                 class="px-2 py-1 rounded-full"
-                onclick="setViewport('desktop')"
+                data-viewport="desktop"
                 data-i18n="viewport_desktop">
                 Desktop
               </button>
@@ -630,14 +630,14 @@
             <button
               type="button"
               class="text-xs border px-2 py-1 rounded-full"
-              onclick="openFullDemo()"
+              data-modal-open-demo
               data-i18n="modal_open_demo">
               Open full demo
             </button>
             <button
               type="button"
               class="text-xs border px-2 py-1 rounded-full"
-              onclick="closeProject()"
+              data-modal-close
               aria-label="Close"
               data-i18n="modal_close">
               Close
@@ -907,12 +907,7 @@
           viewport_desktop: "Desktop",
           modal_email_subject_prefix: "Book: ",
           modal_email_intro: "Hi, I'm interested in the {{title}} template.",
-          modal_email_body_fields:
-            "Name:
-Deadline:
-Budget:
-Links:
-Notes:",
+          modal_email_body_fields: "Name:\nDeadline:\nBudget:\nLinks:\nNotes:",
         },
         de: {
           meta_title: "one-page studio — schnelle, klare One-Pager",
@@ -1103,16 +1098,18 @@ Notes:",
           modal_email_subject_prefix: "Buchen: ",
           modal_email_intro:
             "Hallo, ich interessiere mich für das {{title}}-Template.",
-          modal_email_body_fields:
-            "Name:
-Deadline:
-Budget:
-Links:
-Notizen:",
+          modal_email_body_fields: "Name:\nDeadline:\nBudget:\nLinks:\nNotizen:",
         },
       };
 
-      let currentLang = localStorage.getItem('ops-lang') === 'de' ? 'de' : 'en';
+      const LANG_STORAGE_KEY = 'ops-lang';
+      let currentLang = 'en';
+      try {
+        const storedLang = window?.localStorage?.getItem(LANG_STORAGE_KEY);
+        if (storedLang === 'de') currentLang = 'de';
+      } catch (err) {
+        console.warn('Language preference unavailable:', err);
+      }
 
       function t(key) {
         const table = translations[currentLang] || translations.en;
@@ -1164,9 +1161,8 @@ Notizen:",
         document.body.dataset.lang = currentLang;
 
         const languageToggle = document.getElementById('languageToggle');
-        if (languageToggle) {
+        if (languageToggle)
           languageToggle.textContent = currentLang === 'en' ? 'EN / DE' : 'DE / EN';
-        }
 
         updateModalTranslations();
       }
@@ -1245,9 +1241,7 @@ Notizen:",
             'mailto:hello@eosarchive.app?subject=' +
             encodeURIComponent(subjectPrefix + titleText) +
             '&body=' +
-            encodeURIComponent(intro + '
-
-' + fields);
+            encodeURIComponent(intro + '\n\n' + fields);
           book.href = mailto;
         }
       }
@@ -1318,7 +1312,11 @@ Notizen:",
       const languageToggle = document.getElementById('languageToggle');
       languageToggle?.addEventListener('click', () => {
         currentLang = currentLang === 'en' ? 'de' : 'en';
-        localStorage.setItem('ops-lang', currentLang);
+        try {
+          window?.localStorage?.setItem(LANG_STORAGE_KEY, currentLang);
+        } catch (err) {
+          console.warn('Unable to persist language preference:', err);
+        }
         applyTranslations();
       });
 
@@ -1332,7 +1330,44 @@ Notizen:",
         if (event.key === 'Escape') closeProject();
       });
 
-      applyTranslations();
+      function attachProjectButtons() {
+        document.querySelectorAll('[data-project]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const key = btn.dataset.project;
+            if (key) openProject(key);
+          });
+        });
+      }
+
+      function attachViewportButtons() {
+        document.querySelectorAll('[data-viewport]').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const mode = btn.dataset.viewport;
+            if (mode) setViewport(mode);
+          });
+        });
+      }
+
+      function attachModalControls() {
+        document.querySelectorAll('[data-modal-close]').forEach((el) => {
+          el.addEventListener('click', closeProject);
+        });
+        const openDemoBtn = document.querySelector('[data-modal-open-demo]');
+        openDemoBtn?.addEventListener('click', openFullDemo);
+      }
+
+      function init() {
+        attachProjectButtons();
+        attachViewportButtons();
+        attachModalControls();
+        applyTranslations();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+      } else {
+        init();
+      }
     </script>
   </body>
 </html>
