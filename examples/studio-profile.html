@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Studio / Architect — Example</title>
+  <meta name="description" content="One-page studio profile with services, projects, and contact." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #f5f1f0; --text:#111111; --link:#0000ff; }
+    .dark-mode { --bg:#111111; --text:#e6f0ff; --link:#9ae6b4; }
+    body { background: var(--bg); color: var(--text); }
+    a { color: var(--link); }
+  </style>
+</head>
+<body class="antialiased">
+<header class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+  <a href="/" class="text-sm">← back</a>
+  <button id="modeToggle" class="text-xs border px-3 py-1.5 rounded-full">dusk / dawn</button>
+</header>
+
+<section class="max-w-5xl mx-auto px-4 pt-8 pb-6">
+  <h1 class="text-4xl md:text-5xl tracking-tight">Ort Studio</h1>
+  <p class="mt-2 text-sm opacity-80">architecture & spatial design</p>
+  <p class="mt-6 max-w-prose">We design adaptive, low‑impact spaces. From exhibitions to renovations, we work with local crafts and modular systems.</p>
+</section>
+<section class="max-w-5xl mx-auto px-4 py-8">
+  <h2 class="text-2xl">Projects</h2>
+  <div class="mt-4 grid md:grid-cols-3 gap-4">
+    <div class="border rounded-xl p-4"><div class="aspect-[4/3] rounded-lg border bg-white"></div><div class="mt-2 text-sm">Gallery Fit‑out (2024)</div></div>
+    <div class="border rounded-xl p-4"><div class="aspect-[4/3] rounded-lg border bg-white"></div><div class="mt-2 text-sm">Studio Conversion (2023)</div></div>
+    <div class="border rounded-xl p-4"><div class="aspect-[4/3] rounded-lg border bg-white"></div><div class="mt-2 text-sm">Kiosk Prototype (2025)</div></div>
+  </div>
+</section>
+<section class="max-w-5xl mx-auto px-4 py-8 grid md:grid-cols-3 gap-6">
+  <div class="md:col-span-2">
+    <h2 class="text-2xl">Approach</h2>
+    <p class="mt-2">Simple details, robust materials, honest budgets. We deliver clear drawings and predictable timelines.</p>
+  </div>
+  <aside class="border rounded-2xl p-4 text-sm">
+    <div class="font-medium">Services</div>
+    <ul class="mt-2 space-y-1">
+      <li>Exhibition design</li>
+      <li>Small renovations</li>
+      <li>Furniture & signage</li>
+    </ul>
+    <div class="mt-4 font-medium">Contact</div>
+    <p class="mt-2">studio@example.com</p>
+  </aside>
+</section>
+
+<footer class="max-w-5xl mx-auto px-4 py-10 text-xs opacity-70">
+  <div class="border-t border-black/10 pt-4 flex items-center justify-between">
+    <span>© 2025 one‑page studio</span>
+    <nav class="flex gap-4">
+      <a href="/impressum.html">impressum</a>
+      <a href="/datenschutz.html">datenschutz</a>
+    </nav>
+  </div>
+</footer>
+<script>
+  const b = document.getElementById('modeToggle');
+  b?.addEventListener('click', ()=> document.documentElement.classList.toggle('dark-mode'));
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum (Template)</title>
+  <meta name="description" content="Starter template for German Impressum." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #f5f1f0; --text:#111111; --link:#0000ff; }
+    .dark-mode { --bg:#111111; --text:#e6f0ff; --link:#9ae6b4; }
+    body { background: var(--bg); color: var(--text); }
+    a { color: var(--link); }
+  </style>
+</head>
+<body class="antialiased">
+<header class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+  <a href="/" class="text-sm">← back</a>
+  <button id="modeToggle" class="text-xs border px-3 py-1.5 rounded-full">dusk / dawn</button>
+</header>
+
+<section class="max-w-5xl mx-auto px-4 pt-8 pb-6">
+  <h1 class="text-3xl md:text-4xl">Impressum</h1>
+  <p class="mt-4 text-sm opacity-80">Template — replace with your legal details.</p>
+  <div class="mt-6 text-sm space-y-2">
+    <p><span class="font-medium">Angaben gemäß § 5 TMG</span><br/>Vorname Nachname<br/>Straße Hausnr.<br/>PLZ Ort, Deutschland</p>
+    <p>E-Mail: hello@eosarchive.app</p>
+    <p>Umsatzsteuer-ID: (falls vorhanden)</p>
+    <p>Inhaltlich verantwortlich: (Name, Anschrift)</p>
+  </div>
+</section>
+
+<footer class="max-w-5xl mx-auto px-4 py-10 text-xs opacity-70">
+  <div class="border-t border-black/10 pt-4 flex items-center justify-between">
+    <span>© 2025 one‑page studio</span>
+    <nav class="flex gap-4">
+      <a href="/impressum.html">impressum</a>
+      <a href="/datenschutz.html">datenschutz</a>
+    </nav>
+  </div>
+</footer>
+<script>
+  const b = document.getElementById('modeToggle');
+  b?.addEventListener('click', ()=> document.documentElement.classList.toggle('dark-mode'));
+</script>
+</body>
+</html>

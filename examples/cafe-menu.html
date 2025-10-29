@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café / Menu — Example</title>
+  <meta name="description" content="Simple business one-pager: hours, menu, location, updates." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --bg: #f5f1f0; --text:#111111; --link:#0000ff; }
+    .dark-mode { --bg:#111111; --text:#e6f0ff; --link:#9ae6b4; }
+    body { background: var(--bg); color: var(--text); }
+    a { color: var(--link); }
+  </style>
+</head>
+<body class="antialiased">
+<header class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+  <a href="/" class="text-sm">← back</a>
+  <button id="modeToggle" class="text-xs border px-3 py-1.5 rounded-full">dusk / dawn</button>
+</header>
+
+<section class="max-w-5xl mx-auto px-4 pt-8 pb-6">
+  <h1 class="text-4xl md:text-5xl tracking-tight">Café Parallel</h1>
+  <p class="mt-2 text-sm opacity-80">coffee · natural wine · small plates</p>
+</section>
+<section class="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+  <div class="md:col-span-2">
+    <h2 class="text-2xl">Menu</h2>
+    <div class="mt-3 grid sm:grid-cols-2 gap-4 text-sm">
+      <div class="border rounded-xl p-4"><div class="font-medium">Coffee</div><ul class="mt-2 space-y-1"><li>Espresso — 2,20</li><li>Flat White — 3,60</li></ul></div>
+      <div class="border rounded-xl p-4"><div class="font-medium">Plates</div><ul class="mt-2 space-y-1"><li>Olives — 4,50</li><li>Cheese Plate — 9,00</li></ul></div>
+    </div>
+  </div>
+  <aside class="border rounded-2xl p-4 text-sm">
+    <div class="font-medium">Hours</div>
+    <p class="mt-2">Mon–Fri 8–18 · Sat 10–16</p>
+    <div class="mt-4 font-medium">Address</div>
+    <p class="mt-2">Brockhausstr. 49, 04229 Leipzig</p>
+    <div class="mt-4 font-medium">Instagram</div>
+    <p class="mt-2">@cafe.parallel</p>
+  </aside>
+</section>
+<section class="max-w-5xl mx-auto px-4 py-8">
+  <h2 class="text-2xl">News</h2>
+  <div class="mt-3 text-sm border rounded-2xl p-4">Fri 18:00 — Tasting: Pet‑Nat Night · €15</div>
+</section>
+
+<footer class="max-w-5xl mx-auto px-4 py-10 text-xs opacity-70">
+  <div class="border-t border-black/10 pt-4 flex items-center justify-between">
+    <span>© 2025 one‑page studio</span>
+    <nav class="flex gap-4">
+      <a href="/impressum.html">impressum</a>
+      <a href="/datenschutz.html">datenschutz</a>
+    </nav>
+  </div>
+</footer>
+<script>
+  const b = document.getElementById('modeToggle');
+  b?.addEventListener('click', ()=> document.documentElement.classList.toggle('dark-mode'));
+</script>
+</body>
+</html>
