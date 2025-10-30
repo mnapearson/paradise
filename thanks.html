@@ -11,6 +11,17 @@
         --bg: #f5f1f0;
         --text: #111111;
       }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid rgba(17, 17, 17, 0.18);
+        background: rgba(255, 255, 255, 0.6);
+      }
       body {
         background: var(--bg);
         color: var(--text);
@@ -23,9 +34,9 @@
   <body class="antialiased">
     <main class="min-h-screen px-6 py-24">
       <div class="mx-auto max-w-2xl rounded-3xl border border-black/10 bg-white/70 p-8 text-center shadow-sm">
-        <span class="mb-4 inline-flex items-center justify-center rounded-full border border-black/10 bg-white px-4 py-2 text-xs uppercase tracking-[0.2em] text-black/60">
-          message received
-        </span>
+        <div class="mb-4 flex justify-center">
+          <span class="badge">message received</span>
+        </div>
         <h1 class="text-3xl">thanks for reaching out</h1>
         <p class="mt-4 text-base text-black/70">
           I’ll reply from hello@one-page.studio within one business day. If it’s urgent, email or book a call directly.
