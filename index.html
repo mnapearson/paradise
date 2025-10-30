@@ -2,82 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1" />
-    <title>
-      One-Page Studio · Leipzig Web Designer · Fast One-Page Websites
-    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Custom one-page websites — fast, minimal, open-source</title>
     <meta
       name="description"
-      content="One-Page Studio builds custom one-page websites in Leipzig for artists, studios, cafés, and cultural events. Conversion-focused copy, rapid 48-hour delivery, SEO-ready launch support." />
-    <meta
-      property="og:title"
-      content="One-Page Studio · Leipzig Web Designer · Fast One-Page Websites" />
+      content="one-page studio builds clean, fast websites for artists and small studios. Done-for-you, no builders. Optional simple CMS. Based in Leipzig, working anywhere." />
+    <meta property="og:title" content="Custom one-page websites — fast, minimal, open-source" />
     <meta
       property="og:description"
-      content="Custom one-page websites delivered in 48 hours with copywriting, SEO, and launch support for artists, architecture studios, cafés, and event teams." />
-    <meta
-      property="og:type"
-      content="website" />
-    <meta
-      name="theme-color"
-      content="#f5f1f0" />
-    <link
-      rel="canonical"
-      href="https://one-studio.netlify.app/" />
+      content="one-page studio delivers bespoke one-page websites with optional CMS handoff. Based in Leipzig, working anywhere." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#f5f1f0" />
+    <link rel="canonical" href="https://one-studio.netlify.app/" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
-        "name": "One-Page Studio",
-        "image": "https://one-studio.netlify.app/examples/artist-thumb.png",
+        "name": "one-page studio",
         "url": "https://one-studio.netlify.app/",
-        "description": "Leipzig-based web designer delivering fast, SEO-ready one-page websites for artists, studios, cafés, and cultural events.",
-        "email": "mailto:hello@eosarchive.app",
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Leipzig"
-          },
-          {
-            "@type": "City",
-            "name": "Berlin"
-          },
-          {
-            "@type": "City",
-            "name": "Zurich"
-          }
-        ],
-        "serviceType": [
-          "Artist portfolio websites",
-          "Architecture studio website",
-          "Hospitality one-page site",
-          "Event landing page"
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "One-Page Website Packages",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "name": "Sprint One-Page Website",
-              "priceCurrency": "EUR",
-              "price": "260"
-            },
-            {
-              "@type": "Offer",
-              "name": "Launch One-Page Website",
-              "priceCurrency": "EUR",
-              "price": "480"
-            },
-            {
-              "@type": "Offer",
-              "name": "Plus One-Page Website",
-              "priceCurrency": "EUR",
-              "price": "780"
-            }
-          ]
+        "description": "custom one-page websites with optional CMS handoff and open-source tooling.",
+        "email": "mailto:hello@one-page.studio",
+        "areaServed": {
+          "@type": "GeoShape",
+          "name": "Worldwide"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Micky Arratoon"
+        },
+        "offers": {
+          "@type": "Offer",
+          "name": "Launch + Edit",
+          "priceCurrency": "EUR",
+          "price": "550",
+          "description": "Custom one-page website with Decap CMS handoff and 30 days of tweaks."
         }
       }
     </script>
@@ -88,15 +46,15 @@
         --text: #111111;
         --link: #0000ff;
       }
-      .dark-mode {
-        --bg: #111111;
-        --text: #e6f0ff;
-        --link: #9ae6b4;
+      * {
+        box-sizing: border-box;
       }
       body {
         background: var(--bg);
         color: var(--text);
-        transition: background 0.3s ease, color 0.3s ease;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Arial, "Inter", sans-serif;
+        letter-spacing: -0.01em;
       }
       a {
         color: var(--link);
@@ -104,1675 +62,499 @@
       .badge {
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
-        font-size: 0.7rem;
-        letter-spacing: 0.12em;
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        padding: 0.4rem 0.75rem;
+        padding: 0.35rem 0.75rem;
         border-radius: 999px;
-        border: 1px solid rgba(17, 17, 17, 0.12);
-        background: rgba(255, 255, 255, 0.7);
-      }
-      body.dark-mode .badge {
-        border-color: rgba(230, 240, 255, 0.2);
-        background: rgba(17, 17, 17, 0.3);
-      }
-      body[data-lang='de'] .lang-en-only,
-      body[data-lang='en'] .lang-de-only {
-        display: none;
+        border: 1px solid rgba(17, 17, 17, 0.18);
+        background: rgba(255, 255, 255, 0.6);
       }
     </style>
   </head>
-  <body
-    class="antialiased"
-    data-lang="en">
-    <header
-      class="sticky top-0 z-50 border-b border-black/10 backdrop-blur bg-[color:var(--bg)]/85">
-      <div
-        class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-        <div
-          class="text-sm md:text-base font-medium"
-          data-i18n="brand_name">
-          one-page studio · Leipzig
-        </div>
-        <nav class="hidden md:flex gap-6 text-sm">
-          <a
-            href="#work"
-            data-i18n="nav_work"
-            >Work</a
-          >
-          <a
-            href="#pricing"
-            data-i18n="nav_pricing"
-            >Pricing</a
-          >
-          <a
-            href="#process"
-            data-i18n="nav_process"
-            >Process</a
-          >
-          <a
-            href="#faq"
-            data-i18n="nav_faq"
-            >FAQ</a
-          >
-          <a
-            href="#contact"
-            data-i18n="nav_contact"
-            >Contact</a
-          >
+  <body class="antialiased">
+    <header class="sticky top-0 z-40 border-b border-black/10 bg-[color:var(--bg)]/95 backdrop-blur">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-3 text-sm">
+        <div class="font-medium tracking-tight">one-page studio</div>
+        <nav class="hidden items-center gap-5 sm:flex">
+          <a class="transition hover:text-[#0000ff]" href="#work">work</a>
+          <a class="transition hover:text-[#0000ff]" href="#packages">packages</a>
+          <a class="transition hover:text-[#0000ff]" href="#pledge">pledge</a>
+          <a class="transition hover:text-[#0000ff]" href="#contact">contact</a>
         </nav>
-        <div class="flex items-center gap-2 md:gap-3">
-          <button
-            id="languageToggle"
-            type="button"
-            class="text-xs border px-2 py-1 rounded-full uppercase tracking-[0.3em]"
-            aria-label="Toggle language">
-            EN / DE
-          </button>
-          <button
-            id="modeToggle"
-            type="button"
-            class="text-xs border px-2 py-1 rounded-full"
-            data-i18n="mode_toggle">
-            dusk / dawn
-          </button>
-          <a
-            href="#contact"
-            class="text-xs md:text-sm border px-3 py-1.5 rounded-full"
-            data-i18n="reserve_button">
-            Reserve a slot
-          </a>
-        </div>
+        <a
+          class="rounded-full border border-[#111111] px-3 py-1.5 text-xs uppercase tracking-[0.2em] transition hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+          href="mailto:hello@one-page.studio">
+          email
+        </a>
       </div>
     </header>
 
     <main>
-      <section class="max-w-6xl mx-auto px-4 pt-12 pb-8 md:pt-20 md:pb-12">
-        <div class="grid md:grid-cols-2 gap-10 md:gap-16">
-          <div class="space-y-5">
-            <div
-              class="badge"
-              data-i18n="hero_kicker">
-              Websites for independents & creatives
-            </div>
-            <h1
-              class="text-3xl md:text-5xl leading-tight tracking-tight"
-              data-i18n="hero_title">
-              Launch a conversion-ready one-pager in 48 hours.
-            </h1>
-            <p
-              class="text-base md:text-lg max-w-prose"
-              data-i18n="hero_subtitle">
-              Leipzig-based web designer building custom one-page websites for
-              artists, studios, cafés, and cultural events—no templated fluff,
-              just SEO-ready results.
-            </p>
-            <p
-              class="text-sm opacity-80"
-              data-i18n="hero_secondary">
-              Based in Leipzig, partnering with clients across Europe.
-            </p>
-            <div class="flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                class="border px-4 py-2 rounded-full"
-                data-i18n="hero_cta_primary">
-                Start your project
-              </a>
-              <a
-                href="#pricing"
-                class="border px-4 py-2 rounded-full"
-                data-i18n="hero_cta_secondary">
-                View packages
-              </a>
-            </div>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-              <li
-                class="border rounded-xl p-3"
-                data-i18n="hero_feature1">
-                Content polish & copy support
-              </li>
-              <li
-                class="border rounded-xl p-3"
-                data-i18n="hero_feature2">
-                Impressum & Datenschutz ready
-              </li>
-              <li
-                class="border rounded-xl p-3"
-                data-i18n="hero_feature3">
-                Domain, email & hosting setup
-              </li>
-              <li
-                class="border rounded-xl p-3"
-                data-i18n="hero_feature4">
-                Analytics & handoff documentation
-              </li>
-            </ul>
-            <div
-              class="flex flex-wrap gap-3 items-center text-xs uppercase tracking-[0.15em]">
-              <span
-                class="badge"
-                data-i18n="hero_badge"
-                >2 build slots open this month</span
-              >
-              <span
-                class="opacity-70"
-                data-i18n="hero_trust">
-                Trusted by clients in Berlin · Leipzig · Zurich
-              </span>
-            </div>
-          </div>
-          <div
-            class="border rounded-2xl p-5 md:p-6 bg-white/70 dark:bg-black/20 space-y-6">
-            <div
-              class="text-xs uppercase tracking-[0.2em] text-black/70 dark:text-white/70"
-              data-i18n="hero_right_label">
-              Mini sprint
-            </div>
-            <h2
-              class="text-xl md:text-2xl"
-              data-i18n="hero_right_title">
-              Day 1 strategy, day 2 build, launch on day 3.
-            </h2>
-            <p
-              class="text-sm opacity-80"
-              data-i18n="hero_right_text">
-              We align on goals, gather content, and ship a polished single page
-              with room to grow.
-            </p>
-            <dl class="space-y-4 text-sm">
-              <div>
-                <dt
-                  class="font-medium"
-                  data-i18n="hero_right_point1_title">
-                  Kick-off call
-                </dt>
-                <dd
-                  class="opacity-80"
-                  data-i18n="hero_right_point1_text">
-                  30-minute workshop to map sections, tone, and priorities.
-                </dd>
-              </div>
-              <div>
-                <dt
-                  class="font-medium"
-                  data-i18n="hero_right_point2_title">
-                  Content pass
-                </dt>
-                <dd
-                  class="opacity-80"
-                  data-i18n="hero_right_point2_text">
-                  Light rewrite and structure cleanup so everything reads sharp.
-                </dd>
-              </div>
-              <div>
-                <dt
-                  class="font-medium"
-                  data-i18n="hero_right_point3_title">
-                  QA & launch
-                </dt>
-                <dd
-                  class="opacity-80"
-                  data-i18n="hero_right_point3_text">
-                  Responsive checks, analytics, legal pages, and deployment.
-                </dd>
-              </div>
-            </dl>
-            <p
-              class="text-xs uppercase tracking-[0.18em] opacity-70"
-              data-i18n="hero_right_note">
-              Express schedule available when your content is ready.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="work"
-        class="max-w-6xl mx-auto px-4 py-10 md:py-16">
-        <div
-          class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <h2
-            class="text-2xl md:text-3xl"
-            data-i18n="work_heading">
-            Featured builds
-          </h2>
-          <span
-            class="text-sm opacity-70"
-            data-i18n="work_subheading">
-            Click a card to preview the live demo.
-          </span>
-        </div>
-        <div class="mt-6 grid md:grid-cols-3 gap-4">
-          <button
-            type="button"
-            class="group text-left border rounded-2xl p-4 flex flex-col gap-3"
-            data-project="artist"
-            data-i18n-aria-label="project_artist_title">
-            <img
-              src="examples/artist-thumb.png"
-              class="aspect-[16/10] w-full rounded-xl border object-cover"
-              loading="lazy"
-              data-i18n-alt="project_artist_alt"
-              alt="Screenshot of custom artist portfolio website built by One-Page Studio" />
-            <span
-              class="text-xs uppercase tracking-[0.2em] opacity-70"
-              data-i18n="project_artist_type"
-              >Portfolio</span
-            >
-            <div>
-              <div
-                class="font-medium text-base"
-                data-i18n="project_artist_title">
-                Artist Portfolio
-              </div>
-              <p
-                class="text-sm opacity-80 mt-1"
-                data-i18n="project_artist_summary">
-                Statement-led layout with gallery, CV highlights, and contact.
-              </p>
-            </div>
-            <span
-              class="text-sm opacity-60 group-hover:opacity-100"
-              data-i18n="project_preview_label">
-              Preview →
-            </span>
-          </button>
-
-          <button
-            type="button"
-            class="group text-left border rounded-2xl p-4 flex flex-col gap-3"
-            data-project="studio"
-            data-i18n-aria-label="project_studio_title">
-            <img
-              src="examples/studio-thumb.png"
-              class="aspect-[16/10] w-full rounded-xl border object-cover"
-              loading="lazy"
-              data-i18n-alt="project_studio_alt"
-              alt="Screenshot of architecture studio one-page website crafted in Leipzig" />
-            <span
-              class="text-xs uppercase tracking-[0.2em] opacity-70"
-              data-i18n="project_studio_type"
-              >Studio profile</span
-            >
-            <div>
-              <div
-                class="font-medium text-base"
-                data-i18n="project_studio_title">
-                Architecture Studio
-              </div>
-              <p
-                class="text-sm opacity-80 mt-1"
-                data-i18n="project_studio_summary">
-                Approach, three project case cards, and a clear services list.
-              </p>
-            </div>
-            <span
-              class="text-sm opacity-60 group-hover:opacity-100"
-              data-i18n="project_preview_label">
-              Preview →
-            </span>
-          </button>
-
-          <button
-            type="button"
-            class="group text-left border rounded-2xl p-4 flex flex-col gap-3"
-            data-project="cafe"
-            data-i18n-aria-label="project_cafe_title">
-            <img
-              src="examples/cafe-thumb.png"
-              class="aspect-[16/10] w-full rounded-xl border object-cover"
-              loading="lazy"
-              data-i18n-alt="project_cafe_alt"
-              alt="Screenshot of café menu website with hours and Instagram link" />
-            <span
-              class="text-xs uppercase tracking-[0.2em] opacity-70"
-              data-i18n="project_cafe_type"
-              >Hospitality</span
-            >
-            <div>
-              <div
-                class="font-medium text-base"
-                data-i18n="project_cafe_title">
-                Café Menu
-              </div>
-              <p
-                class="text-sm opacity-80 mt-1"
-                data-i18n="project_cafe_summary">
-                Hours, menu blocks, Instagram link, and a rolling news card.
-              </p>
-            </div>
-            <span
-              class="text-sm opacity-60 group-hover:opacity-100"
-              data-i18n="project_preview_label">
-              Preview →
-            </span>
-          </button>
-
-          <a
-            class="group border rounded-2xl p-4 flex flex-col gap-3"
-            href="#contact">
-            <img
-              src="examples/custom-page.png"
-              class="aspect-[16/10] w-full rounded-xl border object-cover"
-              loading="lazy"
-              alt="Custom one-page website design for small business marketing" />
-            <span
-              class="text-xs uppercase tracking-[0.2em] opacity-70"
-              data-i18n="project_custom_type">
-              Custom scope
-            </span>
-            <div>
-              <div
-                class="font-medium text-base"
-                data-i18n="project_custom_title">
-                Need something else?
-              </div>
-              <p
-                class="text-sm opacity-80 mt-1"
-                data-i18n="project_custom_summary">
-                Send your brief—product launches, microsites, or multi-language
-                pages welcome.
-              </p>
-            </div>
-            <span
-              class="text-sm opacity-60 group-hover:opacity-100"
-              data-i18n="project_custom_cta">
-              Start →
-            </span>
-          </a>
-        </div>
-      </section>
-
-      <section
-        id="pricing"
-        class="max-w-6xl mx-auto px-4 py-10 md:py-16">
-        <div class="max-w-3xl space-y-3">
-          <h2
-            class="text-2xl md:text-3xl"
-            data-i18n="pricing_heading">
-            Packages
-          </h2>
-          <p
-            class="text-sm opacity-80"
-            data-i18n="pricing_intro">
-            Every build includes copy edits, responsive layouts, legal pages,
-            and launch support.
+      <section id="hero" class="px-6 py-20 md:py-28">
+        <div class="mx-auto flex max-w-5xl flex-col gap-6">
+          <span class="badge">two discounted slots this week</span>
+          <h1 class="text-4xl leading-tight tracking-tight md:text-6xl">
+            custom one-page websites. built fast. you keep the keys.
+          </h1>
+          <p class="max-w-2xl text-lg md:text-xl">
+            done-for-you, no builders. optional simple cms. open-source where possible.
           </p>
-          <p
-            class="text-sm font-medium"
-            data-i18n="pricing_note">
-            Two discounted slots available this week.
+          <p class="text-sm uppercase tracking-[0.18em] text-black/60">
+            leipzig-based · collaborating worldwide
           </p>
-        </div>
-        <div class="mt-6 grid md:grid-cols-3 gap-4">
-          <div class="border rounded-2xl p-5 flex flex-col">
-            <div
-              class="text-sm uppercase tracking-[0.25em] opacity-60"
-              data-i18n="pricing_package_sprint_label">
-              Sprint
-            </div>
-            <div
-              class="text-3xl mt-2 font-medium"
-              data-i18n="pricing_package_sprint_price">
-              €260
-            </div>
-            <ul class="mt-4 text-sm space-y-2 flex-1">
-              <li data-i18n="pricing_package_sprint_point1">
-                Single page up to 5 sections
-              </li>
-              <li data-i18n="pricing_package_sprint_point2">
-                Copy polish & tone alignment
-              </li>
-              <li data-i18n="pricing_package_sprint_point3">
-                Technical SEO & metadata
-              </li>
-              <li data-i18n="pricing_package_sprint_point4">
-                One week post-launch check-in
-              </li>
-            </ul>
+          <div class="flex flex-wrap gap-3">
             <a
-              href="#contact"
-              class="mt-5 inline-block border rounded-full px-4 py-2 text-sm text-center"
-              data-i18n="pricing_package_cta">
-              Book
+              class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+              href="https://cal.com/onepagestudio/intro-15"
+              target="_blank"
+              rel="noopener">
+              book a 15-min call
             </a>
-          </div>
-          <div class="border rounded-2xl p-5 flex flex-col">
-            <div
-              class="text-sm uppercase tracking-[0.25em] opacity-60"
-              data-i18n="pricing_package_launch_label">
-              Launch
-            </div>
-            <div
-              class="text-3xl mt-2 font-medium"
-              data-i18n="pricing_package_launch_price">
-              €480
-            </div>
-            <ul class="mt-4 text-sm space-y-2 flex-1">
-              <li data-i18n="pricing_package_launch_point1">
-                Everything in Sprint
-              </li>
-              <li data-i18n="pricing_package_launch_point2">
-                48-hour express option
-              </li>
-              <li data-i18n="pricing_package_launch_point3">
-                Custom illustrations or icon set
-              </li>
-              <li data-i18n="pricing_package_launch_point4">
-                Analytics setup (Plausible)
-              </li>
-            </ul>
             <a
-              href="#contact"
-              class="mt-5 inline-block border rounded-full px-4 py-2 text-sm text-center"
-              data-i18n="pricing_package_cta">
-              Book
-            </a>
-          </div>
-          <div class="border rounded-2xl p-5 flex flex-col">
-            <div
-              class="text-sm uppercase tracking-[0.25em] opacity-60"
-              data-i18n="pricing_package_plus_label">
-              Plus
-            </div>
-            <div
-              class="text-3xl mt-2 font-medium"
-              data-i18n="pricing_package_plus_price">
-              €780
-            </div>
-            <ul class="mt-4 text-sm space-y-2 flex-1">
-              <li data-i18n="pricing_package_plus_point1">
-                Everything in Launch
-              </li>
-              <li data-i18n="pricing_package_plus_point2">
-                Multi-language toggle or CMS handoff
-              </li>
-              <li data-i18n="pricing_package_plus_point3">
-                Three months micro-updates
-              </li>
-              <li data-i18n="pricing_package_plus_point4">
-                Team training session
-              </li>
-            </ul>
-            <a
-              href="#contact"
-              class="mt-5 inline-block border rounded-full px-4 py-2 text-sm text-center"
-              data-i18n="pricing_package_cta">
-              Book
+              class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+              href="mailto:hello@one-page.studio">
+              email
             </a>
           </div>
         </div>
-        <div class="mt-4 text-sm space-y-1">
-          <p data-i18n="pricing_discount">
-            Discounts: −10% for cash payments · −20% for first-time
-            collaborators
-          </p>
-          <p
-            class="opacity-70"
-            data-i18n="pricing_payment_note">
-            Payment plans available on request.
-          </p>
-        </div>
       </section>
 
-      <section
-        id="value"
-        class="max-w-6xl mx-auto px-4 py-10 md:py-16">
-        <h2
-          class="text-2xl md:text-3xl"
-          data-i18n="value_heading">
-          Included in every site
-        </h2>
-        <div class="mt-6 grid md:grid-cols-3 gap-4">
-          <div class="border rounded-2xl p-5 space-y-2">
-            <div
-              class="text-sm uppercase tracking-[0.2em] opacity-60"
-              data-i18n="value_point1_title">
-              Mobile-first build
+      <section id="work" class="border-t border-black/10 bg-white/60">
+        <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
+          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 class="text-2xl md:text-3xl">selected work</h2>
+              <p class="mt-2 text-sm text-black/70 md:text-base">
+                two credible case studies you can reference or remix.
+              </p>
             </div>
-            <p
-              class="text-sm opacity-85"
-              data-i18n="value_point1_text">
-              Fast-loading layouts tested on popular devices.
-            </p>
+            <p class="text-sm text-black/60">click a card to see the breakdown.</p>
           </div>
-          <div class="border rounded-2xl p-5 space-y-2">
-            <div
-              class="text-sm uppercase tracking-[0.2em] opacity-60"
-              data-i18n="value_point2_title">
-              Clear messaging
-            </div>
-            <p
-              class="text-sm opacity-85"
-              data-i18n="value_point2_text">
-              Copy and headings shaped to convert visitors quickly.
-            </p>
-          </div>
-          <div class="border rounded-2xl p-5 space-y-2">
-            <div
-              class="text-sm uppercase tracking-[0.2em] opacity-60"
-              data-i18n="value_point3_title">
-              Future-proof setup
-            </div>
-            <p
-              class="text-sm opacity-85"
-              data-i18n="value_point3_text">
-              Versioned files, documentation, and easy handoff.
-            </p>
+          <div class="mt-10 grid gap-6 md:grid-cols-2">
+            <button
+              type="button"
+              data-modal-target="case-aya"
+              class="group flex flex-col gap-4 rounded-2xl border border-black/10 bg-white/70 p-5 text-left transition-transform duration-150 hover:-translate-y-1 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2">
+              <img
+                src="https://picsum.photos/id/1005/800/600"
+                alt="grid of paintings from Aya Ito"
+                class="aspect-[4/3] w-full rounded-xl border border-black/10 object-cover transition duration-150 group-hover:scale-[1.01]"
+                loading="lazy" />
+              <div class="space-y-2">
+                <div class="text-xs uppercase tracking-[0.2em] text-black/60">artist portfolio</div>
+                <h3 class="text-xl">Aya Ito — painter</h3>
+                <p class="text-sm text-black/70">
+                  Lightweight portfolio with gallery grid, bio, and press kit. Decap CMS keeps updates simple.
+                </p>
+              </div>
+              <span class="text-sm text-[#0000ff]">view case →</span>
+            </button>
+
+            <button
+              type="button"
+              data-modal-target="case-parallel"
+              class="group flex flex-col gap-4 rounded-2xl border border-black/10 bg-white/70 p-5 text-left transition-transform duration-150 hover:-translate-y-1 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2">
+              <img
+                src="https://picsum.photos/id/1027/800/600"
+                alt="interior of Parallel Hair studio"
+                class="aspect-[4/3] w-full rounded-xl border border-black/10 object-cover transition duration-150 group-hover:scale-[1.01]"
+                loading="lazy" />
+              <div class="space-y-2">
+                <div class="text-xs uppercase tracking-[0.2em] text-black/60">local studio</div>
+                <h3 class="text-xl">Parallel Hair — Leipzig</h3>
+                <p class="text-sm text-black/70">
+                  Single page with services, booking deposit workflow, and Supabase-backed form log.
+                </p>
+              </div>
+              <span class="text-sm text-[#0000ff]">view case →</span>
+            </button>
           </div>
         </div>
       </section>
 
-      <section
-        id="process"
-        class="max-w-6xl mx-auto px-4 py-10 md:py-16 border-t border-black/10">
-        <h2
-          class="text-2xl md:text-3xl"
-          data-i18n="process_heading">
-          Process
-        </h2>
-        <ol class="mt-6 grid md:grid-cols-4 gap-3 text-sm">
-          <li class="border rounded-2xl p-4 space-y-2">
-            <span
-              class="font-medium"
-              data-i18n="process_step1_title"
-              >Discover</span
-            >
-            <p
-              class="opacity-80"
-              data-i18n="process_step1_text">
-              Quick intake and moodboard references to translate your goals.
-            </p>
-          </li>
-          <li class="border rounded-2xl p-4 space-y-2">
-            <span
-              class="font-medium"
-              data-i18n="process_step2_title"
-              >Content</span
-            >
-            <p
-              class="opacity-80"
-              data-i18n="process_step2_text">
-              You send material or rough notes—I draft and structure the page.
-            </p>
-          </li>
-          <li class="border rounded-2xl p-4 space-y-2">
-            <span
-              class="font-medium"
-              data-i18n="process_step3_title"
-              >Build</span
-            >
-            <p
-              class="opacity-80"
-              data-i18n="process_step3_text">
-              Design and development in Tailwind, preview link delivered in 48
-              hours.
-            </p>
-          </li>
-          <li class="border rounded-2xl p-4 space-y-2">
-            <span
-              class="font-medium"
-              data-i18n="process_step4_title"
-              >Launch</span
-            >
-            <p
-              class="opacity-80"
-              data-i18n="process_step4_text">
-              Feedback round, legal polish, domain connection, and handover.
-            </p>
-          </li>
-        </ol>
-      </section>
+      <section id="packages" class="border-t border-black/10">
+        <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
+          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 class="text-2xl md:text-3xl">packages</h2>
+              <p class="mt-2 max-w-xl text-sm text-black/70 md:text-base">
+                flat pricing, transparent scope, you keep the repository and credentials.
+              </p>
+            </div>
+            <a
+              class="self-start rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+              href="https://cal.com/onepagestudio/intro-15"
+              target="_blank"
+              rel="noopener">
+              book a 15-min call
+            </a>
+          </div>
 
-      <section
-        id="faq"
-        class="max-w-6xl mx-auto px-4 py-10 md:py-16">
-        <h2
-          class="text-2xl md:text-3xl"
-          data-i18n="faq_heading">
-          FAQ
-        </h2>
-        <div class="mt-6 grid md:grid-cols-2 gap-4 text-sm">
-          <div class="border rounded-2xl p-4">
-            <div
-              class="font-medium"
-              data-i18n="faq_q1">
-              How fast can we launch?
-            </div>
-            <p
-              class="mt-2 opacity-90"
-              data-i18n="faq_a1">
-              Standard delivery is five business days. When content is ready, I
-              can run a 48-hour express build.
-            </p>
-          </div>
-          <div class="border rounded-2xl p-4">
-            <div
-              class="font-medium"
-              data-i18n="faq_q2">
-              What do you need from me?
-            </div>
-            <p
-              class="mt-2 opacity-90"
-              data-i18n="faq_a2">
-              Send any text, images, links, and references. If it’s rough, I’ll
-              tidy the copy and structure for you.
-            </p>
-          </div>
-          <div class="border rounded-2xl p-4">
-            <div
-              class="font-medium"
-              data-i18n="faq_q3">
-              How does hosting work?
-            </div>
-            <p
-              class="mt-2 opacity-90"
-              data-i18n="faq_a3">
-              I deploy to fast, privacy-friendly platforms like Netlify or
-              Vercel and connect your domain—you keep full control.
-            </p>
-          </div>
-          <div class="border rounded-2xl p-4">
-            <div
-              class="font-medium"
-              data-i18n="faq_q4">
-              Can we keep iterating?
-            </div>
-            <p
-              class="mt-2 opacity-90"
-              data-i18n="faq_a4">
-              Two edit rounds are included. Further updates are available at my
-              day rate or via a care plan.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="contact"
-        class="max-w-6xl mx-auto px-4 py-10 md:py-16 border-t border-black/10">
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-          <div class="space-y-4">
-            <h2
-              class="text-2xl md:text-3xl"
-              data-i18n="contact_heading">
-              Start here
-            </h2>
-            <p
-              class="text-sm opacity-80"
-              data-i18n="contact_intro">
-              Email a short brief with your goal, audience, deadline, and any
-              links. I’ll reply within one business day.
-            </p>
-            <div class="flex flex-wrap gap-3">
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <div class="flex h-full flex-col rounded-2xl border border-black/10 bg-white/70 p-6">
+              <div class="text-xs uppercase tracking-[0.25em] text-black/60">launch</div>
+              <div class="mt-3 text-3xl font-medium">€300</div>
+              <ul class="mt-6 space-y-3 text-sm text-black/75">
+                <li>1 responsive page (hero, about, contact)</li>
+                <li>contact form wired to hello@one-page.studio</li>
+                <li>basic SEO + metadata</li>
+                <li>plausible-ready analytics hook</li>
+              </ul>
+              <p class="mt-6 text-sm text-black/70">
+                Turnaround: 48–72h (with content ready). Two rounds of edits.
+              </p>
               <a
-                href="mailto:hello@eosarchive.app?subject=One-page%20site%20inquiry&body=Name%3A%0ADeadline%3A%0ABudget%3A%0ALinks%3A%0ANotes%3A"
-                class="border px-4 py-2 rounded-full text-sm"
-                data-i18n="contact_cta_email">
-                Email now
-              </a>
-              <a
-                href="#"
-                class="border px-4 py-2 rounded-full text-sm"
-                data-i18n="contact_cta_call">
-                Book a 15-min call
+                class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+                href="https://cal.com/onepagestudio/intro-15"
+                target="_blank"
+                rel="noopener">
+                book this package
               </a>
             </div>
-            <p
-              class="text-sm"
-              data-i18n="contact_location">
-              Made in Leipzig. Working with clients everywhere.
-            </p>
+
+            <div class="flex h-full flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-[0_20px_60px_-50px_rgba(0,0,0,0.6)]">
+              <div class="text-xs uppercase tracking-[0.25em] text-black/60">launch + edit</div>
+              <div class="mt-3 text-3xl font-medium">€550</div>
+              <ul class="mt-6 space-y-3 text-sm text-black/75">
+                <li>Everything in Launch</li>
+                <li>Decap CMS at /admin for text, images, links</li>
+                <li>30-minute handover walkthrough</li>
+                <li>30 days of small tweaks post-launch</li>
+              </ul>
+              <p class="mt-6 text-sm text-black/70">
+                Ideal when you need to edit words and artwork yourself without touching code.
+              </p>
+              <a
+                class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+                href="https://cal.com/onepagestudio/intro-15"
+                target="_blank"
+                rel="noopener">
+                book this package
+              </a>
+            </div>
+
+            <div class="flex h-full flex-col rounded-2xl border border-black/10 bg-white/70 p-6">
+              <div class="text-xs uppercase tracking-[0.25em] text-black/60">pro</div>
+              <div class="mt-3 text-3xl font-medium">€900</div>
+              <ul class="mt-6 space-y-3 text-sm text-black/75">
+                <li>Headless CMS (Payload, Strapi, or Directus)</li>
+                <li>One integration: Stripe link or newsletter signup</li>
+                <li>Custom content model + permissions</li>
+                <li>60 days of small tweaks and support</li>
+              </ul>
+              <p class="mt-6 text-sm text-black/70">
+                For teams that need structured data, payments, or subscriber capture without bloat.
+              </p>
+              <a
+                class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+                href="https://cal.com/onepagestudio/intro-15"
+                target="_blank"
+                rel="noopener">
+                book this package
+              </a>
+            </div>
           </div>
-          <div class="border rounded-2xl p-4 md:p-5 text-sm space-y-4">
+
+          <p class="mt-8 text-xs uppercase tracking-[0.2em] text-black/60">
+            two rounds of edits included. hosting not included; i can set it up.
+          </p>
+
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+            <div>
+              <h3 class="text-xs uppercase tracking-[0.25em] text-black/60">add-ons</h3>
+              <ul class="mt-3 space-y-2 text-sm text-black/80">
+                <li>Supabase form storage + email copy · +€80</li>
+                <li>Stripe Payment Link wiring · +€60</li>
+                <li>Extra section · +€50 each</li>
+                <li>Multilingual toggle (EN/DE) with CMS fields · +€150</li>
+              </ul>
+            </div>
+            <div class="space-y-2 text-sm text-black/80">
+              <p>Discounts: −10% cash · −20% first five clients.</p>
+              <p>Payment terms: 50% deposit to book, 50% at launch.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pledge" class="border-t border-black/10 bg-white/60">
+        <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
+          <h2 class="text-2xl md:text-3xl">independent internet pledge</h2>
+          <p class="mt-4 max-w-3xl text-base leading-relaxed text-black/75">
+            I use open-source tools and privacy-friendly defaults. You own your code and content and can export anytime. No trackers by default. Every project ships with clear documentation so another developer—or you—can continue without friction.
+          </p>
+        </div>
+      </section>
+
+      <section id="why" class="border-t border-black/10">
+        <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
+          <h2 class="text-2xl md:text-3xl">why not builders?</h2>
+          <p class="mt-4 max-w-3xl text-base leading-relaxed text-black/75">
+            Builders are fine if you enjoy configuring tools. Most people don’t. I design and code your page for you, then give you a simple editor at /admin to change text, images, and links. No template maze. No plugin roulette. You get something focused, fast, and yours.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="border-t border-black/10 bg-white/70">
+        <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
+          <div class="rounded-2xl border border-black/10 bg-white p-6 md:p-8">
+            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h2 class="text-2xl">ready to start?</h2>
+                <p class="mt-2 text-sm text-black/70">
+                  email hello@one-page.studio or pick a slot. i reply within one business day.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <a
+                  class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+                  href="https://cal.com/onepagestudio/intro-15"
+                  target="_blank"
+                  rel="noopener">
+                  book a 15-min call
+                </a>
+                <a
+                  class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+                  href="mailto:hello@one-page.studio">
+                  email
+                </a>
+              </div>
+            </div>
+
             <form
-              id="contactForm"
+              class="mt-8 grid gap-4"
               name="contact"
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              action="/"
-              class="grid gap-3">
-              <input
-                type="hidden"
-                name="form-name"
-                value="contact" />
+              action="/thanks.html">
+              <input type="hidden" name="form-name" value="contact" />
               <p class="hidden">
                 <label>Don’t fill this out: <input name="bot-field" /></label>
               </p>
 
               <div class="grid gap-1">
-                <label data-i18n="contact_label_name">Name</label>
+                <label class="text-sm text-black/80" for="contact-name">name</label>
                 <input
-                  class="border rounded-lg px-3 py-2 bg-white"
+                  id="contact-name"
+                  class="rounded-lg border border-black/15 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
                   name="name"
-                  data-i18n-placeholder="contact_placeholder_name"
-                  placeholder="Your name"
+                  placeholder="your name"
                   required />
               </div>
 
               <div class="grid gap-1">
-                <label data-i18n="contact_label_email">Email</label>
+                <label class="text-sm text-black/80" for="contact-email">email</label>
                 <input
+                  id="contact-email"
                   type="email"
-                  class="border rounded-lg px-3 py-2 bg-white"
+                  class="rounded-lg border border-black/15 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
                   name="email"
-                  data-i18n-placeholder="contact_placeholder_email"
                   placeholder="you@example.com"
                   required />
               </div>
 
               <div class="grid gap-1">
-                <label data-i18n="contact_label_need">What do you need?</label>
+                <label class="text-sm text-black/80" for="contact-message">what do you need?</label>
                 <textarea
-                  class="border rounded-lg px-3 py-2 bg-white"
+                  id="contact-message"
+                  class="min-h-[140px] rounded-lg border border-black/15 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
                   name="message"
-                  rows="5"
-                  data-i18n-placeholder="contact_placeholder_notes"
-                  placeholder="Portfolio for… Deadline… Links…"></textarea>
+                  placeholder="project notes, deadlines, links…"></textarea>
               </div>
 
-              <input
-                type="hidden"
-                name="subject"
-                value="One-page studio — new inquiry" />
-              <button class="border rounded-full px-4 py-2 justify-self-start">
-                <span data-i18n="contact_submit">Send</span>
+              <input type="hidden" name="subject" value="one-page studio — new inquiry" />
+              <button
+                class="inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+                type="submit">
+                send
               </button>
             </form>
-            <div
-              id="contactThanks"
-              class="hidden border border-dashed rounded-2xl px-4 py-3 bg-white/70 dark:bg-black/40 leading-relaxed"
-              tabindex="-1"
-              role="status"
-              data-i18n="contact_form_thanks">
-              Thank you! I will reply within one business day. If it’s urgent, email hello@eosarchive.app directly.
-            </div>
-            <p
-              id="contactCashNote"
-              class="opacity-70"
-              data-i18n="contact_cash_note">
-              Prefer cash? Ask for the cash discount.
-            </p>
-            <p
-              id="contactFormNote"
-              class="text-xs opacity-60"
-              data-i18n="contact_form_notice">
-              This is a static demo—use the email button to get started.
-            </p>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="max-w-6xl mx-auto px-4 pt-6 pb-16 text-xs opacity-70">
-      <div
-        class="flex flex-wrap items-center justify-between gap-3 border-t border-black/10 pt-4">
-        <div data-i18n="footer_text">
-          © 2025 one-page studio. Minimal sites, quickly.
-        </div>
-        <div class="flex gap-4">
-          <a
-            href="#"
-            data-i18n="footer_impressum"
-            >Impressum</a
-          >
-          <a
-            href="#"
-            data-i18n="footer_datenschutz"
-            >Datenschutz</a
-          >
-        </div>
+    <footer class="border-t border-black/10">
+      <div class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-black/60 md:flex-row md:items-center md:justify-between">
+        <span>leipzig · available anywhere</span>
+        <span>© 2025 one-page studio</span>
       </div>
     </footer>
 
-    <div
-      id="workModal"
-      class="fixed inset-0 z-[60] hidden"
-      aria-hidden="true">
-      <div
-        class="absolute inset-0 bg-black/60"
-        data-modal-close
-        aria-hidden="true"></div>
-      <div
-        class="relative mx-auto my-6 max-w-6xl bg-[color:var(--bg)] rounded-2xl border shadow-xl overflow-hidden">
-        <header
-          class="flex items-center justify-between px-4 md:px-6 py-3 border-b border-black/10">
-          <div>
-            <div
-              id="modalTitle"
-              class="text-base md:text-lg font-medium">
-              <span data-i18n="modal_title_placeholder">Example</span>
-            </div>
-            <div
-              id="modalTag"
-              class="text-xs opacity-70 mt-0.5">
-              <span data-i18n="modal_tag_placeholder">Live preview</span>
-            </div>
+    <div id="case-aya" class="hidden">
+      <article class="space-y-5">
+        <img
+          src="https://picsum.photos/id/1067/1600/1000"
+          alt="hero image from Aya Ito portfolio"
+          class="w-full rounded-2xl border border-black/10 object-cover"
+          loading="lazy" />
+        <div class="space-y-4">
+          <h3 class="text-2xl">Artist Portfolio — Aya Ito</h3>
+          <p class="text-base leading-relaxed text-black/75">
+            Goal — Berlin-based painter Aya Ito needed a calm, image-led portfolio that could grow with new collections without ringing a developer each time. Approach — I mapped a single scroll anchored by hero, gallery grid, bio, and press snippets, then built the layout in plain HTML with Tailwind for spacing. Decap CMS powers editable sections for copy blocks, gallery ordering, exhibition dates, and contact links, while Netlify handles deploy previews and Plausible analytics. Outcome — The site ships under 1&nbsp;MB, loads instantly on mobile, and streams meaningful metrics without invasive tracking. Aya now uploads new series, revises captions, and publishes press blurbs herself in minutes. Since launch, curators link directly to the gallery and enquiries land neatly in her inbox.
+          </p>
+          <p class="text-sm uppercase tracking-[0.2em] text-black/60">
+            Tech note — Decap CMS · Netlify · Plausible
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+              href="https://cal.com/onepagestudio/intro-15"
+              target="_blank"
+              rel="noopener">
+              book this style
+            </a>
+            <a
+              class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+              href="mailto:hello@one-page.studio">
+              email about this
+            </a>
           </div>
-          <div class="flex items-center gap-2">
-            <div
-              class="hidden md:flex items-center gap-1 text-xs border rounded-full p-1">
-              <button
-                type="button"
-                class="px-2 py-1 rounded-full"
-                data-viewport="mobile"
-                data-i18n="viewport_mobile">
-                Mobile
-              </button>
-              <button
-                type="button"
-                class="px-2 py-1 rounded-full"
-                data-viewport="tablet"
-                data-i18n="viewport_tablet">
-                Tablet
-              </button>
-              <button
-                type="button"
-                class="px-2 py-1 rounded-full"
-                data-viewport="desktop"
-                data-i18n="viewport_desktop">
-                Desktop
-              </button>
-            </div>
-            <button
-              type="button"
-              class="text-xs border px-2 py-1 rounded-full"
-              data-modal-open-demo
-              data-i18n="modal_open_demo">
-              Open full demo
-            </button>
-            <button
-              type="button"
-              class="text-xs border px-2 py-1 rounded-full"
-              data-modal-close
-              aria-label="Close"
-              data-i18n="modal_close">
-              Close
-            </button>
-          </div>
-        </header>
-        <div class="grid md:grid-cols-3 gap-0">
-          <div class="md:col-span-2 border-r border-black/10 p-2 md:p-4">
-            <div
-              id="viewportFrame"
-              class="mx-auto rounded-xl border overflow-hidden"
-              style="width: 100%; max-width: 100%">
-              <iframe
-                id="demoFrame"
-                src="about:blank"
-                title="Live preview"
-                class="w-full"
-                style="height: 72vh"></iframe>
-            </div>
-          </div>
-          <aside class="p-4 md:p-6 text-sm space-y-4">
-            <div>
-              <div
-                class="font-medium uppercase tracking-[0.18em] text-xs opacity-70"
-                data-i18n="modal_pitch_label">
-                Pitch
-              </div>
-              <div
-                id="modalPitch"
-                class="mt-1 opacity-90"></div>
-            </div>
-            <div>
-              <div
-                class="font-medium"
-                data-i18n="modal_highlights_label">
-                Highlights
-              </div>
-              <ul
-                id="modalHighlights"
-                class="mt-2 space-y-1 list-disc pl-5"></ul>
-            </div>
-            <div>
-              <div
-                class="font-medium"
-                data-i18n="modal_timeline_label">
-                Typical timeline
-              </div>
-              <div
-                id="modalTimeline"
-                class="opacity-80 mt-1"
-                data-i18n="modal_timeline_text">
-                48 hours with content ready · 5 business days standard
-              </div>
-            </div>
-            <div>
-              <div
-                class="font-medium"
-                data-i18n="modal_price_label">
-                From price
-              </div>
-              <div
-                id="modalPrice"
-                class="opacity-80 mt-1"></div>
-              <div
-                class="opacity-70 mt-1"
-                data-i18n="modal_discount_hint">
-                −10% cash · −20% first-time collaborators
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <a
-                id="modalBook"
-                href="#contact"
-                class="border rounded-full px-4 py-2"
-                data-i18n="modal_book_button">
-                Book this template
-              </a>
-              <a
-                href="#pricing"
-                class="border rounded-full px-4 py-2"
-                data-i18n="modal_pricing_link">
-                See packages
-              </a>
-            </div>
-          </aside>
         </div>
+      </article>
+    </div>
+
+    <div id="case-parallel" class="hidden">
+      <article class="space-y-5">
+        <img
+          src="https://picsum.photos/id/1035/1600/1000"
+          alt="hero image from Parallel Hair case study"
+          class="w-full rounded-2xl border border-black/10 object-cover"
+          loading="lazy" />
+        <div class="space-y-4">
+          <h3 class="text-2xl">Local Studio — Parallel Hair</h3>
+          <p class="text-base leading-relaxed text-black/75">
+            Goal — Parallel Hair, a two-chair studio in Leipzig, wanted a single page that listed services, hours, and neighbourhood info while taking €50 booking deposits online. Approach — I structured the page around clear blocks for pricing, stylists, testimonials, and a locality map, then wired a tailored contact form that posts to Supabase for logging and emails the team instantly. Stripe Payment Links handle the deposit flow, and the site runs as a static deploy with Netlify edge caching. Outcome — Clients now skim services in seconds, pay their deposit before arrival, and use the embedded map for directions. The team checks Supabase to review enquiries, exports data when needed, and stopped losing appointments to scattered DMs.
+          </p>
+          <p class="text-sm uppercase tracking-[0.2em] text-black/60">
+            Tech note — Supabase form · Stripe Payment Link · Netlify
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+              href="https://cal.com/onepagestudio/intro-15"
+              target="_blank"
+              rel="noopener">
+              book this style
+            </a>
+            <a
+              class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+              href="mailto:hello@one-page.studio">
+              email about this
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div
+      id="caseModal"
+      class="fixed inset-0 z-50 hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="caseModalHeading"
+      aria-hidden="true">
+      <div class="absolute inset-0 bg-black/60" data-modal-overlay></div>
+      <div
+        class="relative mx-auto my-8 flex max-h-[90vh] w-[min(95%,960px)] flex-col overflow-hidden rounded-3xl border border-black/20 bg-[color:var(--bg)] shadow-xl">
+        <div class="flex items-center justify-between border-b border-black/10 px-5 py-3">
+          <h2 id="caseModalHeading" class="text-xs uppercase tracking-[0.3em] text-black/60">
+            case study
+          </h2>
+          <button
+            type="button"
+            class="rounded-full border border-transparent px-3 py-1 text-sm text-black/70 transition hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
+            data-modal-close>
+            close
+          </button>
+        </div>
+        <div id="caseModalContent" class="overflow-y-auto px-5 py-6 md:px-8 md:py-8"></div>
       </div>
     </div>
 
     <script>
-      const translations = {
-        en: {
-          meta_title: 'one-page studio — fast, clean one-page websites',
-          meta_description:
-            'Custom one-page websites built in 48 hours. Copy, design, and launch support for artists, studios, cafés, and cultural events.',
-          brand_name: 'one-page studio · Leipzig',
-          nav_work: 'Work',
-          nav_pricing: 'Pricing',
-          nav_process: 'Process',
-          nav_faq: 'FAQ',
-          nav_contact: 'Contact',
-          reserve_button: 'Reserve a slot',
-          mode_toggle: 'dusk / dawn',
-          hero_kicker: 'Websites for independents & creatives',
-          hero_title: 'Launch a conversion-ready one-pager in 48 hours.',
-          hero_subtitle:
-            'Leipzig-based web designer building custom one-page websites for artists, studios, cafés, and cultural events—no templated fluff, just SEO-ready results.',
-          hero_secondary:
-            'Based in Leipzig, partnering with clients across Europe.',
-          hero_cta_primary: 'Start your project',
-          hero_cta_secondary: 'View packages',
-          hero_feature1: 'Content polish & copy support',
-          hero_feature2: 'Impressum & Datenschutz ready',
-          hero_feature3: 'Domain, email & hosting setup',
-          hero_feature4: 'Analytics & handoff documentation',
-          hero_badge: '2 build slots open this month',
-          hero_trust: 'Trusted by clients in Berlin · Leipzig · Zurich',
-          hero_right_label: 'Mini sprint',
-          hero_right_title: 'Day 1 strategy, day 2 build, launch on day 3.',
-          hero_right_text:
-            'We align on goals, gather content, and ship a polished single page with room to grow.',
-          hero_right_point1_title: 'Kick-off call',
-          hero_right_point1_text:
-            '30-minute workshop to map sections, tone, and priorities.',
-          hero_right_point2_title: 'Content pass',
-          hero_right_point2_text:
-            'Light rewrite and structure cleanup so everything reads sharp.',
-          hero_right_point3_title: 'QA & launch',
-          hero_right_point3_text:
-            'Responsive checks, analytics, legal pages, and deployment.',
-          hero_right_note:
-            'Express schedule available when your content is ready.',
-          work_heading: 'Featured builds',
-          work_subheading: 'Click a card to preview the live demo.',
-          project_preview_label: 'Preview →',
-          project_artist_type: 'Portfolio',
-          project_artist_title: 'Artist Portfolio',
-          project_artist_summary:
-            'Statement-led layout with gallery, CV highlights, and contact.',
-          project_artist_alt:
-            'Screenshot of custom artist portfolio website built by One-Page Studio',
-          project_studio_type: 'Studio profile',
-          project_studio_title: 'Architecture Studio',
-          project_studio_summary:
-            'Approach, three project case cards, and a clear services list.',
-          project_studio_alt:
-            'Screenshot of architecture studio one-page website crafted in Leipzig',
-          project_cafe_type: 'Hospitality',
-          project_cafe_title: 'Café Menu',
-          project_cafe_summary:
-            'Hours, menu blocks, Instagram link, and a rolling news card.',
-          project_cafe_alt:
-            'Screenshot of café menu website with hours and Instagram link',
-          project_custom_type: 'Custom scope',
-          project_custom_title: 'Need something else?',
-          project_custom_summary:
-            'Send your brief—product launches, microsites, or multi-language pages welcome.',
-          project_custom_cta: 'Start →',
-          pricing_heading: 'Packages',
-          pricing_intro:
-            'Every build includes copy edits, responsive layouts, legal pages, and launch support.',
-          pricing_note: 'Two discounted slots available this week.',
-          pricing_package_sprint_label: 'Sprint',
-          pricing_package_sprint_price: '€260',
-          pricing_package_sprint_point1: 'Single page up to 5 sections',
-          pricing_package_sprint_point2: 'Copy polish & tone alignment',
-          pricing_package_sprint_point3: 'Technical SEO & metadata',
-          pricing_package_sprint_point4: 'One week post-launch check-in',
-          pricing_package_launch_label: 'Launch',
-          pricing_package_launch_price: '€480',
-          pricing_package_launch_point1: 'Everything in Sprint',
-          pricing_package_launch_point2: '48-hour express option',
-          pricing_package_launch_point3: 'Custom illustrations or icon set',
-          pricing_package_launch_point4: 'Analytics setup (Plausible)',
-          pricing_package_plus_label: 'Plus',
-          pricing_package_plus_price: '€780',
-          pricing_package_plus_point1: 'Everything in Launch',
-          pricing_package_plus_point2: 'Multi-language toggle or CMS handoff',
-          pricing_package_plus_point3: 'Three months micro-updates',
-          pricing_package_plus_point4: 'Team training session',
-          pricing_package_cta: 'Book',
-          pricing_discount:
-            'Discounts: −10% for cash payments · −20% for first-time collaborators',
-          pricing_payment_note: 'Payment plans available on request.',
-          value_heading: 'Included in every site',
-          value_point1_title: 'Mobile-first build',
-          value_point1_text: 'Fast-loading layouts tested on popular devices.',
-          value_point2_title: 'Clear messaging',
-          value_point2_text:
-            'Copy and headings shaped to convert visitors quickly.',
-          value_point3_title: 'Future-proof setup',
-          value_point3_text:
-            'Versioned files, documentation, and easy handoff.',
-          process_heading: 'Process',
-          process_step1_title: 'Discover',
-          process_step1_text:
-            'Quick intake and moodboard references to translate your goals.',
-          process_step2_title: 'Content',
-          process_step2_text:
-            'You send material or rough notes—I draft and structure the page.',
-          process_step3_title: 'Build',
-          process_step3_text:
-            'Design and development in Tailwind, preview link delivered in 48 hours.',
-          process_step4_title: 'Launch',
-          process_step4_text:
-            'Feedback round, legal polish, domain connection, and handover.',
-          faq_heading: 'FAQ',
-          faq_q1: 'How fast can we launch?',
-          faq_a1:
-            'Standard delivery is five business days. When content is ready, I can run a 48-hour express build.',
-          faq_q2: 'What do you need from me?',
-          faq_a2:
-            'Send any text, images, links, and references. If it’s rough, I’ll tidy the copy and structure for you.',
-          faq_q3: 'How does hosting work?',
-          faq_a3:
-            'I deploy to fast, privacy-friendly platforms like Netlify or Vercel and connect your domain—you keep full control.',
-          faq_q4: 'Can we keep iterating?',
-          faq_a4:
-            'Two edit rounds are included. Further updates are available at my day rate or via a care plan.',
-          contact_heading: 'Start here',
-          contact_intro:
-            'Email a short brief with your goal, audience, deadline, and any links. I’ll reply within one business day.',
-          contact_cta_email: 'Email now',
-          contact_cta_call: 'Book a 15-min call',
-          contact_location: 'Made in Leipzig. Working with clients everywhere.',
-          contact_form_title: 'Prefer a quick form?',
-          contact_label_name: 'Name',
-          contact_label_email: 'Email',
-          contact_label_need: 'What do you need?',
-          contact_placeholder_name: 'Your name',
-          contact_placeholder_email: 'you@example.com',
-          contact_placeholder_notes: 'Portfolio for… Deadline… Links…',
-          contact_submit: 'Send',
-          contact_form_thanks:
-            'Thank you! I will reply within one business day. For urgent questions email hello@eosarchive.app directly.',
-          contact_cash_note: 'Prefer cash? Ask for the cash discount.',
-          contact_form_notice:
-            'This is a static demo—use the email button to get started.',
-          footer_text: '© 2025 one-page studio. Minimal sites, quickly.',
-          footer_impressum: 'Impressum',
-          footer_datenschutz: 'Datenschutz',
-          modal_title_placeholder: 'Example',
-          modal_tag_placeholder: 'Live preview',
-          modal_open_demo: 'Open full demo',
-          modal_close: 'Close',
-          modal_book_button: 'Book this template',
-          modal_pricing_link: 'See packages',
-          modal_price_label: 'From price',
-          modal_discount_hint: '−10% cash · −20% first-time collaborators',
-          modal_timeline_label: 'Typical timeline',
-          modal_timeline_text:
-            '48 hours with content ready · 5 business days standard',
-          modal_highlights_label: 'Highlights',
-          modal_pitch_label: 'Pitch',
-          project_artist_tag: 'Art portfolio one-pager',
-          project_artist_pitch:
-            'Clean portfolio built around works, a concise statement, and selectable CV modules.',
-          project_artist_price: 'from €260',
-          project_artist_highlight1: 'Gallery grid with 6–9 works',
-          project_artist_highlight2: '90–120 word statement section',
-          project_artist_highlight3: 'Selected exhibitions & education',
-          project_artist_highlight4: 'Email & social contact strip',
-          project_studio_tag: 'Architecture / studio profile',
-          project_studio_pitch:
-            'Compact profile with projects, services list, and a punchy contact panel.',
-          project_studio_price: 'from €480',
-          project_studio_highlight1: 'Three featured projects with scope notes',
-          project_studio_highlight2: 'Plain-language approach paragraph',
-          project_studio_highlight3: 'Services module with 4 items',
-          project_studio_highlight4: 'City + email contact block',
-          project_cafe_tag: 'Menu, hours, updates',
-          project_cafe_pitch:
-            'Straightforward info page with menu, opening hours, address, and Instagram link.',
-          project_cafe_price: 'from €260',
-          project_cafe_highlight1: 'Two structured menu sections',
-          project_cafe_highlight2: 'Hours & map-ready address block',
-          project_cafe_highlight3: 'Instagram & newsletter callout',
-          project_cafe_highlight4: 'News card for events or tastings',
-          viewport_mobile: 'Mobile',
-          viewport_tablet: 'Tablet',
-          viewport_desktop: 'Desktop',
-          modal_email_subject_prefix: 'Book: ',
-          modal_email_intro: "Hi, I'm interested in the {{title}} template.",
-          modal_email_body_fields: 'Name:\nDeadline:\nBudget:\nLinks:\nNotes:',
-        },
-        de: {
-          meta_title: 'one-page studio — schnelle, klare One-Pager',
-          meta_description:
-            'Individuelle One-Pager in 48 Stunden. Text, Design und Launch-Support für Künstler:innen, Studios, Cafés und Kulturprojekte.',
-          brand_name: 'one-page studio · Leipzig',
-          nav_work: 'Projekte',
-          nav_pricing: 'Pakete',
-          nav_process: 'Ablauf',
-          nav_faq: 'FAQ',
-          nav_contact: 'Kontakt',
-          reserve_button: 'Slot sichern',
-          mode_toggle: 'dämmerung / tag',
-          hero_kicker: 'Websites für Selbständige & Kreative',
-          hero_title: 'In 48 Stunden zur überzeugenden One-Page Website.',
-          hero_subtitle:
-            'Leipziger Webdesigner:in für individuelle One-Pager für Künstler:innen, Studios, Cafés und Events – ohne Baukasten-Floskeln, SEO-ready und schnell live.',
-          hero_secondary: 'Aus Leipzig, mit Kund:innen in ganz Europa.',
-          hero_cta_primary: 'Projekt starten',
-          hero_cta_secondary: 'Pakete ansehen',
-          hero_feature1: 'Text-Finetuning & Copy-Support',
-          hero_feature2: 'Impressum & Datenschutz inklusive',
-          hero_feature3: 'Domain, E-Mail & Hosting Setup',
-          hero_feature4: 'Analytics & Handover-Dokumentation',
-          hero_badge: '2 freie Slots in diesem Monat',
-          hero_trust:
-            'Vertrauenspartner für Studios in Berlin · Leipzig · Zürich',
-          hero_right_label: 'Mini-Sprint',
-          hero_right_title: 'Tag 1 Strategie, Tag 2 Aufbau, Launch an Tag 3.',
-          hero_right_text:
-            'Wir schärfen Ziele, sammeln Inhalte und liefern eine polierte One-Pager-Seite mit Luft nach oben.',
-          hero_right_point1_title: 'Kick-off Call',
-          hero_right_point1_text:
-            '30-Minuten-Workshop für Struktur, Tonalität und Prioritäten.',
-          hero_right_point2_title: 'Content-Pass',
-          hero_right_point2_text:
-            'Leichte Textüberarbeitung und Ordnung, damit alles klar wirkt.',
-          hero_right_point3_title: 'QA & Launch',
-          hero_right_point3_text:
-            'Responsive Check, Analytics, Rechtstexte und Deployment.',
-          hero_right_note:
-            'Express-Takt möglich, sobald deine Inhalte vorliegen.',
-          work_heading: 'Ausgewählte Projekte',
-          work_subheading: 'Klicke auf eine Karte für die Live-Vorschau.',
-          project_preview_label: 'Vorschau →',
-          project_artist_type: 'Portfolio',
-          project_artist_title: 'Künstler:in Portfolio',
-          project_artist_summary:
-            'Layout mit Statement, Galerie, Vita-Auswahl und Kontaktleiste.',
-          project_artist_alt:
-            'Screenshot eines von One-Page Studio gestalteten Künstler:innen-Portfolios',
-          project_studio_type: 'Studio-Profil',
-          project_studio_title: 'Architektur Studio',
-          project_studio_summary:
-            'Approach, drei Projekt-Karten und eine klare Leistungsübersicht.',
-          project_studio_alt:
-            'Screenshot einer Leipziger Architektur-Website als One-Pager',
-          project_cafe_type: 'Gastronomie',
-          project_cafe_title: 'Café Menü',
-          project_cafe_summary:
-            'Öffnungszeiten, Menüblöcke, Instagram-Link und News-Karte.',
-          project_cafe_alt:
-            'Screenshot einer Café-Menü-Seite mit Öffnungszeiten und Instagram-Link',
-          project_custom_type: 'Individuell',
-          project_custom_title: 'Noch etwas anderes?',
-          project_custom_summary:
-            'Schick das Briefing – Launch-Websites, Microsites oder Mehrsprachigkeit sind willkommen.',
-          project_custom_cta: 'Start →',
-          pricing_heading: 'Pakete',
-          pricing_intro:
-            'Alle Projekte enthalten Text-Finetuning, responsive Layouts, Rechtstexte und Launch-Begleitung.',
-          pricing_note:
-            'Diese Woche sind zwei Slots zum reduzierten Preis frei.',
-          pricing_package_sprint_label: 'Sprint',
-          pricing_package_sprint_price: '260 €',
-          pricing_package_sprint_point1: 'Eine Seite mit bis zu 5 Abschnitten',
-          pricing_package_sprint_point2: 'Copy-Polish & Tonalitätsabstimmung',
-          pricing_package_sprint_point3: 'Technisches SEO & Metadaten',
-          pricing_package_sprint_point4: 'Check-in eine Woche nach Launch',
-          pricing_package_launch_label: 'Launch',
-          pricing_package_launch_price: '480 €',
-          pricing_package_launch_point1: 'Alles aus Sprint',
-          pricing_package_launch_point2: '48h-Express möglich',
-          pricing_package_launch_point3: 'Eigene Illustrationen oder Icon-Set',
-          pricing_package_launch_point4: 'Analytics-Setup (Plausible)',
-          pricing_package_plus_label: 'Plus',
-          pricing_package_plus_price: '780 €',
-          pricing_package_plus_point1: 'Alles aus Launch',
-          pricing_package_plus_point2: 'Mehrsprachigkeit oder CMS-Handover',
-          pricing_package_plus_point3: 'Drei Monate Micro-Updates',
-          pricing_package_plus_point4: 'Team-Schulung',
-          pricing_package_cta: 'Buchen',
-          pricing_discount:
-            'Rabatte: −10 % bei Barzahlung · −20 % für Erstkund:innen',
-          pricing_payment_note: 'Ratenzahlung auf Anfrage möglich.',
-          value_heading: 'In jedem Projekt enthalten',
-          value_point1_title: 'Mobile-first Aufbau',
-          value_point1_text:
-            'Schnelle Ladezeiten, getestet auf gängigen Geräten.',
-          value_point2_title: 'Klarer Inhalt',
-          value_point2_text: 'Texte und Headlines auf Conversion optimiert.',
-          value_point3_title: 'Zukunftssicher',
-          value_point3_text:
-            'Versionierte Dateien, Dokumentation und leichter Handover.',
-          process_heading: 'Ablauf',
-          process_step1_title: 'Discover',
-          process_step1_text:
-            'Kurzer Intake plus Moodboard-Referenzen für Ziele und Stil.',
-          process_step2_title: 'Content',
-          process_step2_text:
-            'Du schickst Material oder Stichpunkte – ich strukturiere und schreibe.',
-          process_step3_title: 'Build',
-          process_step3_text:
-            'Design & Entwicklung in Tailwind, Preview-Link in 48 Stunden.',
-          process_step4_title: 'Launch',
-          process_step4_text:
-            'Feedbackrunde, Rechtstexte, Domain-Anbindung und Übergabe.',
-          faq_heading: 'FAQ',
-          faq_q1: 'Wie schnell geht der Launch?',
-          faq_a1:
-            'Standard sind fünf Werktage. Mit fertigen Inhalten kann ich in 48 Stunden liefern.',
-          faq_q2: 'Was brauche ich dafür?',
-          faq_a2:
-            'Texte, Bilder, Links und Referenzen. Auch Rohmaterial ist ok – ich bringe Struktur rein.',
-          faq_q3: 'Wie läuft das Hosting?',
-          faq_a3:
-            'Ich deploye auf schnelle, datenschutzfreundliche Plattformen (z.B. Netlify/Vercel) und verbinde deine Domain – du behältst die Kontrolle.',
-          faq_q4: 'Gibt es weitere Änderungen?',
-          faq_a4:
-            'Zwei Edit-Runden sind inklusive. Mehr Anpassungen gibt es zum Tagessatz oder über ein Care-Paket.',
-          contact_heading: 'Los geht’s',
-          contact_intro:
-            'Schick ein kurzes Briefing mit Ziel, Zielgruppe, Deadline und Links. Antwort innerhalb eines Werktags.',
-          contact_cta_email: 'Jetzt mailen',
-          contact_cta_call: '15-Minuten-Call buchen',
-          contact_location: 'Aus Leipzig. Arbeit mit Kund:innen überall.',
-          contact_form_title: 'Lieber schnell im Formular?',
-          contact_label_name: 'Name',
-          contact_label_email: 'E-Mail',
-          contact_label_need: 'Worum geht es?',
-          contact_placeholder_name: 'Dein Name',
-          contact_placeholder_email: 'du@example.com',
-          contact_placeholder_notes: 'Portfolio für… Deadline… Links…',
-          contact_submit: 'Senden',
-          contact_form_thanks:
-            'Danke! Ich melde mich innerhalb eines Werktags. Für dringende Fragen schreib direkt an hello@eosarchive.app.',
-          contact_cash_note: 'Barzahlung? Einfach nach dem Rabatt fragen.',
-          contact_form_notice:
-            'Dies ist eine statische Demo – nutze den Mail-Button für den Start.',
-          footer_text:
-            '© 2025 one-page studio. Minimal Sites, schnell umgesetzt.',
-          footer_impressum: 'Impressum',
-          footer_datenschutz: 'Datenschutz',
-          modal_title_placeholder: 'Beispiel',
-          modal_tag_placeholder: 'Live-Vorschau',
-          modal_open_demo: 'Demo im neuen Tab',
-          modal_close: 'Schließen',
-          modal_book_button: 'Dieses Template buchen',
-          modal_pricing_link: 'Pakete ansehen',
-          modal_price_label: 'Ab Preis',
-          modal_discount_hint: '−10 % Barzahlung · −20 % Erstkund:innen',
-          modal_timeline_label: 'Typischer Ablauf',
-          modal_timeline_text:
-            '48 Stunden mit fertigen Inhalten · 5 Werktage Standard',
-          modal_highlights_label: 'Highlights',
-          modal_pitch_label: 'Pitch',
-          project_artist_tag: 'One-Pager für Kunst-Portfolios',
-          project_artist_pitch:
-            'Klares Portfolio mit Werkgallerie, kurzem Statement und modularer Vita.',
-          project_artist_price: 'ab 260 €',
-          project_artist_highlight1: 'Galerie mit 6–9 Arbeiten',
-          project_artist_highlight2: 'Statement mit 90–120 Wörtern',
-          project_artist_highlight3: 'Ausstellungen & Ausbildung ausgewählt',
-          project_artist_highlight4: 'Kontaktleiste mit Mail & Social',
-          project_studio_tag: 'Architektur / Studio-Profil',
-          project_studio_pitch:
-            'Reduziertes Profil mit Projekten, Leistungsübersicht und Kontaktpanel.',
-          project_studio_price: 'ab 480 €',
-          project_studio_highlight1: 'Drei Projekte mit Scope-Notizen',
-          project_studio_highlight2: 'Approach-Text in klarer Sprache',
-          project_studio_highlight3: 'Leistungen in 4 Punkten',
-          project_studio_highlight4: 'Kontaktblock mit Stadt & E-Mail',
-          project_cafe_tag: 'Menü, Öffnungszeiten, Updates',
-          project_cafe_pitch:
-            'Übersichtliche Page mit Menü, Öffnungszeiten, Adresse und Instagram-Link.',
-          project_cafe_price: 'ab 260 €',
-          project_cafe_highlight1: 'Zwei strukturierte Menü-Bereiche',
-          project_cafe_highlight2: 'Öffnungszeiten & Adresse (kartenbereit)',
-          project_cafe_highlight3: 'Instagram- & Newsletter-Hinweis',
-          project_cafe_highlight4: 'News-Karte für Tastings oder Events',
-          viewport_mobile: 'Mobil',
-          viewport_tablet: 'Tablet',
-          viewport_desktop: 'Desktop',
-          modal_email_subject_prefix: 'Buchen: ',
-          modal_email_intro:
-            'Hallo, ich interessiere mich für das {{title}}-Template.',
-          modal_email_body_fields:
-            'Name:\nDeadline:\nBudget:\nLinks:\nNotizen:',
-        },
-      };
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("caseModal");
+        const modalContent = document.getElementById("caseModalContent");
+        const triggers = document.querySelectorAll("[data-modal-target]");
+        const overlay = modal.querySelector("[data-modal-overlay]");
+        const closeButton = modal.querySelector("[data-modal-close]");
 
-      const LANG_STORAGE_KEY = 'ops-lang';
-      let currentLang = 'en';
-      try {
-        const storedLang = window?.localStorage?.getItem(LANG_STORAGE_KEY);
-        if (storedLang === 'de') currentLang = 'de';
-      } catch (err) {
-        console.warn('Language preference unavailable:', err);
-      }
+        const focusableSelector =
+          'a[href], button:not([disabled]), textarea, input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-      function t(key) {
-        const table = translations[currentLang] || translations.en;
-        if (table && Object.prototype.hasOwnProperty.call(table, key)) {
-          return table[key];
-        }
-        if (Object.prototype.hasOwnProperty.call(translations.en, key)) {
-          return translations.en[key];
-        }
-        return key;
-      }
+        let lastFocused = null;
+        let trapHandler = null;
 
-      function applyTranslations() {
-        document.querySelectorAll('[data-i18n]').forEach((el) => {
-          const key = el.dataset.i18n;
-          if (!key) return;
-          const value = t(key);
-          if (el.dataset.i18nHtml === 'true') {
-            el.innerHTML = value;
-          } else {
-            el.textContent = value;
+        const getFocusable = (element) =>
+          Array.from(element.querySelectorAll(focusableSelector)).filter(
+            (el) => !el.hasAttribute("disabled") && el.getAttribute("tabindex") !== "-1"
+          );
+
+        const trapFocus = (event) => {
+          if (event.key !== "Tab") return;
+          const focusableEls = getFocusable(modal);
+          if (!focusableEls.length) return;
+          const first = focusableEls[0];
+          const last = focusableEls[focusableEls.length - 1];
+
+          if (event.shiftKey) {
+            if (document.activeElement === first) {
+              event.preventDefault();
+              last.focus();
+            }
+          } else if (document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        };
+
+        const openModal = (targetId) => {
+          const template = document.getElementById(targetId);
+          if (!template) return;
+          modalContent.innerHTML = template.innerHTML;
+          modal.classList.remove("hidden");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.classList.add("overflow-hidden");
+          lastFocused = document.activeElement;
+          const focusableEls = getFocusable(modal);
+          if (focusableEls.length) {
+            focusableEls[0].focus();
+          }
+          trapHandler = trapFocus;
+          modal.addEventListener("keydown", trapHandler);
+        };
+
+        const closeModal = () => {
+          if (modal.classList.contains("hidden")) return;
+          modal.classList.add("hidden");
+          modal.setAttribute("aria-hidden", "true");
+          modalContent.innerHTML = "";
+          document.body.classList.remove("overflow-hidden");
+          if (trapHandler) {
+            modal.removeEventListener("keydown", trapHandler);
+            trapHandler = null;
+          }
+          if (lastFocused && typeof lastFocused.focus === "function") {
+            lastFocused.focus();
+          }
+        };
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => openModal(trigger.dataset.modalTarget));
+        });
+
+        overlay.addEventListener("click", closeModal);
+        closeButton.addEventListener("click", closeModal);
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeModal();
           }
         });
-        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
-          const key = el.dataset.i18nPlaceholder;
-          if (!key) return;
-          el.setAttribute('placeholder', t(key));
-        });
-        document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
-          const key = el.dataset.i18nAlt;
-          if (!key) return;
-          el.setAttribute('alt', t(key));
-        });
-        document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
-          const key = el.dataset.i18nAriaLabel;
-          if (!key) return;
-          el.setAttribute('aria-label', t(key));
-        });
-
-        document.title = t('meta_title');
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute('content', t('meta_description'));
-        const ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle) ogTitle.setAttribute('content', t('meta_title'));
-        const ogDesc = document.querySelector(
-          'meta[property="og:description"]'
-        );
-        if (ogDesc) ogDesc.setAttribute('content', t('meta_description'));
-
-        document.documentElement.lang = currentLang;
-        document.body.dataset.lang = currentLang;
-
-        const languageToggle = document.getElementById('languageToggle');
-        if (languageToggle)
-          languageToggle.textContent =
-            currentLang === 'en' ? 'EN / DE' : 'DE / EN';
-
-        updateModalTranslations();
-      }
-
-      const PROJECTS = {
-        artist: {
-          demo: 'examples/artist-portfolio.html',
-          titleKey: 'project_artist_title',
-          tagKey: 'project_artist_tag',
-          pitchKey: 'project_artist_pitch',
-          priceKey: 'project_artist_price',
-          highlightKeys: [
-            'project_artist_highlight1',
-            'project_artist_highlight2',
-            'project_artist_highlight3',
-            'project_artist_highlight4',
-          ],
-        },
-        studio: {
-          demo: 'examples/studio-profile.html',
-          titleKey: 'project_studio_title',
-          tagKey: 'project_studio_tag',
-          pitchKey: 'project_studio_pitch',
-          priceKey: 'project_studio_price',
-          highlightKeys: [
-            'project_studio_highlight1',
-            'project_studio_highlight2',
-            'project_studio_highlight3',
-            'project_studio_highlight4',
-          ],
-        },
-        cafe: {
-          demo: 'examples/cafe-menu.html',
-          titleKey: 'project_cafe_title',
-          tagKey: 'project_cafe_tag',
-          pitchKey: 'project_cafe_pitch',
-          priceKey: 'project_cafe_price',
-          highlightKeys: [
-            'project_cafe_highlight1',
-            'project_cafe_highlight2',
-            'project_cafe_highlight3',
-            'project_cafe_highlight4',
-          ],
-        },
-      };
-
-      let CURRENT_KEY = null;
-
-      function updateModalContent(project) {
-        if (!project) return;
-        const titleText = t(project.titleKey);
-        const modalTitle = document.getElementById('modalTitle');
-        const modalTag = document.getElementById('modalTag');
-        const modalPitch = document.getElementById('modalPitch');
-        const modalPrice = document.getElementById('modalPrice');
-        const modalHighlights = document.getElementById('modalHighlights');
-        const book = document.getElementById('modalBook');
-
-        if (modalTitle) modalTitle.textContent = titleText;
-        if (modalTag) modalTag.textContent = t(project.tagKey);
-        if (modalPitch) modalPitch.textContent = t(project.pitchKey);
-        if (modalPrice) modalPrice.textContent = t(project.priceKey);
-        if (modalHighlights) {
-          modalHighlights.innerHTML = '';
-          project.highlightKeys.forEach((key) => {
-            const li = document.createElement('li');
-            li.textContent = t(key);
-            modalHighlights.appendChild(li);
-          });
-        }
-        if (book) {
-          const subjectPrefix = t('modal_email_subject_prefix');
-          const intro = t('modal_email_intro').replace('{{title}}', titleText);
-          const fields = t('modal_email_body_fields');
-          const mailto =
-            'mailto:hello@eosarchive.app?subject=' +
-            encodeURIComponent(subjectPrefix + titleText) +
-            '&body=' +
-            encodeURIComponent(intro + '\n\n' + fields);
-          book.href = mailto;
-        }
-      }
-
-      function openProject(key) {
-        const project = PROJECTS[key];
-        if (!project) return;
-        CURRENT_KEY = key;
-        const demo = document.getElementById('demoFrame');
-        if (demo) {
-          const currentSrc = demo.getAttribute('src');
-          if (currentSrc !== project.demo) {
-            demo.setAttribute('src', project.demo);
-          }
-        }
-        const modal = document.getElementById('workModal');
-        if (modal) {
-          modal.classList.remove('hidden');
-          modal.setAttribute('aria-hidden', 'false');
-        }
-        document.body.style.overflow = 'hidden';
-        setViewport('desktop');
-        updateModalContent(project);
-      }
-
-      function closeProject() {
-        const modal = document.getElementById('workModal');
-        if (modal) {
-          modal.classList.add('hidden');
-          modal.setAttribute('aria-hidden', 'true');
-        }
-        const demo = document.getElementById('demoFrame');
-        if (demo) demo.setAttribute('src', 'about:blank');
-        document.body.style.overflow = '';
-        CURRENT_KEY = null;
-      }
-
-      function updateModalTranslations() {
-        if (!CURRENT_KEY) return;
-        const project = PROJECTS[CURRENT_KEY];
-        updateModalContent(project);
-      }
-
-      function setViewport(mode) {
-        const wrap = document.getElementById('viewportFrame');
-        if (!wrap) return;
-        if (mode === 'mobile') {
-          wrap.style.maxWidth = '390px';
-        } else if (mode === 'tablet') {
-          wrap.style.maxWidth = '820px';
-        } else {
-          wrap.style.maxWidth = '100%';
-        }
-      }
-
-      function openFullDemo() {
-        if (CURRENT_KEY) {
-          const project = PROJECTS[CURRENT_KEY];
-          if (project) window.open(project.demo, '_blank');
-        }
-      }
-
-      const themeToggle = document.getElementById('modeToggle');
-      themeToggle?.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark-mode');
       });
-
-      const languageToggle = document.getElementById('languageToggle');
-      languageToggle?.addEventListener('click', () => {
-        currentLang = currentLang === 'en' ? 'de' : 'en';
-        try {
-          window?.localStorage?.setItem(LANG_STORAGE_KEY, currentLang);
-        } catch (err) {
-          console.warn('Unable to persist language preference:', err);
-        }
-        applyTranslations();
-      });
-
-      const contactForm = document.getElementById('contactForm');
-      const contactThanks = document.getElementById('contactThanks');
-      const contactCashNote = document.getElementById('contactCashNote');
-      const contactFormNote = document.getElementById('contactFormNote');
-      contactForm?.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const form = event.currentTarget;
-        const formData = new FormData(form);
-        const encoded = new URLSearchParams();
-        formData.forEach((value, key) => {
-          encoded.append(key, typeof value === 'string' ? value : value.name || '');
-        });
-        if (!encoded.has('form-name')) {
-          encoded.append('form-name', form.getAttribute('name') || 'contact');
-        }
-        try {
-          const response = await fetch('/', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: encoded.toString(),
-          });
-          if (!response.ok) {
-            throw new Error(`Form submission failed: ${response.status}`);
-          }
-        } catch (error) {
-          console.warn('Form submission failed', error);
-        }
-        form.reset();
-        form.classList.add('hidden');
-        contactCashNote?.classList.add('hidden');
-        contactFormNote?.classList.add('hidden');
-        contactThanks?.classList.remove('hidden');
-        contactThanks?.focus();
-      });
-
-      window.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeProject();
-      });
-
-      function attachProjectButtons() {
-        document.querySelectorAll('[data-project]').forEach((btn) => {
-          btn.addEventListener('click', () => {
-            const key = btn.dataset.project;
-            if (key) openProject(key);
-          });
-        });
-      }
-
-      function attachViewportButtons() {
-        document.querySelectorAll('[data-viewport]').forEach((btn) => {
-          btn.addEventListener('click', () => {
-            const mode = btn.dataset.viewport;
-            if (mode) setViewport(mode);
-          });
-        });
-      }
-
-      function attachModalControls() {
-        document.querySelectorAll('[data-modal-close]').forEach((el) => {
-          el.addEventListener('click', closeProject);
-        });
-        const openDemoBtn = document.querySelector('[data-modal-open-demo]');
-        openDemoBtn?.addEventListener('click', openFullDemo);
-      }
-
-      function init() {
-        attachProjectButtons();
-        attachViewportButtons();
-        attachModalControls();
-        applyTranslations();
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init, { once: true });
-      } else {
-        init();
-      }
     </script>
   </body>
 </html>
