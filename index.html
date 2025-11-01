@@ -122,6 +122,86 @@
         background: rgba(255, 255, 255, 0.85);
         box-shadow: 0 8px 20px rgba(17, 17, 17, 0.08);
       }
+      .mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 1px solid rgba(17, 17, 17, 0.16);
+        background: rgba(255, 255, 255, 0.9);
+        transition: background 0.15s ease, border-color 0.15s ease;
+      }
+      .mobile-toggle svg {
+        width: 18px;
+        height: 18px;
+        stroke: #111111;
+        stroke-width: 1.6;
+        transition: stroke 0.15s ease;
+      }
+      .mobile-toggle:hover,
+      .mobile-toggle:focus-visible,
+      .mobile-toggle.is-open {
+        background: #0b03e5;
+        border-color: #0b03e5;
+        outline: none;
+      }
+      .mobile-toggle:hover svg,
+      .mobile-toggle:focus-visible svg,
+      .mobile-toggle.is-open svg {
+        stroke: #ffffff;
+      }
+      .mobile-menu {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        left: 1.5rem;
+        right: 1.5rem;
+        background: #ffffff;
+        border: 1px solid rgba(17, 17, 17, 0.12);
+        border-radius: 20px;
+        box-shadow: 0 24px 55px rgba(17, 17, 17, 0.18);
+        padding: 1.1rem 1.25rem;
+        display: none;
+        flex-direction: column;
+        gap: 1.25rem;
+        z-index: 45;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+      .mobile-menu nav a {
+        font-size: 0.95rem;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+      .mobile-menu nav a:hover {
+        color: #0b03e5;
+      }
+      .mobile-menu-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+      .mobile-menu-actions .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+      .mobile-menu-actions a.secondary {
+        font-size: 0.9rem;
+        color: #0b03e5;
+        text-align: center;
+      }
+      @media (min-width: 640px) {
+        .mobile-menu {
+          display: none !important;
+        }
+      }
       .package-cta {
         margin-top: auto;
         padding-top: 1.5rem;
@@ -137,7 +217,8 @@
         color: #0b03e5;
         border-bottom: 1px solid rgba(11, 3, 229, 0.2);
         padding-bottom: 0.25rem;
-        transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+        transition: color 0.15s ease, border-color 0.15s ease,
+          transform 0.15s ease;
       }
       .package-link:hover,
       .package-link:focus-visible {
@@ -178,67 +259,108 @@
   <body class="antialiased">
     <header
       class="sticky top-0 z-40 border-b border-black/10 bg-white backdrop-blur">
-      <div
-        class="mx-auto flex max-w-5xl items-center justify-between px-6 py-3 text-sm">
-        <div class="flex items-center gap-3 font-medium tracking-tight">
-          <img
-            src="ops-favicon-512.png"
-            alt="one-page studio logo"
-            class="h-8 w-8" />
-          <span>one-page studio</span>
+      <div class="relative mx-auto max-w-5xl px-6 py-3 text-sm">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3 font-medium tracking-tight">
+            <img
+              src="ops-favicon-512.png"
+              alt="one-page studio logo"
+              class="h-8 w-8" />
+            <span>one-page studio</span>
+          </div>
+          <nav class="hidden items-center gap-5 sm:flex">
+            <a
+              class="transition hover:text-[#0000ff]"
+              href="#work"
+              data-i18n="nav.work"
+              >Work</a
+            >
+            <a
+              class="transition hover:text-[#0000ff]"
+              href="#packages"
+              data-i18n="nav.packages"
+              >Packages</a
+            >
+            <a
+              class="transition hover:text-[#0000ff]"
+              href="#pledge"
+              data-i18n="nav.pledge"
+              >Pledge</a
+            >
+            <a
+              class="transition hover:text-[#0000ff]"
+              href="#contact"
+              data-i18n="nav.contact"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-2">
+            <button
+              id="languageToggle"
+              type="button"
+              class="lang-toggle"
+              aria-pressed="false"
+              data-i18n-aria-label="toggle.aria"
+              data-lang="en">
+              <span class="lang-en">EN</span>
+              <span>/</span>
+              <span class="lang-de">DE</span>
+            </button>
+            <button
+              id="mobileMenuButton"
+              type="button"
+              class="mobile-toggle sm:hidden"
+              aria-expanded="false"
+              aria-label="Open menu">
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true">
+                <path d="M3 5h14M3 10h14M3 15h14" />
+              </svg>
+            </button>
+          </div>
         </div>
-        <nav class="hidden items-center gap-5 sm:flex">
-          <a
-            class="transition hover:text-[#0000ff]"
-            href="#work"
-            data-i18n="nav.work"
-            >Work</a
-          >
-          <a
-            class="transition hover:text-[#0000ff]"
-            href="#packages"
-            data-i18n="nav.packages"
-            >Packages</a
-          >
-          <a
-            class="transition hover:text-[#0000ff]"
-            href="#pledge"
-            data-i18n="nav.pledge"
-            >Pledge</a
-          >
-          <a
-            class="transition hover:text-[#0000ff]"
-            href="#contact"
-            data-i18n="nav.contact"
-            >Contact</a
-          >
-        </nav>
-        <div class="flex items-center gap-2">
-          <script>
-            (function () {
-              var target = document.currentScript;
-              window.addEventListener('load', function () {
-                if (!window.calendar || !calendar.schedulingButton) return;
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
-                  color: '#0b03e5',
-                  label: 'Book a 15-min Intro Call',
-                  target: target,
-                });
-              });
-            })();
-          </script>
-          <button
-            id="languageToggle"
-            type="button"
-            class="lang-toggle"
-            aria-pressed="false"
-            data-i18n-aria-label="toggle.aria"
-            data-lang="en">
-            <span class="lang-en">EN</span>
-            <span>/</span>
-            <span class="lang-de">DE</span>
-          </button>
+        <div
+          id="mobileMenuPanel"
+          class="mobile-menu sm:hidden"
+          hidden>
+          <nav>
+            <a
+              href="#work"
+              data-i18n="nav.work"
+              >Work</a
+            >
+            <a
+              href="#packages"
+              data-i18n="nav.packages"
+              >Packages</a
+            >
+            <a
+              href="#pledge"
+              data-i18n="nav.pledge"
+              >Pledge</a
+            >
+            <a
+              href="#contact"
+              data-i18n="nav.contact"
+              >Contact</a
+            >
+          </nav>
+          <div class="mobile-menu-actions">
+            <a
+              class="cta-button"
+              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
+              target="_blank"
+              rel="noopener">
+              Book a 15-min Intro Call
+            </a>
+            <a
+              class="secondary"
+              href="mailto:hello@one-page.studio">
+              hello@one-page.studio
+            </a>
+          </div>
         </div>
       </div>
     </header>
@@ -1036,6 +1158,8 @@
           'nav.packages': 'Packages',
           'nav.pledge': 'Pledge',
           'nav.contact': 'Contact',
+          'nav.menuOpen': 'Open menu',
+          'nav.menuClose': 'Close menu',
           'toggle.aria': 'Toggle language between English and German',
           'hero.badge': 'Two discounted slots this week',
           'hero.title':
@@ -1180,6 +1304,8 @@
           'nav.packages': 'Pakete',
           'nav.pledge': 'Versprechen',
           'nav.contact': 'Kontakt',
+          'nav.menuOpen': 'Menü öffnen',
+          'nav.menuClose': 'Menü schließen',
           'toggle.aria': 'Sprache zwischen Englisch und Deutsch wechseln',
           'hero.badge': 'Zwei vergünstigte Slots diese Woche',
           'hero.title':
@@ -1322,6 +1448,35 @@
 
       let currentLanguage = 'en';
 
+      const CALENDAR_BUTTON_CONFIG = {
+        url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
+        color: '#0b03e5',
+        label: 'Book a 15-min Intro Call',
+      };
+
+      function loadCalendarButtonInto(element) {
+        if (!element) return;
+        const render = () => {
+          if (!window.calendar || !calendar.schedulingButton) {
+            return false;
+          }
+          calendar.schedulingButton.load({
+            url: CALENDAR_BUTTON_CONFIG.url,
+            color: CALENDAR_BUTTON_CONFIG.color,
+            label: CALENDAR_BUTTON_CONFIG.label,
+            target: element,
+          });
+          return true;
+        };
+        if (!render()) {
+          const interval = setInterval(() => {
+            if (render()) {
+              clearInterval(interval);
+            }
+          }, 250);
+        }
+      }
+
       const getTranslation = (lang, key) => {
         if (!key) return '';
         const map = translations[lang] || translations.en;
@@ -1410,6 +1565,25 @@
             el.setAttribute('aria-label', value);
           }
         });
+        const mobileToggle = document.getElementById('mobileMenuButton');
+        if (mobileToggle) {
+          const openLabel = getTranslation(locale, 'nav.menuOpen');
+          const closeLabel = getTranslation(locale, 'nav.menuClose');
+          if (openLabel) {
+            mobileToggle.dataset.openLabel = openLabel;
+          }
+          if (closeLabel) {
+            mobileToggle.dataset.closeLabel = closeLabel;
+          }
+          const expanded =
+            mobileToggle.getAttribute('aria-expanded') === 'true';
+          const label = expanded
+            ? closeLabel || openLabel
+            : openLabel || closeLabel;
+          if (label) {
+            mobileToggle.setAttribute('aria-label', label);
+          }
+        }
 
         const toggle = document.getElementById('languageToggle');
         if (toggle) {
@@ -1443,6 +1617,75 @@
         }
 
         applyTranslations(currentLanguage);
+        loadCalendarButtonInto(
+          document.getElementById('desktopCalendarButton')
+        );
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuButton = document.getElementById('mobileMenuButton');
+        const menuPanel = document.getElementById('mobileMenuPanel');
+        if (!menuButton || !menuPanel) return;
+
+        const updateAria = () => {
+          const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+          const label = expanded
+            ? menuButton.dataset.closeLabel ||
+              menuButton.getAttribute('aria-label')
+            : menuButton.dataset.openLabel ||
+              menuButton.getAttribute('aria-label');
+          if (label) {
+            menuButton.setAttribute('aria-label', label);
+          }
+        };
+
+        const closeMenu = () => {
+          menuPanel.classList.remove('open');
+          menuPanel.setAttribute('hidden', '');
+          menuButton.classList.remove('is-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          updateAria();
+        };
+
+        const openMenu = () => {
+          menuPanel.classList.add('open');
+          menuPanel.removeAttribute('hidden');
+          menuButton.classList.add('is-open');
+          menuButton.setAttribute('aria-expanded', 'true');
+          updateAria();
+        };
+
+        menuButton.addEventListener('click', () => {
+          if (menuButton.getAttribute('aria-expanded') === 'true') {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        menuPanel.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            closeMenu();
+          });
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 640) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (
+            event.key === 'Escape' &&
+            menuButton.getAttribute('aria-expanded') === 'true'
+          ) {
+            closeMenu();
+          }
+        });
+
+        updateAria();
       });
     </script>
     <script>
