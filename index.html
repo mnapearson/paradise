@@ -27,7 +27,6 @@
     <link
       rel="icon"
       type="image/png"
-      sizes="512x512"
       href="/ops-favicon-512.png" />
     <link
       href="https://calendar.google.com/calendar/scheduling-button-script.css"
@@ -283,9 +282,9 @@
             >
             <a
               class="transition hover:text-[#0000ff]"
-              href="#pledge"
-              data-i18n="nav.pledge"
-              >Pledge</a
+              href="#about"
+              data-i18n="nav.about"
+              >About</a
             >
             <a
               class="transition hover:text-[#0000ff]"
@@ -337,9 +336,9 @@
               >Packages</a
             >
             <a
-              href="#pledge"
-              data-i18n="nav.pledge"
-              >Pledge</a
+              href="#about"
+              data-i18n="nav.about"
+              >About</a
             >
             <a
               href="#contact"
@@ -389,7 +388,7 @@
           <p
             class="text-sm uppercase tracking-[0.18em] text-black/60"
             data-i18n="hero.location">
-            leipzig-based · collaborating worldwide
+            Based in Leipzig · Collaborating worldwide
           </p>
           <div class="flex flex-wrap gap-3">
             <script>
@@ -766,22 +765,26 @@
       </section>
 
       <section
-        id="pledge"
+        id="about"
         class="border-t border-black/10 bg-white/60">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <h2
-            class="text-2xl md:text-3xl"
-            data-i18n="pledge.heading">
-            Independent Internet Pledge
-          </h2>
-          <p
-            class="mt-4 max-w-3xl text-base leading-relaxed text-black/75"
-            data-i18n="pledge.body">
-            I use open-source tools and privacy-friendly defaults. You own your
-            code and content and can export anytime. No trackers by default.
-            Every project ships with clear documentation so another developer—or
-            you—can continue without friction.
-          </p>
+          <div class="mx-auto flex max-w-4xl flex-col gap-8 md:flex-row md:items-start md:gap-12">
+            <div class="flex justify-center md:block md:flex-none md:w-60">
+              <img
+                src="https://mqtcodpajykyvodmahlt.supabase.co/storage/v1/object/public/conversations/bio-pic.jpg"
+                alt="Portrait of Micky Arratoon"
+                class="h-auto w-40 max-w-[220px] rounded-2xl border border-black/10 object-cover shadow-sm sm:w-48 md:w-full"
+                loading="lazy" />
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl md:text-3xl" data-i18n="about.heading">
+                About
+              </h2>
+              <p class="mt-4 text-base leading-relaxed text-black/75" data-i18n="about.body">
+                I’m Micky Arratoon, a designer–developer in Leipzig. I build small, fast one-page sites for people who don’t want to wrangle Wix/WordPress or plugins. My approach is open-source where possible, with a simple editor so you can update text, images, and links after launch. Clear scope, tight timelines, calm communication—most projects ship in 48–72 hours once content is ready. If you want a custom page without the builder maze, I’ll take the wheel and get it live quickly.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -946,7 +949,7 @@
       <div
         class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-black/60 md:flex-row md:items-center md:justify-between">
         <span data-i18n="footer.location"
-          >Based in Leipzig · Available anywhere</span
+          >Based in Leipzig · Collaborating worldwide</span
         >
         <span data-i18n="footer.copyright">© 2025 one-page studio</span>
       </div>
@@ -1156,7 +1159,7 @@
             'one-page studio delivers bespoke one-page websites with optional CMS handoff. Based in Leipzig, working anywhere.',
           'nav.work': 'Work',
           'nav.packages': 'Packages',
-          'nav.pledge': 'Pledge',
+          'nav.about': 'About',
           'nav.contact': 'Contact',
           'nav.menuOpen': 'Open menu',
           'nav.menuClose': 'Close menu',
@@ -1166,7 +1169,7 @@
             'Custom one-page websites. Built fast. You keep the keys.',
           'hero.copy':
             'Done-for-you, no builders. Optional simple CMS. Open-source where possible.',
-          'hero.location': 'leipzig-based · collaborating worldwide',
+          'hero.location': 'Based in Leipzig · Collaborating worldwide',
           'hero.emailCta': 'Email',
           'hero.featureLaunchTitle': '48–72h Launch',
           'hero.featureLaunchBody':
@@ -1239,9 +1242,9 @@
             'Discounts: −10% cash · −20% first five clients.',
           'packages.terms.item2':
             'Payment terms: 50% deposit to book, 50% at launch.',
-          'pledge.heading': 'Independent Internet Pledge',
-          'pledge.body':
-            'I use open-source tools and privacy-friendly defaults. You own your code and content and can export anytime. No trackers by default. Every project ships with clear documentation so another developer—or you—can continue without friction.',
+          'about.heading': 'About',
+          'about.body':
+            'I’m Micky Arratoon, a designer–developer in Leipzig. I build small, fast one-page sites for people who don’t want to wrangle Wix/WordPress or plugins. My approach is open-source where possible, with a simple editor so you can update text, images, and links after launch. Clear scope, tight timelines, calm communication—most projects ship in 48–72 hours once content is ready. If you want a custom page without the builder maze, I’ll take the wheel and get it live quickly.',
           'why.heading': 'Why Not Builders?',
           'why.body':
             'Builders are fine if you enjoy configuring tools. Most clients would rather skip the dashboards. I design and code the page, publish it fast, then hand over a calm /admin editor for simple edits.',
@@ -1263,7 +1266,7 @@
           'contact.placeholderMessage': 'project notes, deadlines, links…',
           'contact.subject': 'one-page studio — New Inquiry',
           'contact.submit': 'Send',
-          'footer.location': 'Based in Leipzig · Available anywhere',
+          'footer.location': 'Based in Leipzig · Collaborating worldwide',
           'footer.copyright': '© 2025 one-page studio',
           'modal.heading': 'case study',
           'modal.close': 'close',
@@ -1302,7 +1305,7 @@
             'one-page studio liefert maßgeschneiderte One-Pager mit optionaler CMS-Übergabe. Sitz in Leipzig, Arbeiten weltweit.',
           'nav.work': 'Arbeiten',
           'nav.packages': 'Pakete',
-          'nav.pledge': 'Versprechen',
+          'nav.about': 'Über mich',
           'nav.contact': 'Kontakt',
           'nav.menuOpen': 'Menü öffnen',
           'nav.menuClose': 'Menü schließen',
@@ -1387,9 +1390,9 @@
             'Rabatte: −10 % bei Barzahlung · −20 % für die ersten fünf Kund:innen.',
           'packages.terms.item2':
             'Zahlungsmodalitäten: 50 % Anzahlung zur Buchung, 50 % beim Launch.',
-          'pledge.heading': 'Versprechen für ein unabhängiges Internet',
-          'pledge.body':
-            'Ich nutze Open-Source-Tools und datenschutzfreundliche Defaults. Sie besitzen Code und Inhalte und können jederzeit exportieren. Keine Tracker standardmäßig. Jedes Projekt enthält klare Dokumentation, damit andere Entwickler:innen – oder Sie – ohne Reibung weitermachen.',
+          'about.heading': 'Über mich',
+          'about.body':
+            'Ich bin Micky Arratoon, Designer-Entwickler in Leipzig. Ich baue schnelle, schlanke One-Pager für Menschen, die keine Lust auf Wix/WordPress und Plugins haben. Wo möglich setze ich auf Open-Source und integriere einen einfachen Editor, damit Sie Inhalte nach dem Launch selbst anpassen können. Klare Absprachen, kurze Timelines, ruhige Kommunikation—die meisten Projekte gehen 48–72 Stunden nach Content-Freigabe live. Wenn Sie eine maßgeschneiderte Seite ohne Baukastensystem möchten, übernehme ich und setze sie zügig um.',
           'why.heading': 'Warum keine Baukästen?',
           'why.body':
             'Builder sind okay, wenn Sie gern Tools konfigurieren. Die meisten Kund:innen möchten die Dashboards vermeiden. Ich entwerfe und codiere die Seite, veröffentliche sie schnell und übergebe dann einen ruhigen /admin-Editor für einfache Änderungen.',
