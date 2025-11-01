@@ -91,6 +91,61 @@
         border: 1px solid rgba(17, 17, 17, 0.18);
         background: rgba(255, 255, 255, 0.6);
       }
+      .lang-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(17, 17, 17, 0.18);
+        background: rgba(255, 255, 255, 0.8);
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        transition: background 0.15s ease, color 0.15s ease,
+          border-color 0.15s ease;
+      }
+      .lang-toggle:hover,
+      .lang-toggle:focus-visible {
+        background: #0b03e5;
+        border-color: #0b03e5;
+        color: #ffffff;
+        outline: none;
+      }
+      .lang-toggle[data-lang='de'] .lang-en,
+      .lang-toggle[data-lang='en'] .lang-de {
+        opacity: 0.6;
+      }
+      .packages-note {
+        padding: 0.45rem 1.2rem;
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 8px 20px rgba(17, 17, 17, 0.08);
+      }
+      .package-cta {
+        margin-top: auto;
+        padding-top: 1.5rem;
+      }
+      .package-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #0b03e5;
+        border-bottom: 1px solid rgba(11, 3, 229, 0.2);
+        padding-bottom: 0.25rem;
+        transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+      }
+      .package-link:hover,
+      .package-link:focus-visible {
+        color: #0902b8;
+        border-color: rgba(11, 3, 229, 0.4);
+        transform: translateX(2px);
+        outline: none;
+      }
       .cta-button {
         display: inline-flex;
         align-items: center;
@@ -136,21 +191,25 @@
           <a
             class="transition hover:text-[#0000ff]"
             href="#work"
+            data-i18n="nav.work"
             >Work</a
           >
           <a
             class="transition hover:text-[#0000ff]"
             href="#packages"
+            data-i18n="nav.packages"
             >Packages</a
           >
           <a
             class="transition hover:text-[#0000ff]"
             href="#pledge"
+            data-i18n="nav.pledge"
             >Pledge</a
           >
           <a
             class="transition hover:text-[#0000ff]"
             href="#contact"
+            data-i18n="nav.contact"
             >Contact</a
           >
         </nav>
@@ -159,6 +218,7 @@
             (function () {
               var target = document.currentScript;
               window.addEventListener('load', function () {
+                if (!window.calendar || !calendar.schedulingButton) return;
                 calendar.schedulingButton.load({
                   url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
                   color: '#0b03e5',
@@ -168,6 +228,17 @@
               });
             })();
           </script>
+          <button
+            id="languageToggle"
+            type="button"
+            class="lang-toggle"
+            aria-pressed="false"
+            data-i18n-aria-label="toggle.aria"
+            data-lang="en">
+            <span class="lang-en">EN</span>
+            <span>/</span>
+            <span class="lang-de">DE</span>
+          </button>
         </div>
       </div>
     </header>
@@ -177,15 +248,25 @@
         id="hero"
         class="px-6 py-20 md:py-28">
         <div class="mx-auto flex max-w-5xl flex-col gap-6">
-          <span class="badge">Two discounted slots this week</span>
-          <h1 class="text-4xl leading-tight tracking-tight md:text-6xl">
+          <span
+            class="badge"
+            data-i18n="hero.badge"
+            >Two discounted slots this week</span
+          >
+          <h1
+            class="text-4xl leading-tight tracking-tight md:text-6xl"
+            data-i18n="hero.title">
             Custom one-page websites. Built fast. You keep the keys.
           </h1>
-          <p class="max-w-2xl text-lg md:text-xl">
+          <p
+            class="max-w-2xl text-lg md:text-xl"
+            data-i18n="hero.copy">
             Done-for-you, no builders. Optional simple CMS. Open-source where
             possible.
           </p>
-          <p class="text-sm uppercase tracking-[0.18em] text-black/60">
+          <p
+            class="text-sm uppercase tracking-[0.18em] text-black/60"
+            data-i18n="hero.location">
             leipzig-based · collaborating worldwide
           </p>
           <div class="flex flex-wrap gap-3">
@@ -193,6 +274,7 @@
               (function () {
                 var target = document.currentScript;
                 window.addEventListener('load', function () {
+                  if (!window.calendar || !calendar.schedulingButton) return;
                   calendar.schedulingButton.load({
                     url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
                     color: '#0b03e5',
@@ -204,27 +286,46 @@
             </script>
             <a
               class="cta-button"
-              href="mailto:hello@one-page.studio">
+              href="mailto:hello@one-page.studio"
+              data-i18n="hero.emailCta">
               Email
             </a>
           </div>
           <ul class="mt-10 grid gap-3 text-sm text-black/75 sm:grid-cols-3">
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
-              <p class="font-medium text-black">48–72h Launch</p>
-              <p class="mt-2">
+              <p
+                class="font-medium text-black"
+                data-i18n="hero.featureLaunchTitle">
+                48–72h Launch
+              </p>
+              <p
+                class="mt-2"
+                data-i18n="hero.featureLaunchBody">
                 Clear schedule, structured feedback, no drawn-out retainer.
               </p>
             </li>
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
-              <p class="font-medium text-black">Optional CMS</p>
-              <p class="mt-2">
+              <p
+                class="font-medium text-black"
+                data-i18n="hero.featureCmsTitle">
+                Optional CMS
+              </p>
+              <p
+                class="mt-2"
+                data-i18n="hero.featureCmsBody">
                 Decap or headless setup so you edit copy and media without
                 bloat.
               </p>
             </li>
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
-              <p class="font-medium text-black">Open Handoff</p>
-              <p class="mt-2">
+              <p
+                class="font-medium text-black"
+                data-i18n="hero.featureHandoffTitle">
+                Open Handoff
+              </p>
+              <p
+                class="mt-2"
+                data-i18n="hero.featureHandoffBody">
                 Documentation, repo access, and support to swap teams anytime.
               </p>
             </li>
@@ -239,12 +340,20 @@
           <div
             class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 class="text-2xl md:text-3xl">Selected Work</h2>
-              <p class="mt-2 text-sm text-black/70 md:text-base">
+              <h2
+                class="text-2xl md:text-3xl"
+                data-i18n="work.heading">
+                Selected Work
+              </h2>
+              <p
+                class="mt-2 text-sm text-black/70 md:text-base"
+                data-i18n="work.subheading">
                 Two credible case studies you can reference or remix.
               </p>
             </div>
-            <p class="text-sm text-black/60">
+            <p
+              class="text-sm text-black/60"
+              data-i18n="work.caption">
               Click a card to see the breakdown.
             </p>
           </div>
@@ -256,19 +365,32 @@
               <img
                 src="https://picsum.photos/id/1005/800/600"
                 alt="grid of paintings from Aya Ito"
+                data-i18n-alt="work.cardAya.alt"
                 class="aspect-[4/3] w-full rounded-xl border border-black/10 object-cover transition duration-150 group-hover:scale-[1.01]"
                 loading="lazy" />
               <div class="space-y-2">
-                <div class="text-xs uppercase tracking-[0.2em] text-black/60">
+                <div
+                  class="text-xs uppercase tracking-[0.2em] text-black/60"
+                  data-i18n="work.cardAya.category">
                   Artist Portfolio
                 </div>
-                <h3 class="text-xl">Aya Ito — painter</h3>
-                <p class="text-sm text-black/70">
+                <h3
+                  class="text-xl"
+                  data-i18n="work.cardAya.title">
+                  Aya Ito — painter
+                </h3>
+                <p
+                  class="text-sm text-black/70"
+                  data-i18n="work.cardAya.description">
                   Goal: publish new series quickly. Outcome: calm layout with
                   Decap edits and analytics baked in.
                 </p>
               </div>
-              <span class="text-sm text-[#0000ff]">View Case →</span>
+              <span
+                class="text-sm text-[#0000ff]"
+                data-i18n="work.card.cta">
+                View Case →
+              </span>
             </button>
 
             <button
@@ -278,19 +400,32 @@
               <img
                 src="https://picsum.photos/id/1027/800/600"
                 alt="interior of Parallel Hair studio"
+                data-i18n-alt="work.cardParallel.alt"
                 class="aspect-[4/3] w-full rounded-xl border border-black/10 object-cover transition duration-150 group-hover:scale-[1.01]"
                 loading="lazy" />
               <div class="space-y-2">
-                <div class="text-xs uppercase tracking-[0.2em] text-black/60">
+                <div
+                  class="text-xs uppercase tracking-[0.2em] text-black/60"
+                  data-i18n="work.cardParallel.category">
                   Local Studio
                 </div>
-                <h3 class="text-xl">Parallel Hair — Leipzig</h3>
-                <p class="text-sm text-black/70">
+                <h3
+                  class="text-xl"
+                  data-i18n="work.cardParallel.title">
+                  Parallel Hair — Leipzig
+                </h3>
+                <p
+                  class="text-sm text-black/70"
+                  data-i18n="work.cardParallel.description">
                   Goal: fewer DMs, faster bookings. Outcome: structured info
                   with Supabase logs + Stripe deposits.
                 </p>
               </div>
-              <span class="text-sm text-[#0000ff]">View Case →</span>
+              <span
+                class="text-sm text-[#0000ff]"
+                data-i18n="work.card.cta">
+                View Case →
+              </span>
             </button>
           </div>
         </div>
@@ -303,8 +438,14 @@
           <div
             class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 class="text-2xl md:text-3xl">Packages</h2>
-              <p class="mt-2 max-w-xl text-sm text-black/70 md:text-base">
+              <h2
+                class="text-2xl md:text-3xl"
+                data-i18n="packages.heading">
+                Packages
+              </h2>
+              <p
+                class="mt-2 max-w-xl text-sm text-black/70 md:text-base"
+                data-i18n="packages.subheading">
                 Flat pricing, transparent scope, you keep the repository and
                 credentials.
               </p>
@@ -314,89 +455,138 @@
           <div class="mt-10 grid gap-6 md:grid-cols-3">
             <div
               class="flex h-full flex-col rounded-2xl border border-black/10 bg-white/70 p-6">
-              <div class="text-xs uppercase tracking-[0.25em] text-black/60">
+              <div
+                class="text-xs uppercase tracking-[0.25em] text-black/60"
+                data-i18n="packages.launch.label">
                 Launch
               </div>
               <div class="mt-3 text-3xl font-medium">€300</div>
-              <p class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50">
+              <p
+                class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50"
+                data-i18n="packages.launch.tagline">
                 Best for first launches with content ready
               </p>
               <ul class="mt-6 space-y-3 text-sm text-black/75">
-                <li>1 responsive page (hero, about, contact)</li>
-                <li>Contact form wired to hello@one-page.studio</li>
-                <li>Basic SEO + metadata</li>
-                <li>Plausible-ready analytics hook</li>
+                <li data-i18n="packages.launch.item1">
+                  1 responsive page (hero, about, contact)
+                </li>
+                <li data-i18n="packages.launch.item2">
+                  Contact form wired to hello@one-page.studio
+                </li>
+                <li data-i18n="packages.launch.item3">Basic SEO + metadata</li>
+                <li data-i18n="packages.launch.item4">
+                  Plausible-ready analytics hook
+                </li>
               </ul>
-              <p class="mt-6 text-sm text-black/70">
+              <p
+                class="mt-6 text-sm text-black/70"
+                data-i18n="packages.launch.note">
                 Turnaround: 48–72h (with content ready). Two rounds of edits.
               </p>
-              <a
-                class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
-                target="_blank"
-                rel="noopener">
-                Book This Package
-              </a>
+              <div class="package-cta">
+                <a
+                  class="package-link"
+                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
+                  target="_blank"
+                  rel="noopener">
+                  <span data-i18n="packages.cta">Book Intro Call</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
 
             <div
               class="flex h-full flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-[0_20px_60px_-50px_rgba(0,0,0,0.6)]">
-              <div class="text-xs uppercase tracking-[0.25em] text-black/60">
+              <div
+                class="text-xs uppercase tracking-[0.25em] text-black/60"
+                data-i18n="packages.edit.label">
                 Launch + Edit
               </div>
               <div class="mt-3 text-3xl font-medium">€550</div>
-              <p class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50">
+              <p
+                class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50"
+                data-i18n="packages.edit.tagline">
                 Best for teams who need to update copy often
               </p>
               <ul class="mt-6 space-y-3 text-sm text-black/75">
-                <li>Everything in Launch</li>
-                <li>Decap CMS at /admin for text, images, links</li>
-                <li>30-minute handover walkthrough</li>
-                <li>30 days of small tweaks post-launch</li>
+                <li data-i18n="packages.edit.item1">Everything in Launch</li>
+                <li data-i18n="packages.edit.item2">
+                  Decap CMS at /admin for text, images, links
+                </li>
+                <li data-i18n="packages.edit.item3">
+                  30-minute handover walkthrough
+                </li>
+                <li data-i18n="packages.edit.item4">
+                  30 days of small tweaks post-launch
+                </li>
               </ul>
-              <p class="mt-6 text-sm text-black/70">
+              <p
+                class="mt-6 text-sm text-black/70"
+                data-i18n="packages.edit.note">
                 Ideal when you need to edit words and artwork yourself without
                 touching code.
               </p>
-              <a
-                class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
-                target="_blank"
-                rel="noopener">
-                Book This Package
-              </a>
+              <div class="package-cta">
+                <a
+                  class="package-link"
+                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
+                  target="_blank"
+                  rel="noopener">
+                  <span data-i18n="packages.cta">Book Intro Call</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
 
             <div
               class="flex h-full flex-col rounded-2xl border border-black/10 bg-white/70 p-6">
-              <div class="text-xs uppercase tracking-[0.25em] text-black/60">
+              <div
+                class="text-xs uppercase tracking-[0.25em] text-black/60"
+                data-i18n="packages.pro.label">
                 Pro
               </div>
               <div class="mt-3 text-3xl font-medium">€900</div>
-              <p class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50">
+              <p
+                class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50"
+                data-i18n="packages.pro.tagline">
                 Best for structured data, payments, or integrations
               </p>
               <ul class="mt-6 space-y-3 text-sm text-black/75">
-                <li>Headless CMS (Payload, Strapi, or Directus)</li>
-                <li>One integration: Stripe link or newsletter signup</li>
-                <li>Custom content model + permissions</li>
-                <li>60 days of small tweaks and support</li>
+                <li data-i18n="packages.pro.item1">
+                  Headless CMS (Payload, Strapi, or Directus)
+                </li>
+                <li data-i18n="packages.pro.item2">
+                  One integration: Stripe link or newsletter signup
+                </li>
+                <li data-i18n="packages.pro.item3">
+                  Custom content model + permissions
+                </li>
+                <li data-i18n="packages.pro.item4">
+                  60 days of small tweaks and support
+                </li>
               </ul>
-              <p class="mt-6 text-sm text-black/70">
+              <p
+                class="mt-6 text-sm text-black/70"
+                data-i18n="packages.pro.note">
                 For teams that need structured data, payments, or subscriber
                 capture without bloat.
               </p>
-              <a
-                class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
-                target="_blank"
-                rel="noopener">
-                Book This Package
-              </a>
+              <div class="package-cta">
+                <a
+                  class="package-link"
+                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
+                  target="_blank"
+                  rel="noopener">
+                  <span data-i18n="packages.cta">Book Intro Call</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="mt-10 flex justify-center">
-            <span class="badge align-center">
+            <span
+              class="badge packages-note"
+              data-i18n="packages.note">
               Two rounds of edits included. Hosting not included, but I will set
               it up.
             </span>
@@ -404,35 +594,49 @@
 
           <div class="mt-8 grid gap-4 text-sm text-black/75 md:grid-cols-2">
             <div class="rounded-2xl border border-black/10 bg-white/70 p-6">
-              <h3 class="text-xs uppercase tracking-[0.25em] text-black/60">
+              <h3
+                class="text-xs uppercase tracking-[0.25em] text-black/60"
+                data-i18n="packages.addons.heading">
                 Add-ons
               </h3>
               <ul class="mt-4 space-y-3">
                 <li class="flex items-start justify-between gap-4">
-                  <span>Supabase form storage + email copy</span>
+                  <span data-i18n="packages.addons.item1"
+                    >Supabase form storage + email copy</span
+                  >
                   <span class="tabular-nums text-black/60">+€80</span>
                 </li>
                 <li class="flex items-start justify-between gap-4">
-                  <span>Stripe Payment Link wiring</span>
+                  <span data-i18n="packages.addons.item2"
+                    >Stripe Payment Link wiring</span
+                  >
                   <span class="tabular-nums text-black/60">+€60</span>
                 </li>
                 <li class="flex items-start justify-between gap-4">
-                  <span>Extra section</span>
+                  <span data-i18n="packages.addons.item3">Extra section</span>
                   <span class="tabular-nums text-black/60">+€50 each</span>
                 </li>
                 <li class="flex items-start justify-between gap-4">
-                  <span>Multilingual toggle (EN/DE) with CMS fields</span>
+                  <span data-i18n="packages.addons.item4"
+                    >Multilingual toggle (EN/DE) with CMS fields</span
+                  >
                   <span class="tabular-nums text-black/60">+€150</span>
                 </li>
               </ul>
             </div>
             <div class="rounded-2xl border border-black/10 bg-white/70 p-6">
-              <h3 class="text-xs uppercase tracking-[0.25em] text-black/60">
+              <h3
+                class="text-xs uppercase tracking-[0.25em] text-black/60"
+                data-i18n="packages.terms.heading">
                 Terms & Discounts
               </h3>
               <ul class="mt-4 space-y-3">
-                <li>Discounts: −10% cash · −20% first five clients.</li>
-                <li>Payment terms: 50% deposit to book, 50% at launch.</li>
+                <li data-i18n="packages.terms.item1">
+                  Discounts: −10% cash · −20% first five clients.
+                </li>
+                <li data-i18n="packages.terms.item2">
+                  Payment terms: 50% deposit to book, 50% at launch.
+                </li>
               </ul>
             </div>
           </div>
@@ -443,8 +647,14 @@
         id="pledge"
         class="border-t border-black/10 bg-white/60">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <h2 class="text-2xl md:text-3xl">Independent Internet Pledge</h2>
-          <p class="mt-4 max-w-3xl text-base leading-relaxed text-black/75">
+          <h2
+            class="text-2xl md:text-3xl"
+            data-i18n="pledge.heading">
+            Independent Internet Pledge
+          </h2>
+          <p
+            class="mt-4 max-w-3xl text-base leading-relaxed text-black/75"
+            data-i18n="pledge.body">
             I use open-source tools and privacy-friendly defaults. You own your
             code and content and can export anytime. No trackers by default.
             Every project ships with clear documentation so another developer—or
@@ -457,21 +667,33 @@
         id="why"
         class="border-t border-black/10">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <h2 class="text-2xl md:text-3xl">Why Not Builders?</h2>
-          <p class="mt-4 max-w-3xl text-base leading-relaxed text-black/75">
+          <h2
+            class="text-2xl md:text-3xl"
+            data-i18n="why.heading">
+            Why Not Builders?
+          </h2>
+          <p
+            class="mt-4 max-w-3xl text-base leading-relaxed text-black/75"
+            data-i18n="why.body">
             Builders are fine if you enjoy configuring tools. Most clients would
             rather skip the dashboards. I design and code the page, publish it
             fast, then hand over a calm /admin editor for simple edits.
           </p>
           <ul class="mt-6 grid gap-3 text-sm text-black/75 md:grid-cols-3">
-            <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
+            <li
+              class="rounded-2xl border border-black/10 bg-white/60 p-4"
+              data-i18n="why.item1">
               No template maze, no vendor lock-in. Your repo lives in your
               account.
             </li>
-            <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
+            <li
+              class="rounded-2xl border border-black/10 bg-white/60 p-4"
+              data-i18n="why.item2">
               Performance and accessibility tuned by hand, not by plugins.
             </li>
-            <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
+            <li
+              class="rounded-2xl border border-black/10 bg-white/60 p-4"
+              data-i18n="why.item3">
               Open-source stack with documentation so any future dev can
               continue.
             </li>
@@ -487,8 +709,14 @@
             <div
               class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2 class="text-2xl">Ready to Start?</h2>
-                <p class="mt-2 text-sm text-black/70">
+                <h2
+                  class="text-2xl"
+                  data-i18n="contact.heading">
+                  Ready to Start?
+                </h2>
+                <p
+                  class="mt-2 text-sm text-black/70"
+                  data-i18n="contact.copy">
                   Email hello@one-page.studio or pick a slot. I reply within one
                   business day.
                 </p>
@@ -498,6 +726,8 @@
                   (function () {
                     var target = document.currentScript;
                     window.addEventListener('load', function () {
+                      if (!window.calendar || !calendar.schedulingButton)
+                        return;
                       calendar.schedulingButton.load({
                         url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
                         color: '#0b03e5',
@@ -522,13 +752,15 @@
                 name="form-name"
                 value="contact" />
               <p class="hidden">
-                <label>Don’t fill this out: <input name="bot-field" /></label>
+                <label data-i18n="contact.honeypot">Don’t fill this out:</label>
+                <input name="bot-field" />
               </p>
 
               <div class="grid gap-1">
                 <label
                   class="text-sm text-black/80"
                   for="contact-name"
+                  data-i18n="contact.labelName"
                   >Name</label
                 >
                 <input
@@ -536,6 +768,7 @@
                   class="rounded-lg border border-black/15 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
                   name="name"
                   placeholder="your name"
+                  data-i18n-placeholder="contact.placeholderName"
                   required />
               </div>
 
@@ -543,6 +776,7 @@
                 <label
                   class="text-sm text-black/80"
                   for="contact-email"
+                  data-i18n="contact.labelEmail"
                   >Email</label
                 >
                 <input
@@ -551,6 +785,7 @@
                   class="rounded-lg border border-black/15 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
                   name="email"
                   placeholder="you@example.com"
+                  data-i18n-placeholder="contact.placeholderEmail"
                   required />
               </div>
 
@@ -558,23 +793,26 @@
                 <label
                   class="text-sm text-black/80"
                   for="contact-message"
+                  data-i18n="contact.labelMessage"
                   >What do you need?</label
                 >
                 <textarea
                   id="contact-message"
                   class="min-h-[140px] rounded-lg border border-black/15 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
                   name="message"
-                  placeholder="project notes, deadlines, links…"></textarea>
+                  placeholder="project notes, deadlines, links…"
+                  data-i18n-placeholder="contact.placeholderMessage"></textarea>
               </div>
 
               <input
                 type="hidden"
                 name="subject"
-                value="one-page studio — New Inquiry" />
+                value="one-page studio — New Inquiry"
+                data-i18n-value="contact.subject" />
               <button
                 class="cta-button"
                 type="submit">
-                Send
+                <span data-i18n="contact.submit">Send</span>
               </button>
             </form>
           </div>
@@ -585,8 +823,10 @@
     <footer class="border-t border-black/10">
       <div
         class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-black/60 md:flex-row md:items-center md:justify-between">
-        <span>Based in Leipzig · Available anywhere</span>
-        <span>© 2025 one-page studio</span>
+        <span data-i18n="footer.location"
+          >Based in Leipzig · Available anywhere</span
+        >
+        <span data-i18n="footer.copyright">© 2025 one-page studio</span>
       </div>
     </footer>
 
@@ -597,32 +837,45 @@
         <img
           src="https://picsum.photos/id/1067/1600/1000"
           alt="hero image from Aya Ito portfolio"
+          data-i18n-alt="modal.aya.heroAlt"
           class="w-full rounded-2xl border border-black/10 object-cover"
           loading="lazy" />
         <div
           class="grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-start">
           <div class="space-y-4">
-            <h3 class="text-2xl">Artist Portfolio — Aya Ito</h3>
-            <p class="text-base leading-relaxed text-black/75">
+            <h3
+              class="text-2xl"
+              data-i18n="modal.aya.title">
+              Artist Portfolio — Aya Ito
+            </h3>
+            <p
+              class="text-base leading-relaxed text-black/75"
+              data-i18n-html="modal.aya.goal">
               <strong>Goal.</strong> Berlin painter Aya Ito needed a quiet
               portfolio that foregrounds large works, keeps bio and press
               materials tidy, and lets her reorder pieces without emailing a
               developer.
             </p>
-            <p class="text-base leading-relaxed text-black/75">
+            <p
+              class="text-base leading-relaxed text-black/75"
+              data-i18n-html="modal.aya.approach">
               <strong>Approach.</strong> I drafted a single narrative
               scroll—statement, gallery grid, exhibitions, contact—then wired
               Decap CMS collections for hero copy, artwork metadata, press
               links, and CV highlights. Netlify builds share preview links,
               while Plausible tracks views without cookies.
             </p>
-            <p class="text-base leading-relaxed text-black/75">
+            <p
+              class="text-base leading-relaxed text-black/75"
+              data-i18n-html="modal.aya.outcome">
               <strong>Outcome.</strong> The page ships under 1&nbsp;MB, loads
               instantly on mobile, and every text or gallery change publishes
               via a clean /admin editor. Curators now receive a consistent link,
               and Aya uploads new series minutes after shoots.
             </p>
-            <p class="text-sm uppercase tracking-[0.2em] text-black/60">
+            <p
+              class="text-sm uppercase tracking-[0.2em] text-black/60"
+              data-i18n="modal.aya.tech">
               Tech note — Decap CMS · Netlify · Plausible
             </p>
             <div class="flex flex-wrap gap-3">
@@ -631,12 +884,12 @@
                 href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
                 target="_blank"
                 rel="noopener">
-                Book This Style
+                <span data-i18n="modal.book">Book This Style</span>
               </a>
               <a
                 class="cta-button"
                 href="mailto:hello@one-page.studio">
-                Email About This
+                <span data-i18n="modal.email">Email About This</span>
               </a>
             </div>
           </div>
@@ -644,11 +897,13 @@
             <img
               src="https://picsum.photos/id/1005/800/600"
               alt="Gallery grid from Aya Ito portfolio"
+              data-i18n-alt="modal.aya.galleryAlt"
               class="w-full rounded-xl border border-black/10 object-cover"
               loading="lazy" />
             <img
               src="https://picsum.photos/id/1011/800/600"
               alt="Detail view of Aya Ito painting"
+              data-i18n-alt="modal.aya.detailAlt"
               class="w-full rounded-xl border border-black/10 object-cover"
               loading="lazy" />
           </div>
@@ -663,31 +918,44 @@
         <img
           src="https://picsum.photos/id/1035/1600/1000"
           alt="hero image from Parallel Hair case study"
+          data-i18n-alt="modal.parallel.heroAlt"
           class="w-full rounded-2xl border border-black/10 object-cover"
           loading="lazy" />
         <div
           class="grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-start">
           <div class="space-y-4">
-            <h3 class="text-2xl">Local Studio — Parallel Hair</h3>
-            <p class="text-base leading-relaxed text-black/75">
+            <h3
+              class="text-2xl"
+              data-i18n="modal.parallel.title">
+              Local Studio — Parallel Hair
+            </h3>
+            <p
+              class="text-base leading-relaxed text-black/75"
+              data-i18n-html="modal.parallel.goal">
               <strong>Goal.</strong> Parallel Hair wanted to reduce Instagram
               DMs by pointing clients to a single page with services, hours, map
               directions, and a €50 booking deposit.
             </p>
-            <p class="text-base leading-relaxed text-black/75">
+            <p
+              class="text-base leading-relaxed text-black/75"
+              data-i18n-html="modal.parallel.approach">
               <strong>Approach.</strong> I mapped sections for hero, stylists,
               pricing, testimonials, and locality info, then wired a Netlify
               form that posts to Supabase for logging while emailing the team.
               Stripe Payment Links handle deposits, and the site deploys
               statically for speed.
             </p>
-            <p class="text-base leading-relaxed text-black/75">
+            <p
+              class="text-base leading-relaxed text-black/75"
+              data-i18n-html="modal.parallel.outcome">
               <strong>Outcome.</strong> Clients skim pricing, pay deposits
               before visiting, and use the embedded map for directions. The team
               exports enquiry logs from Supabase, and bookings arrive with fewer
               back-and-forth messages.
             </p>
-            <p class="text-sm uppercase tracking-[0.2em] text-black/60">
+            <p
+              class="text-sm uppercase tracking-[0.2em] text-black/60"
+              data-i18n="modal.parallel.tech">
               Tech note — Supabase form · Stripe Payment Link · Netlify
             </p>
             <div class="flex flex-wrap gap-3">
@@ -696,12 +964,12 @@
                 href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
                 target="_blank"
                 rel="noopener">
-                Book This Style
+                <span data-i18n="modal.book">Book This Style</span>
               </a>
               <a
                 class="cta-button"
                 href="mailto:hello@one-page.studio">
-                Email About This
+                <span data-i18n="modal.email">Email About This</span>
               </a>
             </div>
           </div>
@@ -709,11 +977,13 @@
             <img
               src="https://picsum.photos/id/1027/800/600"
               alt="Services section from Parallel Hair page"
+              data-i18n-alt="modal.parallel.galleryAlt"
               class="w-full rounded-xl border border-black/10 object-cover"
               loading="lazy" />
             <img
               src="https://picsum.photos/id/103/800/600"
               alt="Interior detail of Parallel Hair studio"
+              data-i18n-alt="modal.parallel.detailAlt"
               class="w-full rounded-xl border border-black/10 object-cover"
               loading="lazy" />
           </div>
@@ -737,14 +1007,15 @@
           class="flex items-center justify-between border-b border-black/10 px-5 py-3">
           <h2
             id="caseModalHeading"
-            class="text-xs uppercase tracking-[0.3em] text-black/60">
+            class="text-xs uppercase tracking-[0.3em] text-black/60"
+            data-i18n="modal.heading">
             case study
           </h2>
           <button
             type="button"
             class="rounded-full border border-transparent px-3 py-1 text-sm text-black/70 transition hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
             data-modal-close>
-            close
+            <span data-i18n="modal.close">close</span>
           </button>
         </div>
         <div
@@ -753,6 +1024,427 @@
       </div>
     </div>
 
+    <script>
+      const translations = {
+        en: {
+          'meta.title': 'Custom one-page websites — fast, minimal, open-source',
+          'meta.description':
+            'one-page studio builds clean, fast websites for artists and small studios. Done-for-you, no builders. Optional simple CMS. Based in Leipzig, working anywhere.',
+          'meta.ogDescription':
+            'one-page studio delivers bespoke one-page websites with optional CMS handoff. Based in Leipzig, working anywhere.',
+          'nav.work': 'Work',
+          'nav.packages': 'Packages',
+          'nav.pledge': 'Pledge',
+          'nav.contact': 'Contact',
+          'toggle.aria': 'Toggle language between English and German',
+          'hero.badge': 'Two discounted slots this week',
+          'hero.title':
+            'Custom one-page websites. Built fast. You keep the keys.',
+          'hero.copy':
+            'Done-for-you, no builders. Optional simple CMS. Open-source where possible.',
+          'hero.location': 'leipzig-based · collaborating worldwide',
+          'hero.emailCta': 'Email',
+          'hero.featureLaunchTitle': '48–72h Launch',
+          'hero.featureLaunchBody':
+            'Clear schedule, structured feedback, no drawn-out retainer.',
+          'hero.featureCmsTitle': 'Optional CMS',
+          'hero.featureCmsBody':
+            'Decap or headless setup so you edit copy and media without bloat.',
+          'hero.featureHandoffTitle': 'Open Handoff',
+          'hero.featureHandoffBody':
+            'Documentation, repo access, and support to swap teams anytime.',
+          'cta.calendar': 'Book a 15-min Intro Call',
+          'work.heading': 'Selected Work',
+          'work.subheading':
+            'Two credible case studies you can reference or remix.',
+          'work.caption': 'Click a card to see the breakdown.',
+          'work.cardAya.category': 'Artist Portfolio',
+          'work.cardAya.title': 'Aya Ito — painter',
+          'work.cardAya.description':
+            'Goal: publish new series quickly. Outcome: calm layout with Decap edits and analytics baked in.',
+          'work.cardAya.alt': 'grid of paintings from Aya Ito',
+          'work.cardParallel.category': 'Local Studio',
+          'work.cardParallel.title': 'Parallel Hair — Leipzig',
+          'work.cardParallel.description':
+            'Goal: fewer DMs, faster bookings. Outcome: structured info with Supabase logs + Stripe deposits.',
+          'work.cardParallel.alt': 'interior of Parallel Hair studio',
+          'work.card.cta': 'View Case →',
+          'packages.heading': 'Packages',
+          'packages.subheading':
+            'Flat pricing, transparent scope, you keep the repository and credentials.',
+          'packages.launch.label': 'Launch',
+          'packages.launch.tagline':
+            'Best for first launches with content ready',
+          'packages.launch.item1': '1 responsive page (hero, about, contact)',
+          'packages.launch.item2':
+            'Contact form wired to hello@one-page.studio',
+          'packages.launch.item3': 'Basic SEO + metadata',
+          'packages.launch.item4': 'Plausible-ready analytics hook',
+          'packages.launch.note':
+            'Turnaround: 48–72h (with content ready). Two rounds of edits.',
+          'packages.edit.label': 'Launch + Edit',
+          'packages.edit.tagline':
+            'Best for teams who need to update copy often',
+          'packages.edit.item1': 'Everything in Launch',
+          'packages.edit.item2': 'Decap CMS at /admin for text, images, links',
+          'packages.edit.item3': '30-minute handover walkthrough',
+          'packages.edit.item4': '30 days of small tweaks post-launch',
+          'packages.edit.note':
+            'Ideal when you need to edit words and artwork yourself without touching code.',
+          'packages.pro.label': 'Pro',
+          'packages.pro.tagline':
+            'Best for structured data, payments, or integrations',
+          'packages.pro.item1': 'Headless CMS (Payload, Strapi, or Directus)',
+          'packages.pro.item2':
+            'One integration: Stripe link or newsletter signup',
+          'packages.pro.item3': 'Custom content model + permissions',
+          'packages.pro.item4': '60 days of small tweaks and support',
+          'packages.pro.note':
+            'For teams that need structured data, payments, or subscriber capture without bloat.',
+          'packages.cta': 'Book Intro Call',
+          'packages.note':
+            'Two rounds of edits included. Hosting not included; I can set it up.',
+          'packages.addons.heading': 'Add-ons',
+          'packages.addons.item1': 'Supabase form storage + email copy',
+          'packages.addons.item2': 'Stripe Payment Link wiring',
+          'packages.addons.item3': 'Extra section',
+          'packages.addons.item4':
+            'Multilingual toggle (EN/DE) with CMS fields',
+          'packages.terms.heading': 'Terms & Discounts',
+          'packages.terms.item1':
+            'Discounts: −10% cash · −20% first five clients.',
+          'packages.terms.item2':
+            'Payment terms: 50% deposit to book, 50% at launch.',
+          'pledge.heading': 'Independent Internet Pledge',
+          'pledge.body':
+            'I use open-source tools and privacy-friendly defaults. You own your code and content and can export anytime. No trackers by default. Every project ships with clear documentation so another developer—or you—can continue without friction.',
+          'why.heading': 'Why Not Builders?',
+          'why.body':
+            'Builders are fine if you enjoy configuring tools. Most clients would rather skip the dashboards. I design and code the page, publish it fast, then hand over a calm /admin editor for simple edits.',
+          'why.item1':
+            'No template maze, no vendor lock-in. Your repo lives in your account.',
+          'why.item2':
+            'Performance and accessibility tuned by hand, not by plugins.',
+          'why.item3':
+            'Open-source stack with documentation so any future dev can continue.',
+          'contact.heading': 'Ready to Start?',
+          'contact.copy':
+            'Email hello@one-page.studio or pick a slot. I reply within one business day.',
+          'contact.honeypot': 'Don’t fill this out:',
+          'contact.labelName': 'Name',
+          'contact.labelEmail': 'Email',
+          'contact.labelMessage': 'What do you need?',
+          'contact.placeholderName': 'your name',
+          'contact.placeholderEmail': 'you@example.com',
+          'contact.placeholderMessage': 'project notes, deadlines, links…',
+          'contact.subject': 'one-page studio — New Inquiry',
+          'contact.submit': 'Send',
+          'footer.location': 'Based in Leipzig · Available anywhere',
+          'footer.copyright': '© 2025 one-page studio',
+          'modal.heading': 'case study',
+          'modal.close': 'close',
+          'modal.book': 'Book This Style',
+          'modal.email': 'Email About This',
+          'modal.aya.title': 'Artist Portfolio — Aya Ito',
+          'modal.aya.goal':
+            '<strong>Goal.</strong> Berlin painter Aya Ito needed a quiet portfolio that foregrounds large works, keeps bio and press materials tidy, and lets her reorder pieces without emailing a developer.',
+          'modal.aya.approach':
+            '<strong>Approach.</strong> I drafted a single narrative scroll—statement, gallery grid, exhibitions, contact—then wired Decap CMS collections for hero copy, artwork metadata, press links, and CV highlights. Netlify builds share preview links, while Plausible tracks views without cookies.',
+          'modal.aya.outcome':
+            '<strong>Outcome.</strong> The page ships under 1&nbsp;MB, loads instantly on mobile, and every text or gallery change publishes via a clean /admin editor. Curators now receive a consistent link, and Aya uploads new series minutes after shoots.',
+          'modal.aya.tech': 'Tech note — Decap CMS · Netlify · Plausible',
+          'modal.aya.heroAlt': 'hero image from Aya Ito portfolio',
+          'modal.aya.galleryAlt': 'Gallery grid from Aya Ito portfolio',
+          'modal.aya.detailAlt': 'Detail view of Aya Ito painting',
+          'modal.parallel.title': 'Local Studio — Parallel Hair',
+          'modal.parallel.goal':
+            '<strong>Goal.</strong> Parallel Hair wanted to reduce Instagram DMs by pointing clients to a single page with services, hours, map directions, and a €50 booking deposit.',
+          'modal.parallel.approach':
+            '<strong>Approach.</strong> I mapped sections for hero, stylists, pricing, testimonials, and locality info, then wired a Netlify form that posts to Supabase for logging while emailing the team. Stripe Payment Links handle deposits, and the site deploys statically for speed.',
+          'modal.parallel.outcome':
+            '<strong>Outcome.</strong> Clients skim pricing, pay deposits before visiting, and use the embedded map for directions. The team exports enquiry logs from Supabase, and bookings arrive with fewer back-and-forth messages.',
+          'modal.parallel.tech':
+            'Tech note — Supabase form · Stripe Payment Link · Netlify',
+          'modal.parallel.heroAlt': 'hero image from Parallel Hair case study',
+          'modal.parallel.galleryAlt':
+            'Services section from Parallel Hair page',
+          'modal.parallel.detailAlt': 'Interior detail of Parallel Hair studio',
+        },
+        de: {
+          'meta.title': 'Individuelle One-Pager – schnell, minimal, quelloffen',
+          'meta.description':
+            'one-page studio erstellt schnelle, klare One-Pager für Künstler:innen und kleine Studios. Komplett umgesetzt, ohne Builder. Optionales, einfaches CMS. Sitz in Leipzig, Arbeiten weltweit.',
+          'meta.ogDescription':
+            'one-page studio liefert maßgeschneiderte One-Pager mit optionaler CMS-Übergabe. Sitz in Leipzig, Arbeiten weltweit.',
+          'nav.work': 'Arbeiten',
+          'nav.packages': 'Pakete',
+          'nav.pledge': 'Versprechen',
+          'nav.contact': 'Kontakt',
+          'toggle.aria': 'Sprache zwischen Englisch und Deutsch wechseln',
+          'hero.badge': 'Zwei vergünstigte Slots diese Woche',
+          'hero.title':
+            'Individuelle One-Pager. Schnell gebaut. Sie behalten die Kontrolle.',
+          'hero.copy':
+            'Komplett umgesetzt, keine Builder. Optionales schlankes CMS. Wo möglich Open Source.',
+          'hero.location': 'LEIPZIG · WELTWEIT ZUSAMMENARBEITEN',
+          'hero.emailCta': 'E-Mail',
+          'hero.featureLaunchTitle': '48–72h Start',
+          'hero.featureLaunchBody':
+            'Klarer Ablauf, strukturiertes Feedback, keine endlosen Retainer.',
+          'hero.featureCmsTitle': 'Optionales CMS',
+          'hero.featureCmsBody':
+            'Decap oder Headless Setup, damit Sie Texte und Medien ohne Ballast pflegen.',
+          'hero.featureHandoffTitle': 'Offene Übergabe',
+          'hero.featureHandoffBody':
+            'Dokumentation, Repo-Zugang und Support für einen einfachen Teamwechsel.',
+          'cta.calendar': '15-minütiges Kennenlernen buchen',
+          'work.heading': 'Ausgewählte Arbeiten',
+          'work.subheading':
+            'Zwei belastbare Fallstudien zum Referenzieren oder Anpassen.',
+          'work.caption': 'Karte anklicken, um die Details zu sehen.',
+          'work.cardAya.category': 'Künstler-Portfolio',
+          'work.cardAya.title': 'Aya Ito — Malerin',
+          'work.cardAya.description':
+            'Ziel: Neue Serien schnell veröffentlichen. Ergebnis: Ruhiges Layout mit Decap-Editor und integrierter Analyse.',
+          'work.cardAya.alt': 'Raster mit Gemälden von Aya Ito',
+          'work.cardParallel.category': 'Lokales Studio',
+          'work.cardParallel.title': 'Parallel Hair — Leipzig',
+          'work.cardParallel.description':
+            'Ziel: Weniger DMs, schnellere Buchungen. Ergebnis: Strukturierte Infos mit Supabase-Logs und Stripe-Anzahlungen.',
+          'work.cardParallel.alt': 'Innenraum des Studios Parallel Hair',
+          'work.card.cta': 'Projekt ansehen →',
+          'packages.heading': 'Pakete',
+          'packages.subheading':
+            'Transparente Pauschalen, klarer Umfang, Repo und Zugang bleiben bei Ihnen.',
+          'packages.launch.label': 'Launch',
+          'packages.launch.tagline':
+            'Ideal für erste Launches mit fertigen Inhalten',
+          'packages.launch.item1':
+            '1 responsive Seite (Hero, Über mich, Kontakt)',
+          'packages.launch.item2':
+            'Kontaktformular, das an hello@one-page.studio sendet',
+          'packages.launch.item3': 'Grundlegendes SEO + Metadaten',
+          'packages.launch.item4': 'Analytics-Hook vorbereitet für Plausible',
+          'packages.launch.note':
+            'Umsetzung: 48–72h (bei gelieferten Inhalten). Zwei Feedback-Runden.',
+          'packages.edit.label': 'Launch + Edit',
+          'packages.edit.tagline':
+            'Ideal für Teams, die Texte oft aktualisieren',
+          'packages.edit.item1': 'Alles aus Launch',
+          'packages.edit.item2':
+            'Decap CMS unter /admin für Texte, Bilder und Links',
+          'packages.edit.item3': '30-minütiges Handover',
+          'packages.edit.item4': '30 Tage kleinere Anpassungen nach dem Launch',
+          'packages.edit.note':
+            'Ideal, wenn Sie Texte und Bilder selbst ohne Code ändern möchten.',
+          'packages.pro.label': 'Pro',
+          'packages.pro.tagline':
+            'Für strukturierte Daten, Zahlungen oder Integrationen',
+          'packages.pro.item1': 'Headless CMS (Payload, Strapi oder Directus)',
+          'packages.pro.item2':
+            'Eine Integration: Stripe-Link oder Newsletter-Anmeldung',
+          'packages.pro.item3': 'Individuelles Content-Modell + Berechtigungen',
+          'packages.pro.item4': '60 Tage kleinere Anpassungen und Support',
+          'packages.pro.note':
+            'Für Teams, die strukturierte Daten, Zahlungen oder Abonnenten ohne Ballast brauchen.',
+          'packages.cta': 'Kennenlerntermin buchen',
+          'packages.note':
+            'Zwei Feedback-Runden inklusive. Hosting nicht enthalten; gern richte ich es ein.',
+          'packages.addons.heading': 'Add-ons',
+          'packages.addons.item1': 'Supabase Formularspeicher + E-Mail-Text',
+          'packages.addons.item2': 'Stripe Payment Link Anbindung',
+          'packages.addons.item3': 'Zusätzlicher Abschnitt',
+          'packages.addons.item4':
+            'Mehrsprachige Umschaltung (EN/DE) mit CMS-Feldern',
+          'packages.terms.heading': 'Konditionen & Rabatte',
+          'packages.terms.item1':
+            'Rabatte: −10 % bei Barzahlung · −20 % für die ersten fünf Kund:innen.',
+          'packages.terms.item2':
+            'Zahlungsmodalitäten: 50 % Anzahlung zur Buchung, 50 % beim Launch.',
+          'pledge.heading': 'Versprechen für ein unabhängiges Internet',
+          'pledge.body':
+            'Ich nutze Open-Source-Tools und datenschutzfreundliche Defaults. Sie besitzen Code und Inhalte und können jederzeit exportieren. Keine Tracker standardmäßig. Jedes Projekt enthält klare Dokumentation, damit andere Entwickler:innen – oder Sie – ohne Reibung weitermachen.',
+          'why.heading': 'Warum keine Baukästen?',
+          'why.body':
+            'Builder sind okay, wenn Sie gern Tools konfigurieren. Die meisten Kund:innen möchten die Dashboards vermeiden. Ich entwerfe und codiere die Seite, veröffentliche sie schnell und übergebe dann einen ruhigen /admin-Editor für einfache Änderungen.',
+          'why.item1':
+            'Kein Vorlagen-Labyrinth, kein Vendor-Lock-in. Ihr Repo bleibt in Ihrem Account.',
+          'why.item2':
+            'Performance und Accessibility von Hand optimiert, nicht durch Plugins.',
+          'why.item3':
+            'Open-Source-Stack mit Dokumentation, damit jedes künftige Team weiterarbeiten kann.',
+          'contact.heading': 'Bereit zum Start?',
+          'contact.copy':
+            'Schreiben Sie an hello@one-page.studio oder buchen Sie einen Slot. Antwort innerhalb eines Werktags.',
+          'contact.honeypot': 'Nicht ausfüllen:',
+          'contact.labelName': 'Name',
+          'contact.labelEmail': 'E-Mail',
+          'contact.labelMessage': 'Worum geht es?',
+          'contact.placeholderName': 'Ihr Name',
+          'contact.placeholderEmail': 'sie@example.com',
+          'contact.placeholderMessage': 'Projektnotizen, Deadlines, Links…',
+          'contact.subject': 'one-page studio — Neue Anfrage',
+          'contact.submit': 'Senden',
+          'footer.location': 'Sitz in Leipzig · Überall verfügbar',
+          'footer.copyright': '© 2025 one-page studio',
+          'modal.heading': 'FALLSTUDIE',
+          'modal.close': 'Schließen',
+          'modal.book': 'Diesen Stil buchen',
+          'modal.email': 'Per E-Mail anfragen',
+          'modal.aya.title': 'Künstler-Portfolio — Aya Ito',
+          'modal.aya.goal':
+            '<strong>Ziel.</strong> Die Berliner Malerin Aya Ito brauchte ein ruhiges Portfolio, das große Werke hervorhebt, Bio und Presse ordnet und neue Serien ohne Mails an Entwickler:innen ermöglicht.',
+          'modal.aya.approach':
+            '<strong>Vorgehen.</strong> Ich entwarf einen erzählerischen Scroll mit Statement, Galerie, Ausstellungen und Kontakt und band Decap-CMS-Sammlungen für Hero-Text, Werksdaten, Presse und CV ein. Netlify-Builds liefern Vorschauen, Plausible trackt ohne Cookies.',
+          'modal.aya.outcome':
+            '<strong>Ergebnis.</strong> Die Seite bleibt unter 1&nbsp;MB, lädt mobil sofort und jede Text- oder Galerieänderung geht über einen ruhigen /admin-Editor live. Kurator:innen erhalten einen konsistenten Link, Aya stellt neue Serien Minuten nach den Shootings online.',
+          'modal.aya.tech': 'Tech-Notiz — Decap CMS · Netlify · Plausible',
+          'modal.aya.heroAlt': 'Hero-Bild aus dem Portfolio von Aya Ito',
+          'modal.aya.galleryAlt': 'Galerieraster aus dem Portfolio von Aya Ito',
+          'modal.aya.detailAlt': 'Detailansicht eines Gemäldes von Aya Ito',
+          'modal.parallel.title': 'Lokales Studio — Parallel Hair',
+          'modal.parallel.goal':
+            '<strong>Ziel.</strong> Parallel Hair wollte Instagram-DMs reduzieren und Kund:innen auf eine Seite mit Leistungen, Öffnungszeiten, Karte und 50-€-Anzahlung führen.',
+          'modal.parallel.approach':
+            '<strong>Vorgehen.</strong> Ich strukturierte Bereiche für Hero, Team, Preise, Testimonials und Standort und band ein Netlify-Formular an Supabase an, das Mails verschickt und Leads speichert. Stripe Payment Links übernehmen die Anzahlungen, deployt wird statisch.',
+          'modal.parallel.outcome':
+            '<strong>Ergebnis.</strong> Kund:innen überfliegen Preise, zahlen vor dem Termin und nutzen die eingebettete Karte. Das Team exportiert Anfragen aus Supabase, Buchungen kommen mit weniger Hin und Her an.',
+          'modal.parallel.tech':
+            'Tech-Notiz — Supabase-Formular · Stripe Payment Link · Netlify',
+          'modal.parallel.heroAlt':
+            'Hero-Bild aus der Fallstudie Parallel Hair',
+          'modal.parallel.galleryAlt':
+            'Leistungsabschnitt der Seite Parallel Hair',
+          'modal.parallel.detailAlt':
+            'Innenraumdetail des Studios Parallel Hair',
+        },
+      };
+
+      let currentLanguage = 'en';
+
+      const getTranslation = (lang, key) => {
+        if (!key) return '';
+        const map = translations[lang] || translations.en;
+        if (map && Object.prototype.hasOwnProperty.call(map, key)) {
+          return map[key];
+        }
+        return translations.en[key] || '';
+      };
+
+      function updateMeta(lang) {
+        const title = getTranslation(lang, 'meta.title');
+        if (title) {
+          document.title = title;
+          const ogTitle = document.querySelector('meta[property="og:title"]');
+          if (ogTitle) {
+            ogTitle.setAttribute('content', title);
+          }
+        }
+        const description = getTranslation(lang, 'meta.description');
+        const metaDescription = document.querySelector(
+          'meta[name="description"]'
+        );
+        if (metaDescription && description) {
+          metaDescription.setAttribute('content', description);
+        }
+        const ogDescription = document.querySelector(
+          'meta[property="og:description"]'
+        );
+        const ogValue =
+          getTranslation(lang, 'meta.ogDescription') || description;
+        if (ogDescription && ogValue) {
+          ogDescription.setAttribute('content', ogValue);
+        }
+      }
+
+      function applyTranslations(lang) {
+        const locale = lang === 'de' ? 'de' : 'en';
+        currentLanguage = locale;
+        document.documentElement.setAttribute('lang', locale);
+        updateMeta(locale);
+
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.dataset.i18n;
+          const value = getTranslation(locale, key);
+          if (value !== undefined) {
+            el.textContent = value;
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+          const key = el.dataset.i18nHtml;
+          const value = getTranslation(locale, key);
+          if (value !== undefined) {
+            el.innerHTML = value;
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+          const key = el.dataset.i18nAlt;
+          const value = getTranslation(locale, key);
+          if (value !== undefined) {
+            el.setAttribute('alt', value);
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+          const key = el.dataset.i18nPlaceholder;
+          const value = getTranslation(locale, key);
+          if (value !== undefined) {
+            el.setAttribute('placeholder', value);
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-value]').forEach((el) => {
+          const key = el.dataset.i18nValue;
+          const value = getTranslation(locale, key);
+          if (value !== undefined) {
+            el.value = value;
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+          const key = el.dataset.i18nAriaLabel;
+          const value = getTranslation(locale, key);
+          if (value !== undefined) {
+            el.setAttribute('aria-label', value);
+          }
+        });
+
+        const toggle = document.getElementById('languageToggle');
+        if (toggle) {
+          toggle.dataset.lang = locale;
+          toggle.setAttribute('aria-pressed', locale === 'de');
+        }
+
+        try {
+          localStorage.setItem('opsLang', locale);
+        } catch (error) {
+          // ignore persistence errors
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        try {
+          const stored = localStorage.getItem('opsLang');
+          if (stored === 'en' || stored === 'de') {
+            currentLanguage = stored;
+          }
+        } catch (error) {
+          // ignore persistence errors
+        }
+
+        const toggle = document.getElementById('languageToggle');
+        if (toggle) {
+          toggle.addEventListener('click', () => {
+            const next = currentLanguage === 'en' ? 'de' : 'en';
+            applyTranslations(next);
+          });
+        }
+
+        applyTranslations(currentLanguage);
+      });
+    </script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('caseModal');
