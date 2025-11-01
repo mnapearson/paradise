@@ -2,18 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
     <title>Custom one-page websites — fast, minimal, open-source</title>
     <meta
       name="description"
       content="one-page studio builds clean, fast websites for artists and small studios. Done-for-you, no builders. Optional simple CMS. Based in Leipzig, working anywhere." />
-    <meta property="og:title" content="Custom one-page websites — fast, minimal, open-source" />
+    <meta
+      property="og:title"
+      content="Custom one-page websites — fast, minimal, open-source" />
     <meta
       property="og:description"
       content="one-page studio delivers bespoke one-page websites with optional CMS handoff. Based in Leipzig, working anywhere." />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#f5f1f0" />
-    <link rel="canonical" href="https://one-studio.netlify.app/" />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      name="theme-color"
+      content="#f5f1f0" />
+    <link
+      rel="canonical"
+      href="https://one-studio.netlify.app/" />
+    <link
+      href="https://calendar.google.com/calendar/scheduling-button-script.css"
+      rel="stylesheet" />
+    <script
+      src="https://calendar.google.com/calendar/scheduling-button-script.js"
+      async></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -52,8 +68,8 @@
       body {
         background: var(--bg);
         color: var(--text);
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Arial, "Inter", sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Arial, 'Inter', sans-serif;
         letter-spacing: -0.01em;
       }
       a {
@@ -73,23 +89,47 @@
     </style>
   </head>
   <body class="antialiased">
-    <header class="sticky top-0 z-40 border-b border-black/10 bg-[color:var(--bg)]/95 backdrop-blur">
-      <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-3 text-sm">
+    <header
+      class="sticky top-0 z-40 border-b border-black/10 bg-[color:var(--bg)]/95 backdrop-blur">
+      <div
+        class="mx-auto flex max-w-5xl items-center justify-between px-6 py-3 text-sm">
         <div class="font-medium tracking-tight">one-page studio</div>
         <nav class="hidden items-center gap-5 sm:flex">
-          <a class="transition hover:text-[#0000ff]" href="#work">work</a>
-          <a class="transition hover:text-[#0000ff]" href="#packages">packages</a>
-          <a class="transition hover:text-[#0000ff]" href="#pledge">pledge</a>
-          <a class="transition hover:text-[#0000ff]" href="#contact">contact</a>
+          <a
+            class="transition hover:text-[#0000ff]"
+            href="#work"
+            >work</a
+          >
+          <a
+            class="transition hover:text-[#0000ff]"
+            href="#packages"
+            >packages</a
+          >
+          <a
+            class="transition hover:text-[#0000ff]"
+            href="#pledge"
+            >pledge</a
+          >
+          <a
+            class="transition hover:text-[#0000ff]"
+            href="#contact"
+            >contact</a
+          >
         </nav>
         <div class="flex items-center gap-2">
-          <a
-            class="rounded-full border border-[#111111] px-3 py-1.5 text-xs uppercase tracking-[0.2em] transition hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-            href="https://cal.com/onepagestudio/intro-15"
-            target="_blank"
-            rel="noopener">
-            book call
-          </a>
+          <script>
+            (function () {
+              var target = document.currentScript;
+              window.addEventListener('load', function () {
+                calendar.schedulingButton.load({
+                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
+                  color: '#0b03e5',
+                  label: 'Book a 15-min Intro Call',
+                  target: target,
+                });
+              });
+            })();
+          </script>
           <a
             class="rounded-full border border-[#111111] px-3 py-1.5 text-xs uppercase tracking-[0.2em] transition hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
             href="mailto:hello@one-page.studio">
@@ -100,26 +140,35 @@
     </header>
 
     <main>
-      <section id="hero" class="px-6 py-20 md:py-28">
+      <section
+        id="hero"
+        class="px-6 py-20 md:py-28">
         <div class="mx-auto flex max-w-5xl flex-col gap-6">
           <span class="badge">two discounted slots this week</span>
           <h1 class="text-4xl leading-tight tracking-tight md:text-6xl">
             custom one-page websites. built fast. you keep the keys.
           </h1>
           <p class="max-w-2xl text-lg md:text-xl">
-            done-for-you, no builders. optional simple cms. open-source where possible.
+            done-for-you, no builders. optional simple cms. open-source where
+            possible.
           </p>
           <p class="text-sm uppercase tracking-[0.18em] text-black/60">
             leipzig-based · collaborating worldwide
           </p>
           <div class="flex flex-wrap gap-3">
-            <a
-              class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-              href="https://cal.com/onepagestudio/intro-15"
-              target="_blank"
-              rel="noopener">
-              book a 15-min call
-            </a>
+            <script>
+              (function () {
+                var target = document.currentScript;
+                window.addEventListener('load', function () {
+                  calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
+                    color: '#0b03e5',
+                    label: 'Book a 15-min Intro Call',
+                    target: target,
+                  });
+                });
+              })();
+            </script>
             <a
               class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
               href="mailto:hello@one-page.studio">
@@ -133,26 +182,36 @@
             </div>
             <div>
               <p class="font-medium text-black">optional cms</p>
-              <p>decap or headless setup so you edit copy and media without bloat.</p>
+              <p>
+                decap or headless setup so you edit copy and media without
+                bloat.
+              </p>
             </div>
             <div>
               <p class="font-medium text-black">open handoff</p>
-              <p>documentation, repo access, and support to swap teams anytime.</p>
+              <p>
+                documentation, repo access, and support to swap teams anytime.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="work" class="border-t border-black/10 bg-white/60">
+      <section
+        id="work"
+        class="border-t border-black/10 bg-white/60">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div
+            class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <h2 class="text-2xl md:text-3xl">selected work</h2>
               <p class="mt-2 text-sm text-black/70 md:text-base">
                 two credible case studies you can reference or remix.
               </p>
             </div>
-            <p class="text-sm text-black/60">click a card to see the breakdown.</p>
+            <p class="text-sm text-black/60">
+              click a card to see the breakdown.
+            </p>
           </div>
           <div class="mt-10 grid gap-6 md:grid-cols-2">
             <button
@@ -165,10 +224,13 @@
                 class="aspect-[4/3] w-full rounded-xl border border-black/10 object-cover transition duration-150 group-hover:scale-[1.01]"
                 loading="lazy" />
               <div class="space-y-2">
-                <div class="text-xs uppercase tracking-[0.2em] text-black/60">artist portfolio</div>
+                <div class="text-xs uppercase tracking-[0.2em] text-black/60">
+                  artist portfolio
+                </div>
                 <h3 class="text-xl">Aya Ito — painter</h3>
                 <p class="text-sm text-black/70">
-                  Goal: publish new series quickly. Outcome: calm layout with Decap edits and analytics baked in.
+                  Goal: publish new series quickly. Outcome: calm layout with
+                  Decap edits and analytics baked in.
                 </p>
               </div>
               <span class="text-sm text-[#0000ff]">view case →</span>
@@ -184,10 +246,13 @@
                 class="aspect-[4/3] w-full rounded-xl border border-black/10 object-cover transition duration-150 group-hover:scale-[1.01]"
                 loading="lazy" />
               <div class="space-y-2">
-                <div class="text-xs uppercase tracking-[0.2em] text-black/60">local studio</div>
+                <div class="text-xs uppercase tracking-[0.2em] text-black/60">
+                  local studio
+                </div>
                 <h3 class="text-xl">Parallel Hair — Leipzig</h3>
                 <p class="text-sm text-black/70">
-                  Goal: fewer DMs, faster bookings. Outcome: structured info with Supabase logs + Stripe deposits.
+                  Goal: fewer DMs, faster bookings. Outcome: structured info
+                  with Supabase logs + Stripe deposits.
                 </p>
               </div>
               <span class="text-sm text-[#0000ff]">view case →</span>
@@ -196,18 +261,22 @@
         </div>
       </section>
 
-      <section id="packages" class="border-t border-black/10">
+      <section
+        id="packages"
+        class="border-t border-black/10">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div
+            class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <h2 class="text-2xl md:text-3xl">packages</h2>
               <p class="mt-2 max-w-xl text-sm text-black/70 md:text-base">
-                flat pricing, transparent scope, you keep the repository and credentials.
+                flat pricing, transparent scope, you keep the repository and
+                credentials.
               </p>
             </div>
             <a
               class="self-start rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-              href="https://cal.com/onepagestudio/intro-15"
+              href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
               target="_blank"
               rel="noopener">
               book a 15-min call
@@ -215,8 +284,11 @@
           </div>
 
           <div class="mt-10 grid gap-6 md:grid-cols-3">
-            <div class="flex h-full flex-col rounded-2xl border border-black/10 bg-white/70 p-6">
-              <div class="text-xs uppercase tracking-[0.25em] text-black/60">launch</div>
+            <div
+              class="flex h-full flex-col rounded-2xl border border-black/10 bg-white/70 p-6">
+              <div class="text-xs uppercase tracking-[0.25em] text-black/60">
+                launch
+              </div>
               <div class="mt-3 text-3xl font-medium">€300</div>
               <p class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50">
                 best for first launches with content ready
@@ -232,15 +304,18 @@
               </p>
               <a
                 class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                href="https://cal.com/onepagestudio/intro-15"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
                 target="_blank"
                 rel="noopener">
                 book this package
               </a>
             </div>
 
-            <div class="flex h-full flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-[0_20px_60px_-50px_rgba(0,0,0,0.6)]">
-              <div class="text-xs uppercase tracking-[0.25em] text-black/60">launch + edit</div>
+            <div
+              class="flex h-full flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-[0_20px_60px_-50px_rgba(0,0,0,0.6)]">
+              <div class="text-xs uppercase tracking-[0.25em] text-black/60">
+                launch + edit
+              </div>
               <div class="mt-3 text-3xl font-medium">€550</div>
               <p class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50">
                 best for teams who need to update copy often
@@ -252,19 +327,23 @@
                 <li>30 days of small tweaks post-launch</li>
               </ul>
               <p class="mt-6 text-sm text-black/70">
-                Ideal when you need to edit words and artwork yourself without touching code.
+                Ideal when you need to edit words and artwork yourself without
+                touching code.
               </p>
               <a
                 class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                href="https://cal.com/onepagestudio/intro-15"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
                 target="_blank"
                 rel="noopener">
                 book this package
               </a>
             </div>
 
-            <div class="flex h-full flex-col rounded-2xl border border-black/10 bg-white/70 p-6">
-              <div class="text-xs uppercase tracking-[0.25em] text-black/60">pro</div>
+            <div
+              class="flex h-full flex-col rounded-2xl border border-black/10 bg-white/70 p-6">
+              <div class="text-xs uppercase tracking-[0.25em] text-black/60">
+                pro
+              </div>
               <div class="mt-3 text-3xl font-medium">€900</div>
               <p class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50">
                 best for structured data, payments, or integrations
@@ -276,11 +355,12 @@
                 <li>60 days of small tweaks and support</li>
               </ul>
               <p class="mt-6 text-sm text-black/70">
-                For teams that need structured data, payments, or subscriber capture without bloat.
+                For teams that need structured data, payments, or subscriber
+                capture without bloat.
               </p>
               <a
                 class="mt-6 inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                href="https://cal.com/onepagestudio/intro-15"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
                 target="_blank"
                 rel="noopener">
                 book this package
@@ -294,7 +374,9 @@
 
           <div class="mt-8 grid gap-6 md:grid-cols-2">
             <div>
-              <h3 class="text-xs uppercase tracking-[0.25em] text-black/60">add-ons</h3>
+              <h3 class="text-xs uppercase tracking-[0.25em] text-black/60">
+                add-ons
+              </h3>
               <ul class="mt-3 space-y-2 text-sm text-black/80">
                 <li class="flex items-start justify-between gap-4">
                   <span>Supabase form storage + email copy</span>
@@ -322,53 +404,74 @@
         </div>
       </section>
 
-      <section id="pledge" class="border-t border-black/10 bg-white/60">
+      <section
+        id="pledge"
+        class="border-t border-black/10 bg-white/60">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
           <h2 class="text-2xl md:text-3xl">independent internet pledge</h2>
           <p class="mt-4 max-w-3xl text-base leading-relaxed text-black/75">
-            I use open-source tools and privacy-friendly defaults. You own your code and content and can export anytime. No trackers by default. Every project ships with clear documentation so another developer—or you—can continue without friction.
+            I use open-source tools and privacy-friendly defaults. You own your
+            code and content and can export anytime. No trackers by default.
+            Every project ships with clear documentation so another developer—or
+            you—can continue without friction.
           </p>
         </div>
       </section>
 
-      <section id="why" class="border-t border-black/10">
+      <section
+        id="why"
+        class="border-t border-black/10">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
           <h2 class="text-2xl md:text-3xl">why not builders?</h2>
           <p class="mt-4 max-w-3xl text-base leading-relaxed text-black/75">
-            Builders are fine if you enjoy configuring tools. Most clients would rather skip the dashboards. I design and code the page, publish it fast, then hand over a calm /admin editor for simple edits.
+            Builders are fine if you enjoy configuring tools. Most clients would
+            rather skip the dashboards. I design and code the page, publish it
+            fast, then hand over a calm /admin editor for simple edits.
           </p>
           <ul class="mt-6 grid gap-3 text-sm text-black/75 md:grid-cols-3">
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
-              No template maze, no vendor lock-in. Your repo lives in your account.
+              No template maze, no vendor lock-in. Your repo lives in your
+              account.
             </li>
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
               Performance and accessibility tuned by hand, not by plugins.
             </li>
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
-              Open-source stack with documentation so any future dev can continue.
+              Open-source stack with documentation so any future dev can
+              continue.
             </li>
           </ul>
         </div>
       </section>
 
-      <section id="contact" class="border-t border-black/10 bg-white/70">
+      <section
+        id="contact"
+        class="border-t border-black/10 bg-white/70">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
           <div class="rounded-2xl border border-black/10 bg-white p-6 md:p-8">
-            <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div
+              class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <h2 class="text-2xl">ready to start?</h2>
                 <p class="mt-2 text-sm text-black/70">
-                  email hello@one-page.studio or pick a slot. i reply within one business day.
+                  email hello@one-page.studio or pick a slot. i reply within one
+                  business day.
                 </p>
               </div>
               <div class="flex flex-wrap gap-3">
-                <a
-                  class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                  href="https://cal.com/onepagestudio/intro-15"
-                  target="_blank"
-                  rel="noopener">
-                  book a 15-min call
-                </a>
+                <script>
+                  (function () {
+                    var target = document.currentScript;
+                    window.addEventListener('load', function () {
+                      calendar.schedulingButton.load({
+                        url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
+                        color: '#0b03e5',
+                        label: 'Book a 15-min Intro Call',
+                        target: target,
+                      });
+                    });
+                  })();
+                </script>
                 <a
                   class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
                   href="mailto:hello@one-page.studio">
@@ -384,13 +487,20 @@
               data-netlify="true"
               netlify-honeypot="bot-field"
               action="/thanks.html">
-              <input type="hidden" name="form-name" value="contact" />
+              <input
+                type="hidden"
+                name="form-name"
+                value="contact" />
               <p class="hidden">
                 <label>Don’t fill this out: <input name="bot-field" /></label>
               </p>
 
               <div class="grid gap-1">
-                <label class="text-sm text-black/80" for="contact-name">name</label>
+                <label
+                  class="text-sm text-black/80"
+                  for="contact-name"
+                  >name</label
+                >
                 <input
                   id="contact-name"
                   class="rounded-lg border border-black/15 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
@@ -400,7 +510,11 @@
               </div>
 
               <div class="grid gap-1">
-                <label class="text-sm text-black/80" for="contact-email">email</label>
+                <label
+                  class="text-sm text-black/80"
+                  for="contact-email"
+                  >email</label
+                >
                 <input
                   id="contact-email"
                   type="email"
@@ -411,7 +525,11 @@
               </div>
 
               <div class="grid gap-1">
-                <label class="text-sm text-black/80" for="contact-message">what do you need?</label>
+                <label
+                  class="text-sm text-black/80"
+                  for="contact-message"
+                  >what do you need?</label
+                >
                 <textarea
                   id="contact-message"
                   class="min-h-[140px] rounded-lg border border-black/15 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
@@ -419,7 +537,10 @@
                   placeholder="project notes, deadlines, links…"></textarea>
               </div>
 
-              <input type="hidden" name="subject" value="one-page studio — new inquiry" />
+              <input
+                type="hidden"
+                name="subject"
+                value="one-page studio — new inquiry" />
               <button
                 class="inline-flex w-max rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
                 type="submit">
@@ -432,30 +553,44 @@
     </main>
 
     <footer class="border-t border-black/10">
-      <div class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-black/60 md:flex-row md:items-center md:justify-between">
+      <div
+        class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-black/60 md:flex-row md:items-center md:justify-between">
         <span>leipzig · available anywhere</span>
         <span>© 2025 one-page studio</span>
       </div>
     </footer>
 
-    <div id="case-aya" class="hidden">
+    <div
+      id="case-aya"
+      class="hidden">
       <article class="space-y-6">
         <img
           src="https://picsum.photos/id/1067/1600/1000"
           alt="hero image from Aya Ito portfolio"
           class="w-full rounded-2xl border border-black/10 object-cover"
           loading="lazy" />
-        <div class="grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-start">
+        <div
+          class="grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-start">
           <div class="space-y-4">
             <h3 class="text-2xl">Artist Portfolio — Aya Ito</h3>
             <p class="text-base leading-relaxed text-black/75">
-              <strong>Goal.</strong> Berlin painter Aya Ito needed a quiet portfolio that foregrounds large works, keeps bio and press materials tidy, and lets her reorder pieces without emailing a developer.
+              <strong>Goal.</strong> Berlin painter Aya Ito needed a quiet
+              portfolio that foregrounds large works, keeps bio and press
+              materials tidy, and lets her reorder pieces without emailing a
+              developer.
             </p>
             <p class="text-base leading-relaxed text-black/75">
-              <strong>Approach.</strong> I drafted a single narrative scroll—statement, gallery grid, exhibitions, contact—then wired Decap CMS collections for hero copy, artwork metadata, press links, and CV highlights. Netlify builds share preview links, while Plausible tracks views without cookies.
+              <strong>Approach.</strong> I drafted a single narrative
+              scroll—statement, gallery grid, exhibitions, contact—then wired
+              Decap CMS collections for hero copy, artwork metadata, press
+              links, and CV highlights. Netlify builds share preview links,
+              while Plausible tracks views without cookies.
             </p>
             <p class="text-base leading-relaxed text-black/75">
-              <strong>Outcome.</strong> The page ships under 1&nbsp;MB, loads instantly on mobile, and every text or gallery change publishes via a clean /admin editor. Curators now receive a consistent link, and Aya uploads new series minutes after shoots.
+              <strong>Outcome.</strong> The page ships under 1&nbsp;MB, loads
+              instantly on mobile, and every text or gallery change publishes
+              via a clean /admin editor. Curators now receive a consistent link,
+              and Aya uploads new series minutes after shoots.
             </p>
             <p class="text-sm uppercase tracking-[0.2em] text-black/60">
               Tech note — Decap CMS · Netlify · Plausible
@@ -463,7 +598,7 @@
             <div class="flex flex-wrap gap-3">
               <a
                 class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                href="https://cal.com/onepagestudio/intro-15"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
                 target="_blank"
                 rel="noopener">
                 book this style
@@ -491,24 +626,36 @@
       </article>
     </div>
 
-    <div id="case-parallel" class="hidden">
+    <div
+      id="case-parallel"
+      class="hidden">
       <article class="space-y-6">
         <img
           src="https://picsum.photos/id/1035/1600/1000"
           alt="hero image from Parallel Hair case study"
           class="w-full rounded-2xl border border-black/10 object-cover"
           loading="lazy" />
-        <div class="grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-start">
+        <div
+          class="grid gap-6 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-start">
           <div class="space-y-4">
             <h3 class="text-2xl">Local Studio — Parallel Hair</h3>
             <p class="text-base leading-relaxed text-black/75">
-              <strong>Goal.</strong> Parallel Hair wanted to reduce Instagram DMs by pointing clients to a single page with services, hours, map directions, and a €50 booking deposit.
+              <strong>Goal.</strong> Parallel Hair wanted to reduce Instagram
+              DMs by pointing clients to a single page with services, hours, map
+              directions, and a €50 booking deposit.
             </p>
             <p class="text-base leading-relaxed text-black/75">
-              <strong>Approach.</strong> I mapped sections for hero, stylists, pricing, testimonials, and locality info, then wired a Netlify form that posts to Supabase for logging while emailing the team. Stripe Payment Links handle deposits, and the site deploys statically for speed.
+              <strong>Approach.</strong> I mapped sections for hero, stylists,
+              pricing, testimonials, and locality info, then wired a Netlify
+              form that posts to Supabase for logging while emailing the team.
+              Stripe Payment Links handle deposits, and the site deploys
+              statically for speed.
             </p>
             <p class="text-base leading-relaxed text-black/75">
-              <strong>Outcome.</strong> Clients skim pricing, pay deposits before visiting, and use the embedded map for directions. The team exports enquiry logs from Supabase, and bookings arrive with fewer back-and-forth messages.
+              <strong>Outcome.</strong> Clients skim pricing, pay deposits
+              before visiting, and use the embedded map for directions. The team
+              exports enquiry logs from Supabase, and bookings arrive with fewer
+              back-and-forth messages.
             </p>
             <p class="text-sm uppercase tracking-[0.2em] text-black/60">
               Tech note — Supabase form · Stripe Payment Link · Netlify
@@ -516,7 +663,7 @@
             <div class="flex flex-wrap gap-3">
               <a
                 class="rounded-full border border-[#111111] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:bg-[#0000ff] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2"
-                href="https://cal.com/onepagestudio/intro-15"
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
                 target="_blank"
                 rel="noopener">
                 book this style
@@ -551,11 +698,16 @@
       aria-modal="true"
       aria-labelledby="caseModalHeading"
       aria-hidden="true">
-      <div class="absolute inset-0 bg-black/60" data-modal-overlay></div>
+      <div
+        class="absolute inset-0 bg-black/60"
+        data-modal-overlay></div>
       <div
         class="relative mx-auto my-8 flex max-h-[90vh] w-[min(95%,960px)] flex-col overflow-hidden rounded-3xl border border-black/20 bg-[color:var(--bg)] shadow-xl">
-        <div class="flex items-center justify-between border-b border-black/10 px-5 py-3">
-          <h2 id="caseModalHeading" class="text-xs uppercase tracking-[0.3em] text-black/60">
+        <div
+          class="flex items-center justify-between border-b border-black/10 px-5 py-3">
+          <h2
+            id="caseModalHeading"
+            class="text-xs uppercase tracking-[0.3em] text-black/60">
             case study
           </h2>
           <button
@@ -565,17 +717,19 @@
             close
           </button>
         </div>
-        <div id="caseModalContent" class="overflow-y-auto px-5 py-6 md:px-8 md:py-8"></div>
+        <div
+          id="caseModalContent"
+          class="overflow-y-auto px-5 py-6 md:px-8 md:py-8"></div>
       </div>
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("caseModal");
-        const modalContent = document.getElementById("caseModalContent");
-        const triggers = document.querySelectorAll("[data-modal-target]");
-        const overlay = modal.querySelector("[data-modal-overlay]");
-        const closeButton = modal.querySelector("[data-modal-close]");
+      document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('caseModal');
+        const modalContent = document.getElementById('caseModalContent');
+        const triggers = document.querySelectorAll('[data-modal-target]');
+        const overlay = modal.querySelector('[data-modal-overlay]');
+        const closeButton = modal.querySelector('[data-modal-close]');
 
         const focusableSelector =
           'a[href], button:not([disabled]), textarea, input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -585,11 +739,13 @@
 
         const getFocusable = (element) =>
           Array.from(element.querySelectorAll(focusableSelector)).filter(
-            (el) => !el.hasAttribute("disabled") && el.getAttribute("tabindex") !== "-1"
+            (el) =>
+              !el.hasAttribute('disabled') &&
+              el.getAttribute('tabindex') !== '-1'
           );
 
         const trapFocus = (event) => {
-          if (event.key !== "Tab") return;
+          if (event.key !== 'Tab') return;
           const focusableEls = getFocusable(modal);
           if (!focusableEls.length) return;
           const first = focusableEls[0];
@@ -610,42 +766,44 @@
           const template = document.getElementById(targetId);
           if (!template) return;
           modalContent.innerHTML = template.innerHTML;
-          modal.classList.remove("hidden");
-          modal.setAttribute("aria-hidden", "false");
-          document.body.classList.add("overflow-hidden");
+          modal.classList.remove('hidden');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('overflow-hidden');
           lastFocused = document.activeElement;
           const focusableEls = getFocusable(modal);
           if (focusableEls.length) {
             focusableEls[0].focus();
           }
           trapHandler = trapFocus;
-          modal.addEventListener("keydown", trapHandler);
+          modal.addEventListener('keydown', trapHandler);
         };
 
         const closeModal = () => {
-          if (modal.classList.contains("hidden")) return;
-          modal.classList.add("hidden");
-          modal.setAttribute("aria-hidden", "true");
-          modalContent.innerHTML = "";
-          document.body.classList.remove("overflow-hidden");
+          if (modal.classList.contains('hidden')) return;
+          modal.classList.add('hidden');
+          modal.setAttribute('aria-hidden', 'true');
+          modalContent.innerHTML = '';
+          document.body.classList.remove('overflow-hidden');
           if (trapHandler) {
-            modal.removeEventListener("keydown", trapHandler);
+            modal.removeEventListener('keydown', trapHandler);
             trapHandler = null;
           }
-          if (lastFocused && typeof lastFocused.focus === "function") {
+          if (lastFocused && typeof lastFocused.focus === 'function') {
             lastFocused.focus();
           }
         };
 
         triggers.forEach((trigger) => {
-          trigger.addEventListener("click", () => openModal(trigger.dataset.modalTarget));
+          trigger.addEventListener('click', () =>
+            openModal(trigger.dataset.modalTarget)
+          );
         });
 
-        overlay.addEventListener("click", closeModal);
-        closeButton.addEventListener("click", closeModal);
+        overlay.addEventListener('click', closeModal);
+        closeButton.addEventListener('click', closeModal);
 
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") {
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
             closeModal();
           }
         });
