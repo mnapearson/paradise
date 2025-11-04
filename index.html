@@ -19,6 +19,15 @@
       property="og:type"
       content="website" />
     <meta
+      property="og:image"
+      content="https://one-studio.netlify.app/ops-favicon-512.png" />
+    <meta
+      property="og:url"
+      content="https://one-studio.netlify.app/" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image" />
+    <meta
       name="theme-color"
       content="#f5f1f0" />
     <link
@@ -256,6 +265,38 @@
         outline: none;
         box-shadow: 0 0 0 3px rgba(11, 3, 229, 0.45);
       }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        animated-icons *,
+        [data-animated-packages] *,
+        [data-animated-why] * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+      @keyframes ops-fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .fade-in {
+        animation: ops-fade-in 0.25s ease-out both;
+      }
     </style>
   </head>
   <body class="antialiased">
@@ -357,11 +398,6 @@
               rel="noopener">
               Book a 15-min Intro Call
             </a>
-            <a
-              class="secondary"
-              href="mailto:hello@one-page.studio">
-              hello@one-page.studio
-            </a>
           </div>
         </div>
       </div>
@@ -384,7 +420,6 @@
               Custom one-page websites. <br />
               Built fast. You keep the keys.
             </h1>
-            <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
             <animated-icons
               src="https://animatedicons.co/get-icon?name=Work%20Ethic&style=minimalistic&token=5359b304-fa32-4655-b5d8-71dd75b18ea1"
               trigger="loop"
@@ -419,11 +454,10 @@
               })();
             </script>
             <a
-              class="cta-button"
+              class="package-link"
               href="mailto:hello@one-page.studio"
-              data-i18n="hero.emailCta">
-              Email
-            </a>
+              >Email</a
+            >
           </div>
           <ul class="mt-10 grid gap-3 text-sm text-black/75 sm:grid-cols-3">
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
@@ -475,7 +509,6 @@
             class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <div class="flex items-center gap-2">
-                <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
                 <animated-icons
                   src="https://animatedicons.co/get-icon?name=Solution&style=minimalistic&token=330b61cf-d46c-486d-9ee1-1f70863984e3"
                   trigger="loop"
@@ -814,7 +847,6 @@
                   data-i18n="about.heading">
                   About
                 </h2>
-                <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
                 <animated-icons
                   src="https://animatedicons.co/get-icon?name=Business%20Woman&style=minimalistic&token=52fcf4eb-bf87-403f-92d6-9762b5f166a2"
                   trigger="loop"
@@ -899,7 +931,6 @@
               class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <div class="flex items-center">
-                  <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
                   <animated-icons
                     src="https://animatedicons.co/get-icon?name=Hey&style=minimalistic&token=a91f6990-968c-4b27-8d19-1e6965a394aa"
                     trigger="loop"
@@ -944,13 +975,12 @@
               name="contact"
               method="POST"
               data-netlify="true"
-              netlify-honeypot="bot-field"
-              action="/thanks.html">
+              netlify-honeypot="bot-field">
               <input
                 type="hidden"
                 name="form-name"
                 value="contact" />
-              <p class="hidden">
+              <p class="sr-only">
                 <label data-i18n="contact.honeypot">Don’t fill this out:</label>
                 <input name="bot-field" />
               </p>
@@ -1014,6 +1044,86 @@
                 <span data-i18n="contact.submit">Send</span>
               </button>
             </form>
+            <script>
+              (function () {
+                const form = document.querySelector('form[name="contact"]');
+                if (!form) return;
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn ? submitBtn.textContent : '';
+
+                // Reuse the same booking URL used elsewhere on the page
+                const BOOKING_URL =
+                  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true';
+
+                function encode(fd) {
+                  const p = new URLSearchParams();
+                  for (const [k, v] of fd.entries()) p.append(k, v);
+                  return p.toString();
+                }
+
+                function successPanelHTML() {
+                  return `
+  <div class="rounded-2xl bg-white p-6 md:p-8 fade-in" role="status" aria-live="polite">
+    <div class="flex items-center gap-4">
+      <animated-icons
+        aria-hidden="true"
+        src="https://animatedicons.co/get-icon?name=Success&style=minimalistic&token=7d0a0a3f-3e3a-4d3b-9b59-cb7ed29a4a3d"
+        trigger="loop"
+        attributes='{"variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0027FFFF","background":"#FFFFFF"}}'
+        height="48"
+        width="48"></animated-icons>
+      <div>
+        <h2 id="contact-success-heading" tabindex="-1" class="text-2xl mb-1">Thanks — message sent!</h2>
+        
+      </div>
+    </div>
+  </div>`;
+                }
+
+                form.addEventListener('submit', async (e) => {
+                  e.preventDefault();
+                  const fd = new FormData(form);
+                  fd.append('form-name', 'contact');
+
+                  if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending…';
+                  }
+
+                  try {
+                    await fetch('/', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                      },
+                      body: encode(fd),
+                    });
+
+                    form.outerHTML = successPanelHTML();
+
+                    // move focus and scroll into view for a11y
+                    const heading = document.getElementById(
+                      'contact-success-heading'
+                    );
+                    if (heading) {
+                      heading.focus({ preventScroll: true });
+                      heading.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                      });
+                    }
+                  } catch (err) {
+                    if (submitBtn) {
+                      submitBtn.disabled = false;
+                      submitBtn.textContent = originalBtnText || 'Send';
+                    }
+                    alert(
+                      'Something went wrong. Please email hello@one-page.studio.'
+                    );
+                  }
+                });
+              })();
+            </script>
           </div>
         </div>
       </section>
