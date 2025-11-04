@@ -1,49 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <title>Datenschutzerklärung — one-page studio</title>
+    <meta
+      name="description"
+      content="Datenschutzhinweise für one-page studio: Verantwortliche Stelle, Hosting (Netlify), Kontaktformular (Netlify Forms), Terminbuchung (Google Appointment Schedule), E-Mail (Google Workspace), Rechte der Betroffenen." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --bg: #f5f1f0;
+        --text: #111111;
+        --link: #0000ff;
+      }
+      .dark-mode {
+        --bg: #111111;
+        --text: #e6f0ff;
+        --link: #9ae6b4;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+      }
+      a {
+        color: var(--link);
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <header
+      class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a
+        href="/"
+        class="text-sm"
+        >← back</a
+      >
+      <button
+        id="modeToggle"
+        class="text-xs border px-3 py-1.5 rounded-full">
+        dusk / dawn
+      </button>
+    </header>
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Datenschutzerklärung (Template)</title>
-  <meta name="description" content="Starter template for German privacy notice (minimal)." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root { --bg: #f5f1f0; --text:#111111; --link:#0000ff; }
-    .dark-mode { --bg:#111111; --text:#e6f0ff; --link:#9ae6b4; }
-    body { background: var(--bg); color: var(--text); }
-    a { color: var(--link); }
-  </style>
-</head>
-<body class="antialiased">
-<header class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-  <a href="/" class="text-sm">← back</a>
-  <button id="modeToggle" class="text-xs border px-3 py-1.5 rounded-full">dusk / dawn</button>
-</header>
+    <section class="max-w-5xl mx-auto px-4 pt-8 pb-6">
+      <h1 class="text-3xl md:text-4xl">Datenschutzerklärung</h1>
+      <p class="mt-4 max-w-prose text-sm">
+        Diese Hinweise informieren Sie über Art, Umfang und Zwecke der
+        Verarbeitung personenbezogener Daten beim Besuch dieser Website und bei
+        der Nutzung unserer Kontakt- und Terminangebote.
+      </p>
 
-<section class="max-w-5xl mx-auto px-4 pt-8 pb-6">
-  <h1 class="text-3xl md:text-4xl">Datenschutzerklärung</h1>
-  <p class="mt-4 max-w-prose text-sm">Kurze, verständliche Hinweise. Ersetzen Sie die Platzhalter. Keine Cookies außer technisch notwendige; optional Plausible Analytics (eU‑hosting, IP‑anonymisiert).</p>
-  <div class="mt-6 text-sm space-y-3">
-    <p><span class="font-medium">Verantwortlich</span><br/>Name, Anschrift, E-Mail.</p>
-    <p><span class="font-medium">Hosting</span><br/>Netlify/Vercel verarbeiten IP‑Adresse und Logfiles zur Bereitstellung der Website.</p>
-    <p><span class="font-medium">Kontakt</span><br/>Wenn Sie uns kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage.</p>
-    <p><span class="font-medium">Plausible</span><br/>Wenn aktiviert: anonymisierte Nutzungsdaten ohne Cookies; Widerspruch möglich per Do‑Not‑Track.</p>
-    <p><span class="font-medium">Ihre Rechte</span><br/>Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch.</p>
-  </div>
-</section>
+      <div class="mt-6 text-sm space-y-5 max-w-prose">
+        <div>
+          <p class="font-medium">
+            1. Verantwortliche Stelle (Art. 4 Nr. 7 DSGVO)
+          </p>
+          <p>
+            Michaela Arratoon Pearson (Einzelunternehmen)<br />
+            Kötzschauerstr. 2, 04229 Leipzig, Deutschland<br />
+            E‑Mail:
+            <a href="mailto:hello@one-page.studio">hello@one-page.studio</a>
+          </p>
+        </div>
 
-<footer class="max-w-5xl mx-auto px-4 py-10 text-xs opacity-70">
-  <div class="border-t border-black/10 pt-4 flex items-center justify-between">
-    <span>© 2025 one‑page studio</span>
-    <nav class="flex gap-4">
-      <a href="/impressum.html">impressum</a>
-      <a href="/datenschutz.html">datenschutz</a>
-    </nav>
-  </div>
-</footer>
-<script>
-  const b = document.getElementById('modeToggle');
-  b?.addEventListener('click', ()=> document.documentElement.classList.toggle('dark-mode'));
-</script>
-</body>
+        <div>
+          <p class="font-medium">
+            2. Hosting & Server‑Logfiles (Art. 6 Abs. 1 lit. f DSGVO)
+          </p>
+          <p>
+            Diese Website wird bei <strong>Netlify, Inc.</strong> gehostet. Beim
+            Aufruf werden technisch notwendige Daten (z.&nbsp;B. IP‑Adresse,
+            Datum/Uhrzeit, angeforderte URL, Referrer, User‑Agent, ggf.
+            Statuscodes) in Server‑Logs verarbeitet, um die Website
+            bereitzustellen und die Sicherheit zu gewährleisten. Die Speicherung
+            erfolgt für eine kurze Dauer (in der Regel wenige Tage bis maximal
+            30 Tage) und ist für den sicheren Betrieb erforderlich.
+          </p>
+          <p>
+            <em>Rechtsgrundlage:</em> berechtigtes Interesse an der sicheren,
+            effizienten Bereitstellung der Website (Art. 6 Abs. 1 lit. f DSGVO).
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">
+            3. Kontaktformular / Netlify Forms (Art. 6 Abs. 1 lit. b, f DSGVO)
+          </p>
+          <p>
+            Wenn Sie das Kontaktformular nutzen, verarbeiten wir die von Ihnen
+            eingegebenen Angaben (z.&nbsp;B. Name, E‑Mail, Nachricht) zur
+            Bearbeitung Ihrer Anfrage. Das Formular wird technisch über
+            <strong>Netlify Forms</strong> übermittelt und gespeichert. Wir
+            setzen ein &bdquo;Honeypot&ldquo;-Feld gegen Spam ein; es erfolgt
+            keine Profilbildung.
+          </p>
+          <p>
+            <em>Rechtsgrundlagen:</em> Vertrag/Anbahnung (Art. 6 Abs. 1 lit. b)
+            sowie unser berechtigtes Interesse an effizienter Kommunikation
+            (Art. 6 Abs. 1 lit. f). <em>Speicherdauer:</em> Anfragen werden
+            regelmäßig nach Abschluss der Bearbeitung gelöscht, spätestens nach
+            12 Monaten, sofern keine gesetzlichen Aufbewahrungspflichten
+            entgegenstehen.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">
+            4. Terminbuchung über Google Appointment Schedule (Art. 6 Abs. 1
+            lit. b, f DSGVO)
+          </p>
+          <p>
+            Für die Terminvereinbarung verlinken wir auf
+            <strong>Google Appointment Schedule</strong> (Google LLC). Dort
+            eingegebene Daten (z.&nbsp;B. Name, E‑Mail, gewählter Termin) werden
+            von Google in unserem Auftrag verarbeitet, um den Termin zu
+            koordinieren.
+          </p>
+          <p>
+            <em>Rechtsgrundlagen:</em> Vertrag/Anbahnung (Art. 6 Abs. 1 lit. b)
+            und berechtigtes Interesse an einfacher Terminorganisation (Art. 6
+            Abs. 1 lit. f). <em>Hinweis:</em> Es kann zu Übermittlungen in
+            Drittländer (u.&nbsp;a. USA) kommen; Google stützt dies u.&nbsp;a.
+            auf Standardvertragsklauseln. Alternativ können Sie uns jederzeit
+            per E‑Mail kontaktieren.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">
+            5. E‑Mail‑Kommunikation (Google Workspace) (Art. 6 Abs. 1 lit. b, f
+            DSGVO)
+          </p>
+          <p>
+            Unsere E‑Mails werden über
+            <strong>Google Workspace</strong> verarbeitet. Wenn Sie uns
+            schreiben, verarbeiten wir Ihre Angaben zur Beantwortung und ggf.
+            zur Dokumentation der Korrespondenz.
+          </p>
+          <p>
+            <em>Rechtsgrundlagen:</em> Vertrag/Anbahnung (Art. 6 Abs. 1 lit. b)
+            und berechtigtes Interesse an geschäftlicher Kommunikation (Art. 6
+            Abs. 1 lit. f). <em>Speicherdauer:</em> Korrespondenz wird
+            regelmäßig überprüft und gelöscht, sofern keine gesetzlichen
+            Pflichten entgegenstehen.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">6. Cookies & Analyse</p>
+          <p>
+            Wir setzen derzeit keine Tracking‑Cookies ein. Sofern künftig eine
+            datenschutzfreundliche, cookielose Analyse (z.&nbsp;B. Plausible)
+            aktiviert wird, informieren wir hier mit Angaben zu Anbieter, Zweck,
+            Rechtsgrundlage und Widerspruchsoptionen.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">7. Empfänger & Auftragsverarbeitung</p>
+          <p>
+            Wir setzen Dienstleister als Auftragsverarbeiter ein, darunter
+            insbesondere <strong>Netlify, Inc.</strong> (Hosting/Formulare) und
+            <strong>Google LLC</strong> (Appointment Schedule/Workspace). Mit
+            den Anbietern bestehen Verträge zur Auftragsverarbeitung; es werden
+            nur die zur Zweckerfüllung erforderlichen Daten verarbeitet.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">8. Drittlandübermittlungen</p>
+          <p>
+            Bei Einsatz der genannten Dienste kann es zu Übermittlungen in
+            Drittländer (insbesondere USA) kommen. Diese stützen sich u.&nbsp;a.
+            auf EU‑Standardvertragsklauseln und zusätzliche Schutzmaßnahmen.
+            Gleichwohl kann ein vom EU‑Niveau abweichendes Datenschutzniveau
+            nicht vollständig ausgeschlossen werden.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">9. Speicherdauer</p>
+          <p>
+            Sofern in dieser Erklärung nicht anders angegeben, verarbeiten wir
+            personenbezogene Daten nur so lange, wie es zur jeweiligen
+            Zweckerfüllung erforderlich ist oder gesetzliche
+            Aufbewahrungspflichten bestehen.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">10. Ihre Rechte</p>
+          <p>
+            Sie haben die Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung
+            (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18),
+            Datenübertragbarkeit (Art. 20) sowie Widerspruch (Art. 21). Soweit
+            die Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese
+            jederzeit mit Wirkung für die Zukunft widerrufen.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">11. Beschwerderecht</p>
+          <p>
+            Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu
+            beschweren, insbesondere bei der/ dem Sächsischen
+            Datenschutzbeauftragten.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-medium">12. Änderungen</p>
+          <p>
+            Wir passen diese Datenschutzerklärung an, wenn sich Verfahren oder
+            Rechtslagen ändern. Die jeweils aktuelle Fassung ist unter dieser
+            URL abrufbar.
+          </p>
+        </div>
+
+        <p class="opacity-60">Stand: <span id="privacy-date"></span></p>
+      </div>
+
+      <script>
+        (function () {
+          const el = document.getElementById('privacy-date');
+          if (el) {
+            const d = new Date();
+            el.textContent = d.toLocaleDateString('de-DE', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+            });
+          }
+        })();
+      </script>
+    </section>
+
+    <footer class="max-w-5xl mx-auto px-4 py-10 text-xs opacity-70">
+      <div
+        class="border-t border-black/10 pt-4 flex items-center justify-between">
+        <span>© 2025 one‑page studio</span>
+        <nav class="flex gap-4">
+          <a href="/impressum.html">impressum</a>
+          <a href="/datenschutz.html">datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      const b = document.getElementById('modeToggle');
+      b?.addEventListener('click', () =>
+        document.documentElement.classList.toggle('dark-mode')
+      );
+    </script>
+  </body>
 </html>
