@@ -60,6 +60,9 @@
       }
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://animatedicons.co/scripts/embed-animated-icons.js"
+      defer></script>
     <style>
       :root {
         --bg: #f5f1f0;
@@ -374,11 +377,21 @@
             data-i18n="hero.badge"
             >Two discounted slots this week</span
           >
-          <h1
-            class="text-4xl leading-tight tracking-tight md:text-6xl"
-            data-i18n="hero.title">
-            Custom one-page websites. Built fast. You keep the keys.
-          </h1>
+          <div class="flex items-center">
+            <h1
+              class="text-4xl leading-tight tracking-tight md:text-6xl"
+              data-i18n="hero.title">
+              Custom one-page websites. <br />
+              Built fast. You keep the keys.
+            </h1>
+            <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+            <animated-icons
+              src="https://animatedicons.co/get-icon?name=Work%20Ethic&style=minimalistic&token=5359b304-fa32-4655-b5d8-71dd75b18ea1"
+              trigger="loop"
+              attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0027FFFF","background":"#FFFFFF"}}'
+              height="150"
+              width="150"></animated-icons>
+          </div>
           <p
             class="max-w-2xl text-lg md:text-xl"
             data-i18n="hero.copy">
@@ -461,17 +474,27 @@
           <div
             class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2
-                class="text-2xl md:text-3xl"
-                data-i18n="work.heading">
-                Selected Work
-              </h2>
+              <div class="flex items-center gap-2">
+                <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+                <animated-icons
+                  src="https://animatedicons.co/get-icon?name=Solution&style=minimalistic&token=330b61cf-d46c-486d-9ee1-1f70863984e3"
+                  trigger="loop"
+                  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0027FFFF","background":"#FFFFFF"}}'
+                  height="65"
+                  width="65"></animated-icons>
+                <h2
+                  class="text-2xl md:text-3xl"
+                  data-i18n="work.heading">
+                  Selected Work
+                </h2>
+              </div>
               <p
                 class="mt-2 text-sm text-black/70 md:text-base"
                 data-i18n="work.subheading">
                 Two credible case studies you can reference or remix.
               </p>
             </div>
+
             <p
               class="text-sm text-black/60"
               data-i18n="work.caption">
@@ -556,21 +579,28 @@
         id="packages"
         class="border-t border-black/10">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <div
-            class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
+          <div class="flex flex-col gap-3 md:gap-4">
+            <div class="flex items-center justify-between">
               <h2
                 class="text-2xl md:text-3xl"
                 data-i18n="packages.heading">
                 Packages
               </h2>
-              <p
-                class="mt-2 max-w-xl text-sm text-black/70 md:text-base"
-                data-i18n="packages.subheading">
-                Flat pricing, transparent scope, you keep the repository and
-                credentials.
-              </p>
+              <animated-icons
+                aria-hidden="true"
+                data-animated-packages
+                src="https://animatedicons.co/get-icon?name=billing&style=minimalistic&token=05cbe654-13ce-49e2-a2c5-2381b77a7905"
+                trigger="loop"
+                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#0F172A","group-2":"#536DFE","background":"#FFFFFF"}}'
+                height="65"
+                width="65"></animated-icons>
             </div>
+            <p
+              class="max-w-2xl text-sm text-black/70 md:text-base"
+              data-i18n="packages.subheading">
+              Flat pricing, transparent scope, you keep the repository and
+              credentials.
+            </p>
           </div>
 
           <div class="mt-10 grid gap-6 md:grid-cols-3">
@@ -768,7 +798,8 @@
         id="about"
         class="border-t border-black/10 bg-white/60">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <div class="mx-auto flex max-w-4xl flex-col gap-8 md:flex-row md:items-start md:gap-12">
+          <div
+            class="mx-auto flex max-w-4xl flex-col gap-8 md:flex-row md:items-start md:gap-12">
             <div class="flex justify-center md:block md:flex-none md:w-60">
               <img
                 src="https://mqtcodpajykyvodmahlt.supabase.co/storage/v1/object/public/conversations/bio-pic.jpg"
@@ -777,11 +808,31 @@
                 loading="lazy" />
             </div>
             <div class="flex-1">
-              <h2 class="text-2xl md:text-3xl" data-i18n="about.heading">
-                About
-              </h2>
-              <p class="mt-4 text-base leading-relaxed text-black/75" data-i18n="about.body">
-                I’m Micky Arratoon, a designer–developer in Leipzig. I build small, fast one-page sites for people who don’t want to wrangle Wix/WordPress or plugins. My approach is open-source where possible, with a simple editor so you can update text, images, and links after launch. Clear scope, tight timelines, calm communication—most projects ship in 48–72 hours once content is ready. If you want a custom page without the builder maze, I’ll take the wheel and get it live quickly.
+              <div class="flex items-center">
+                <h2
+                  class="text-2xl md:text-3xl"
+                  data-i18n="about.heading">
+                  About
+                </h2>
+                <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+                <animated-icons
+                  src="https://animatedicons.co/get-icon?name=Business%20Woman&style=minimalistic&token=52fcf4eb-bf87-403f-92d6-9762b5f166a2"
+                  trigger="loop"
+                  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0027FFFF","background":"#FFFFFF"}}'
+                  height="65"
+                  width="65"></animated-icons>
+              </div>
+              <p
+                class="mt-4 text-base leading-relaxed text-black/75"
+                data-i18n="about.body">
+                I’m Micky Arratoon, a designer–developer in Leipzig. I build
+                small, fast one-page sites for people who don’t want to wrangle
+                Wix/WordPress or plugins. My approach is open-source where
+                possible, with a simple editor so you can update text, images,
+                and links after launch. Clear scope, tight timelines, calm
+                communication—most projects ship in 48–72 hours once content is
+                ready. If you want a custom page without the builder maze, I’ll
+                take the wheel and get it live quickly.
               </p>
             </div>
           </div>
@@ -792,18 +843,31 @@
         id="why"
         class="border-t border-black/10">
         <div class="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <h2
-            class="text-2xl md:text-3xl"
-            data-i18n="why.heading">
-            Why Not Builders?
-          </h2>
-          <p
-            class="mt-4 max-w-3xl text-base leading-relaxed text-black/75"
-            data-i18n="why.body">
-            Builders are fine if you enjoy configuring tools. Most clients would
-            rather skip the dashboards. I design and code the page, publish it
-            fast, then hand over a calm /admin editor for simple edits.
-          </p>
+          <div class="flex flex-col gap-3 md:gap-4">
+            <div class="flex items-center">
+              <h2
+                class="text-2xl md:text-3xl"
+                data-i18n="why.heading">
+                Why Not Builders?
+              </h2>
+              <animated-icons
+                aria-hidden="true"
+                data-animated-why
+                src="https://animatedicons.co/get-icon?name=Imaginary&style=minimalistic&token=52c73b94-1f22-4341-babe-ce7b65f7ae66"
+                trigger="loop"
+                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0000FFFF","background":"#FFFFFF"}}'
+                height="65"
+                width="65"></animated-icons>
+            </div>
+            <p
+              class="max-w-3xl text-base leading-relaxed text-black/75"
+              data-i18n="why.body">
+              Builders are fine if you enjoy configuring tools. Most clients
+              would rather skip the dashboards. I design and code the page,
+              publish it fast, then hand over a calm /admin editor for simple
+              edits.
+            </p>
+          </div>
           <ul class="mt-6 grid gap-3 text-sm text-black/75 md:grid-cols-3">
             <li
               class="rounded-2xl border border-black/10 bg-white/60 p-4"
@@ -834,11 +898,21 @@
             <div
               class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
-                <h2
-                  class="text-2xl"
-                  data-i18n="contact.heading">
-                  Ready to Start?
-                </h2>
+                <div class="flex items-center">
+                  <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+                  <animated-icons
+                    src="https://animatedicons.co/get-icon?name=Hey&style=minimalistic&token=a91f6990-968c-4b27-8d19-1e6965a394aa"
+                    trigger="loop"
+                    attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0027FFFF","background":"#FFFFFF"}}'
+                    height="65
+                    "
+                    width="65"></animated-icons>
+                  <h2
+                    class="text-2xl"
+                    data-i18n="contact.heading">
+                    Ready to Start?
+                  </h2>
+                </div>
                 <p
                   class="mt-2 text-sm text-black/70"
                   data-i18n="contact.copy">
@@ -947,10 +1021,20 @@
 
     <footer class="border-t border-black/10">
       <div
-        class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-black/60 md:flex-row md:items-center md:justify-between">
-        <span data-i18n="footer.location"
-          >Based in Leipzig · Collaborating worldwide</span
-        >
+        class="flex flex-col items-center gap-3 px-6 py-8 text-center text-sm text-black/60 md:flex-row md:justify-between md:gap-6">
+        <span data-i18n="footer.location">
+          Based in Leipzig · Collaborating worldwide
+        </span>
+        <div class="flex items-center">
+          <animated-icons
+            aria-hidden="true"
+            class="h-[30px] w-[30px]"
+            src="https://animatedicons.co/get-icon?name=Thank%20you&style=minimalistic&token=eb0b9e1a-e71e-4b20-a7dc-7c38f678e237"
+            trigger="loop"
+            attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0B03E5FF","background":"#FFFFFF"}}'
+            height="30"
+            width="30"></animated-icons>
+        </div>
         <span data-i18n="footer.copyright">© 2025 one-page studio</span>
       </div>
     </footer>
@@ -1623,6 +1707,50 @@
         loadCalendarButtonInto(
           document.getElementById('desktopCalendarButton')
         );
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const icons = [
+          {
+            element: document.querySelector('[data-animated-packages]'),
+            whenVisible: 'loop',
+            whenHidden: 'loop-on-hover',
+            threshold: 0.5,
+          },
+          {
+            element: document.querySelector('[data-animated-why]'),
+            whenVisible: 'loop',
+            whenHidden: 'loop-on-hover',
+            threshold: 0.6,
+          },
+        ].filter((icon) => icon.element instanceof HTMLElement);
+
+        if (!icons.length) return;
+
+        if (!('IntersectionObserver' in window)) {
+          icons.forEach((icon) =>
+            icon.element.setAttribute('trigger', icon.whenVisible)
+          );
+          return;
+        }
+
+        icons.forEach((icon) => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.target === icon.element) {
+                  icon.element.setAttribute(
+                    'trigger',
+                    entry.isIntersecting ? icon.whenVisible : icon.whenHidden
+                  );
+                }
+              });
+            },
+            { threshold: icon.threshold }
+          );
+          observer.observe(icon.element);
+        });
       });
     </script>
     <script>
