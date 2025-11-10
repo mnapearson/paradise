@@ -9,6 +9,7 @@
         "url": "https://one-page.studio/",
         "image": "https://one-page.studio/ops-favicon-512.png",
         "telephone": "+49 01625790189",
+        "priceRange": "€279–€900",
         "areaServed": "DE",
         "address": {
           "@type": "PostalAddress",
@@ -39,7 +40,7 @@
       content="website" />
     <meta
       property="og:image"
-      content="https://one-spage.studio/ops-favicon-512.png" />
+      content="https://one-page.studio/ops-favicon-512.png" />
     <meta
       property="og:url"
       content="https://one-page.studio/" />
@@ -67,7 +68,7 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "one-page studio",
-        "url": "https://one-studio.netlify.app/",
+        "url": "https://one-page.studio/",
         "description": "custom one-page websites with optional CMS handoff and open-source tooling.",
         "email": "mailto:hello@one-page.studio",
         "areaServed": {
@@ -92,6 +93,9 @@
       src="https://animatedicons.co/scripts/embed-animated-icons.js"
       defer></script>
     <style>
+      .hero-illustration {
+        margin-left: auto;
+      }
       :root {
         --bg: #f5f1f0;
         --text: #111111;
@@ -439,95 +443,110 @@
     <main>
       <section
         id="hero"
-        class="px-6 py-20 md:py-28">
-        <div class="mx-auto flex max-w-5xl flex-col gap-6">
+        class="px-6 py-24">
+        <div class="mx-auto flex max-w-5xl flex-col gap-8">
           <span
             class="badge"
             data-i18n="hero.badge"
             >Two discounted slots this week</span
           >
-          <div class="flex items-center">
-            <h1
-              class="text-4xl leading-tight tracking-tight md:text-6xl"
-              data-i18n="hero.title">
-              Custom one-page websites. <br />
-              Built fast. You keep the keys.
-            </h1>
-            <animated-icons
-              src="https://animatedicons.co/get-icon?name=Work%20Ethic&style=minimalistic&token=5359b304-fa32-4655-b5d8-71dd75b18ea1"
-              trigger="loop"
-              attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0027FFFF","background":"#FFFFFF"}}'
-              height="150"
-              width="150"></animated-icons>
+
+          <div class="flex flex-col items-start gap-4 md:flex-row md:gap-6">
+            <div class="flex-1">
+              <div class="flex items-center">
+                <h1
+                  class="text-4xl leading-tight tracking-tight md:text-6xl"
+                  data-i18n="hero.title">
+                  Custom one-page websites. <br />Built fast. You keep the keys.
+                </h1>
+                <animated-icons
+                  aria-hidden="true"
+                  src="https://animatedicons.co/get-icon?name=Work%20Ethic&style=minimalistic&token=5359b304-fa32-4655-b5d8-71dd75b18ea1"
+                  trigger="loop"
+                  height="75"
+                  width="75"
+                  attributes='{"variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#0027FFFF","background":"#FFFFFF"}}'>
+                </animated-icons>
+              </div>
+              <p
+                class="max-w-2xl text-lg md:text-xl mt-4 md:mt-6"
+                data-i18n="hero.copy">
+                I design and build it for you. No site builders. Launch in 48–72
+                hours — packages from €279.
+              </p>
+              <p
+                class="text-sm uppercase tracking-[0.18em] text-black/60 mt-4"
+                data-i18n="hero.location">
+                Based in Leipzig · Collaborating worldwide
+              </p>
+
+              <div class="mt-3 flex flex-wrap gap-3">
+                <script>
+                  (function () {
+                    var target = document.currentScript;
+                    window.addEventListener('load', function () {
+                      if (!window.calendar || !calendar.schedulingButton) {
+                        target.insertAdjacentHTML(
+                          'afterend',
+                          '<a class="cta-button" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true" target="_blank" rel="noopener">Book a 15-min Intro Call</a>'
+                        );
+                        return;
+                      }
+                      calendar.schedulingButton.load({
+                        url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
+                        color: '#0b03e5',
+                        label: 'Book a 15-min Intro Call',
+                        target: target,
+                      });
+                    });
+                  })();
+                </script>
+                <a
+                  class="package-link"
+                  href="mailto:hello@one-page.studio"
+                  aria-label="Email one-page studio"
+                  >Email</a
+                >
+              </div>
+            </div>
           </div>
-          <p
-            class="max-w-2xl text-lg md:text-xl"
-            data-i18n="hero.copy">
-            Done-for-you, no builders. Optional simple CMS. Open-source where
-            possible.
-          </p>
-          <p
-            class="text-sm uppercase tracking-[0.18em] text-black/60"
-            data-i18n="hero.location">
-            Based in Leipzig · Collaborating worldwide
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <script>
-              (function () {
-                var target = document.currentScript;
-                window.addEventListener('load', function () {
-                  if (!window.calendar || !calendar.schedulingButton) return;
-                  calendar.schedulingButton.load({
-                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true',
-                    color: '#0b03e5',
-                    label: 'Book a 15-min Intro Call',
-                    target: target,
-                  });
-                });
-              })();
-            </script>
-            <a
-              class="package-link"
-              href="mailto:hello@one-page.studio"
-              >Email</a
-            >
-          </div>
+
           <ul class="mt-10 grid gap-3 text-sm text-black/75 sm:grid-cols-3">
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
               <p
                 class="font-medium text-black"
                 data-i18n="hero.featureLaunchTitle">
-                48–72h Launch
+                48–72h launch
               </p>
               <p
                 class="mt-2"
                 data-i18n="hero.featureLaunchBody">
-                Clear schedule, structured feedback, no drawn-out retainer.
+                Clear steps, quick feedback, no long contracts.
               </p>
             </li>
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
               <p
                 class="font-medium text-black"
                 data-i18n="hero.featureCmsTitle">
-                Optional CMS
+                Easy edits
               </p>
               <p
                 class="mt-2"
                 data-i18n="hero.featureCmsBody">
-                Decap or headless setup so you edit copy and media without
-                bloat.
+                Simple editor to change words and pictures yourself.
               </p>
             </li>
             <li class="rounded-2xl border border-black/10 bg-white/60 p-4">
               <p
                 class="font-medium text-black"
                 data-i18n="hero.featureHandoffTitle">
-                Open Handoff
+                You own it
               </p>
               <p
                 class="mt-2"
                 data-i18n="hero.featureHandoffBody">
-                Documentation, repo access, and support to swap teams anytime.
+                You keep the site and access. Easy hand‑off to any developer
+                later.
               </p>
             </li>
           </ul>
@@ -677,7 +696,7 @@
                 data-i18n="packages.launch.label">
                 Launch
               </div>
-              <div class="mt-3 text-3xl font-medium">€300</div>
+              <div class="mt-3 text-3xl font-medium">€279</div>
               <p
                 class="mt-2 text-xs uppercase tracking-[0.18em] text-black/50"
                 data-i18n="packages.launch.tagline">
@@ -1370,9 +1389,9 @@
         en: {
           'meta.title': 'Custom one-page websites — fast, minimal, open-source',
           'meta.description':
-            'one-page studio builds clean, fast websites for artists and small studios. Done-for-you, no builders. Optional simple CMS. Based in Leipzig, working anywhere.',
+            'one-page studio builds clean, fast websites for artists and small studios. Launch in 48–72h — packages from €279. Done-for-you, no builders. Based in Leipzig, working anywhere.',
           'meta.ogDescription':
-            'one-page studio delivers bespoke one-page websites with optional CMS handoff. Based in Leipzig, working anywhere.',
+            'Bespoke one-page websites with optional simple editor. Launch in 48–72h — from €279. Based in Leipzig, working anywhere.',
           'nav.work': 'Work',
           'nav.packages': 'Packages',
           'nav.about': 'About',
@@ -1384,18 +1403,18 @@
           'hero.title':
             'Custom one-page websites. Built fast. You keep the keys.',
           'hero.copy':
-            'Done-for-you, no builders. Optional simple CMS. Open-source where possible.',
+            'I design and build it for you. No site builders. Launch in 48–72 hours — packages from €279.',
           'hero.location': 'Based in Leipzig · Collaborating worldwide',
           'hero.emailCta': 'Email',
-          'hero.featureLaunchTitle': '48–72h Launch',
+          'hero.featureLaunchTitle': '48–72h launch',
           'hero.featureLaunchBody':
-            'Clear schedule, structured feedback, no drawn-out retainer.',
-          'hero.featureCmsTitle': 'Optional CMS',
+            'Clear steps, quick feedback, no long contracts.',
+          'hero.featureCmsTitle': 'Easy edits',
           'hero.featureCmsBody':
-            'Decap or headless setup so you edit copy and media without bloat.',
-          'hero.featureHandoffTitle': 'Open Handoff',
+            'Simple editor to change words and pictures yourself.',
+          'hero.featureHandoffTitle': 'You own it',
           'hero.featureHandoffBody':
-            'Documentation, repo access, and support to swap teams anytime.',
+            'You keep the site and access. Easy hand‑off to any developer later.',
           'cta.calendar': 'Book a 15-min Intro Call',
           'work.heading': 'Selected Work',
           'work.subheading':
@@ -1516,9 +1535,9 @@
         de: {
           'meta.title': 'Individuelle One-Pager – schnell, minimal, quelloffen',
           'meta.description':
-            'one-page studio erstellt schnelle, klare One-Pager für Künstler:innen und kleine Studios. Komplett umgesetzt, ohne Builder. Optionales, einfaches CMS. Sitz in Leipzig, Arbeiten weltweit.',
+            'one-page studio erstellt schnelle, klare One-Pager für Künstler:innen und kleine Studios. Launch in 48–72 h — ab 279 €. Komplett umgesetzt, ohne Builder. Sitz in Leipzig, Arbeiten weltweit.',
           'meta.ogDescription':
-            'one-page studio liefert maßgeschneiderte One-Pager mit optionaler CMS-Übergabe. Sitz in Leipzig, Arbeiten weltweit.',
+            'Maßgeschneiderte One-Pager mit optionalem einfachem Editor. Launch in 48–72 h — ab 279 €. Sitz in Leipzig, Arbeiten weltweit.',
           'nav.work': 'Arbeiten',
           'nav.packages': 'Pakete',
           'nav.about': 'Über mich',
@@ -1530,18 +1549,17 @@
           'hero.title':
             'Individuelle One-Pager. Schnell gebaut. Sie behalten die Kontrolle.',
           'hero.copy':
-            'Komplett umgesetzt, keine Builder. Optionales schlankes CMS. Wo möglich Open Source.',
+            'Ich gestalte und baue die Seite für Sie. Kein Baukasten. Launch in 48–72 Stunden — ab 279 €.',
           'hero.location': 'LEIPZIG · WELTWEIT ZUSAMMENARBEITEN',
           'hero.emailCta': 'E-Mail',
-          'hero.featureLaunchTitle': '48–72h Start',
+          'hero.featureLaunchTitle': 'Launch in 48–72 h',
           'hero.featureLaunchBody':
-            'Klarer Ablauf, strukturiertes Feedback, keine endlosen Retainer.',
-          'hero.featureCmsTitle': 'Optionales CMS',
-          'hero.featureCmsBody':
-            'Decap oder Headless Setup, damit Sie Texte und Medien ohne Ballast pflegen.',
-          'hero.featureHandoffTitle': 'Offene Übergabe',
+            'Klare Schritte, schnelles Feedback, keine langen Verträge.',
+          'hero.featureCmsTitle': 'Einfache Änderungen',
+          'hero.featureCmsBody': 'Schlichter Editor für Texte und Bilder.',
+          'hero.featureHandoffTitle': 'Sie besitzen alles',
           'hero.featureHandoffBody':
-            'Dokumentation, Repo-Zugang und Support für einen einfachen Teamwechsel.',
+            'Sie behalten Seite und Zugänge. Spätere Übergabe an andere Entwickler:innen ist einfach.',
           'cta.calendar': '15-minütiges Kennenlernen buchen',
           'work.heading': 'Ausgewählte Arbeiten',
           'work.subheading':
