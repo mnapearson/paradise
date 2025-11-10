@@ -576,7 +576,7 @@
               <p
                 class="mt-2 text-sm text-black/70 md:text-base"
                 data-i18n="work.subheading">
-                Two credible case studies you can reference or remix.
+                Two quick examples of what your page can look like.
               </p>
             </div>
 
@@ -592,7 +592,7 @@
               data-modal-target="case-aya"
               class="group flex flex-col gap-4 rounded-2xl border border-black/10 bg-white/70 p-5 text-left transition-transform duration-150 hover:-translate-y-1 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2">
               <img
-                src="https://picsum.photos/id/1005/800/600"
+                src="https://picsum.photos/seed/artist-portfolio/800/600"
                 alt="grid of paintings from Aya Ito"
                 data-i18n-alt="work.cardAya.alt"
                 class="aspect-[4/3] w-full rounded-xl border border-black/10 object-cover transition duration-150 group-hover:scale-[1.01]"
@@ -611,8 +611,8 @@
                 <p
                   class="text-sm text-black/70"
                   data-i18n="work.cardAya.description">
-                  Goal: publish new series quickly. Outcome: calm layout with
-                  Decap edits and analytics baked in.
+                  Clean gallery with artist bio and contact. Easy to add new
+                  series.
                 </p>
               </div>
               <span
@@ -627,7 +627,7 @@
               data-modal-target="case-parallel"
               class="group flex flex-col gap-4 rounded-2xl border border-black/10 bg-white/70 p-5 text-left transition-transform duration-150 hover:-translate-y-1 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0000ff] focus-visible:ring-offset-2">
               <img
-                src="https://picsum.photos/id/1027/800/600"
+                src="https://picsum.photos/seed/local-studio/800/600"
                 alt="interior of Parallel Hair studio"
                 data-i18n-alt="work.cardParallel.alt"
                 class="aspect-[4/3] w-full rounded-xl border border-black/10 object-cover transition duration-150 group-hover:scale-[1.01]"
@@ -646,8 +646,8 @@
                 <p
                   class="text-sm text-black/70"
                   data-i18n="work.cardParallel.description">
-                  Goal: fewer DMs, faster bookings. Outcome: structured info
-                  with Supabase logs + Stripe deposits.
+                  One page with services, hours, map and booking link — fewer
+                  DMs, faster bookings.
                 </p>
               </div>
               <span
@@ -932,7 +932,7 @@
               <h2
                 class="text-2xl md:text-3xl"
                 data-i18n="why.heading">
-                Why Not Builders?
+                Why a simple one-page site?
               </h2>
               <animated-icons
                 aria-hidden="true"
@@ -946,31 +946,61 @@
             <p
               class="max-w-3xl text-base leading-relaxed text-black/75"
               data-i18n="why.body">
-              Builders are fine if you enjoy configuring tools. Most clients
-              would rather skip the dashboards. I design and code the page,
-              publish it fast, then hand over a calm /admin editor for simple
-              edits.
+              Most people just need a clear page that loads fast, looks good on
+              phones, and makes it easy to contact or book. Here’s why it helps:
             </p>
           </div>
-          <ul class="mt-6 grid gap-3 text-sm text-black/75 md:grid-cols-3">
-            <li
-              class="rounded-2xl border border-black/10 bg-white/60 p-4"
-              data-i18n="why.item1">
-              No template maze, no vendor lock-in. Your repo lives in your
-              account.
-            </li>
-            <li
-              class="rounded-2xl border border-black/10 bg-white/60 p-4"
-              data-i18n="why.item2">
-              Performance and accessibility tuned by hand, not by plugins.
-            </li>
-            <li
-              class="rounded-2xl border border-black/10 bg-white/60 p-4"
-              data-i18n="why.item3">
-              Open-source stack with documentation so any future dev can
-              continue.
-            </li>
-          </ul>
+
+          <div class="mt-6 grid gap-3 text-sm text-black/75 md:grid-cols-3">
+            <div class="rounded-2xl border border-black/10 bg-white/60 p-4">
+              <strong
+                class="block text-black"
+                data-i18n="why.stat1.title"
+                >77%</strong
+              >
+              <span data-i18n="why.stat1.body"
+                >of EU internet users buy online (2024). Be findable and
+                contactable.</span
+              >
+              <small
+                class="block opacity-60"
+                data-i18n="why.stat1.source"
+                >Source: Eurostat 2024</small
+              >
+            </div>
+            <div class="rounded-2xl border border-black/10 bg-white/60 p-4">
+              <strong
+                class="block text-black"
+                data-i18n="why.stat2.title"
+                >Speed → enquiries</strong
+              >
+              <span data-i18n="why.stat2.body"
+                >Each extra second on mobile can reduce conversions
+                noticeably.</span
+              >
+              <small
+                class="block opacity-60"
+                data-i18n="why.stat2.source"
+                >Source: Think with Google</small
+              >
+            </div>
+            <div class="rounded-2xl border border-black/10 bg-white/60 p-4">
+              <strong
+                class="block text-black"
+                data-i18n="why.stat3.title"
+                >People research first</strong
+              >
+              <span data-i18n="why.stat3.body"
+                >Most check the web & reviews before choosing a local
+                business.</span
+              >
+              <small
+                class="block opacity-60"
+                data-i18n="why.stat3.source"
+                >Source: industry studies</small
+              >
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1418,17 +1448,17 @@
           'cta.calendar': 'Book a 15-min Intro Call',
           'work.heading': 'Selected Work',
           'work.subheading':
-            'Two credible case studies you can reference or remix.',
+            'Two quick examples of what your page can look like.',
           'work.caption': 'Click a card to see the breakdown.',
           'work.cardAya.category': 'Artist Portfolio',
           'work.cardAya.title': 'Aya Ito — painter',
           'work.cardAya.description':
-            'Goal: publish new series quickly. Outcome: calm layout with Decap edits and analytics baked in.',
+            'Clean gallery with artist bio and contact. Easy to add new series.',
           'work.cardAya.alt': 'grid of paintings from Aya Ito',
           'work.cardParallel.category': 'Local Studio',
           'work.cardParallel.title': 'Parallel Hair — Leipzig',
           'work.cardParallel.description':
-            'Goal: fewer DMs, faster bookings. Outcome: structured info with Supabase logs + Stripe deposits.',
+            'One page with services, hours, map and booking link — fewer DMs, faster bookings.',
           'work.cardParallel.alt': 'interior of Parallel Hair studio',
           'work.card.cta': 'View Case →',
           'packages.heading': 'Packages',
@@ -1480,15 +1510,21 @@
           'about.heading': 'About',
           'about.body':
             'I’m Micky Arratoon, a designer–developer in Leipzig. I build small, fast one-page sites for people who don’t want to wrangle Wix/WordPress or plugins. My approach is open-source where possible, with a simple editor so you can update text, images, and links after launch. Clear scope, tight timelines, calm communication—most projects ship in 48–72 hours once content is ready. If you want a custom page without the builder maze, I’ll take the wheel and get it live quickly.',
-          'why.heading': 'Why Not Builders?',
+          'why.heading': 'Why a simple one-page site?',
           'why.body':
-            'Builders are fine if you enjoy configuring tools. Most clients would rather skip the dashboards. I design and code the page, publish it fast, then hand over a calm /admin editor for simple edits.',
-          'why.item1':
-            'No template maze, no vendor lock-in. Your repo lives in your account.',
-          'why.item2':
-            'Performance and accessibility tuned by hand, not by plugins.',
-          'why.item3':
-            'Open-source stack with documentation so any future dev can continue.',
+            'Most people just need a clear page that loads fast, looks good on phones, and makes it easy to contact or book. Here’s why it helps:',
+          'why.stat1.title': '77%',
+          'why.stat1.body':
+            'of EU internet users buy online (2024). Be findable and contactable.',
+          'why.stat1.source': 'Source: Eurostat 2024',
+          'why.stat2.title': 'Speed → enquiries',
+          'why.stat2.body':
+            'Each extra second on mobile can reduce conversions noticeably.',
+          'why.stat2.source': 'Source: Think with Google',
+          'why.stat3.title': 'People research first',
+          'why.stat3.body':
+            'Most check the web & reviews before choosing a local business.',
+          'why.stat3.source': 'Source: industry studies',
           'contact.heading': 'Ready to Start?',
           'contact.copy':
             'Email hello@one-page.studio or pick a slot. I reply within one business day.',
@@ -1509,24 +1545,23 @@
           'modal.email': 'Email About This',
           'modal.aya.title': 'Artist Portfolio — Aya Ito',
           'modal.aya.goal':
-            '<strong>Goal.</strong> Berlin painter Aya Ito needed a quiet portfolio that foregrounds large works, keeps bio and press materials tidy, and lets her reorder pieces without emailing a developer.',
+            '<strong>Goal.</strong> Show large works simply, keep bio/press tidy, and add new series without back‑and‑forth.',
           'modal.aya.approach':
-            '<strong>Approach.</strong> I drafted a single narrative scroll—statement, gallery grid, exhibitions, contact—then wired Decap CMS collections for hero copy, artwork metadata, press links, and CV highlights. Netlify builds share preview links, while Plausible tracks views without cookies.',
+            '<strong>Approach.</strong> One calm scroll: intro, gallery, exhibitions, contact. Simple editor for text and images.',
           'modal.aya.outcome':
-            '<strong>Outcome.</strong> The page ships under 1&nbsp;MB, loads instantly on mobile, and every text or gallery change publishes via a clean /admin editor. Curators now receive a consistent link, and Aya uploads new series minutes after shoots.',
-          'modal.aya.tech': 'Tech note — Decap CMS · Netlify · Plausible',
+            '<strong>Outcome.</strong> Loads fast on phones. The artist updates images and text in minutes and shares a single link.',
+          'modal.aya.tech': 'Notes — simple editor · fast load',
           'modal.aya.heroAlt': 'hero image from Aya Ito portfolio',
           'modal.aya.galleryAlt': 'Gallery grid from Aya Ito portfolio',
           'modal.aya.detailAlt': 'Detail view of Aya Ito painting',
           'modal.parallel.title': 'Local Studio — Parallel Hair',
           'modal.parallel.goal':
-            '<strong>Goal.</strong> Parallel Hair wanted to reduce Instagram DMs by pointing clients to a single page with services, hours, map directions, and a €50 booking deposit.',
+            '<strong>Goal.</strong> Fewer Instagram DMs and a clear way to book.',
           'modal.parallel.approach':
-            '<strong>Approach.</strong> I mapped sections for hero, stylists, pricing, testimonials, and locality info, then wired a Netlify form that posts to Supabase for logging while emailing the team. Stripe Payment Links handle deposits, and the site deploys statically for speed.',
+            '<strong>Approach.</strong> Sections for services, team, prices, testimonials and a map. Deposit via payment link.',
           'modal.parallel.outcome':
-            '<strong>Outcome.</strong> Clients skim pricing, pay deposits before visiting, and use the embedded map for directions. The team exports enquiry logs from Supabase, and bookings arrive with fewer back-and-forth messages.',
-          'modal.parallel.tech':
-            'Tech note — Supabase form · Stripe Payment Link · Netlify',
+            '<strong>Outcome.</strong> Clients scan prices, pay a deposit and get directions — bookings arrive with less back‑and‑forth.',
+          'modal.parallel.tech': 'Notes — booking link · fast page',
           'modal.parallel.heroAlt': 'hero image from Parallel Hair case study',
           'modal.parallel.galleryAlt':
             'Services section from Parallel Hair page',
@@ -1563,17 +1598,17 @@
           'cta.calendar': '15-minütiges Kennenlernen buchen',
           'work.heading': 'Ausgewählte Arbeiten',
           'work.subheading':
-            'Zwei belastbare Fallstudien zum Referenzieren oder Anpassen.',
+            'Zwei schnelle Beispiele, wie Ihre Seite aussehen kann.',
           'work.caption': 'Karte anklicken, um die Details zu sehen.',
           'work.cardAya.category': 'Künstler-Portfolio',
           'work.cardAya.title': 'Aya Ito — Malerin',
           'work.cardAya.description':
-            'Ziel: Neue Serien schnell veröffentlichen. Ergebnis: Ruhiges Layout mit Decap-Editor und integrierter Analyse.',
+            'Ruhige Galerie mit Künstlerbio und Kontakt. Neue Serien lassen sich leicht ergänzen.',
           'work.cardAya.alt': 'Raster mit Gemälden von Aya Ito',
           'work.cardParallel.category': 'Lokales Studio',
           'work.cardParallel.title': 'Parallel Hair — Leipzig',
           'work.cardParallel.description':
-            'Ziel: Weniger DMs, schnellere Buchungen. Ergebnis: Strukturierte Infos mit Supabase-Logs und Stripe-Anzahlungen.',
+            'Eine Seite mit Leistungen, Zeiten, Karte und Buchungslink – weniger DMs, schnellere Buchungen.',
           'work.cardParallel.alt': 'Innenraum des Studios Parallel Hair',
           'work.card.cta': 'Projekt ansehen →',
           'packages.heading': 'Pakete',
@@ -1627,15 +1662,21 @@
           'about.heading': 'Über mich',
           'about.body':
             'Ich bin Micky Arratoon, Designer-Entwickler in Leipzig. Ich baue schnelle, schlanke One-Pager für Menschen, die keine Lust auf Wix/WordPress und Plugins haben. Wo möglich setze ich auf Open-Source und integriere einen einfachen Editor, damit Sie Inhalte nach dem Launch selbst anpassen können. Klare Absprachen, kurze Timelines, ruhige Kommunikation—die meisten Projekte gehen 48–72 Stunden nach Content-Freigabe live. Wenn Sie eine maßgeschneiderte Seite ohne Baukastensystem möchten, übernehme ich und setze sie zügig um.',
-          'why.heading': 'Warum keine Baukästen?',
+          'why.heading': 'Warum ein einfacher One-Pager?',
           'why.body':
-            'Builder sind okay, wenn Sie gern Tools konfigurieren. Die meisten Kund:innen möchten die Dashboards vermeiden. Ich entwerfe und codiere die Seite, veröffentliche sie schnell und übergebe dann einen ruhigen /admin-Editor für einfache Änderungen.',
-          'why.item1':
-            'Kein Vorlagen-Labyrinth, kein Vendor-Lock-in. Ihr Repo bleibt in Ihrem Account.',
-          'why.item2':
-            'Performance und Accessibility von Hand optimiert, nicht durch Plugins.',
-          'why.item3':
-            'Open-Source-Stack mit Dokumentation, damit jedes künftige Team weiterarbeiten kann.',
+            'Oft reicht eine klare Seite, die mobil schnell lädt, gut aussieht und Kontakt oder Buchung einfach macht. Darum hilft es:',
+          'why.stat1.title': '77%',
+          'why.stat1.body':
+            'der Internetnutzer:innen in der EU kaufen online (2024). Auffindbar sein & Kontakt erleichtern.',
+          'why.stat1.source': 'Quelle: Eurostat 2024',
+          'why.stat2.title': 'Tempo → Anfragen',
+          'why.stat2.body':
+            'Jede zusätzliche Sekunde auf dem Handy kann Conversions spürbar senken.',
+          'why.stat2.source': 'Quelle: Think with Google',
+          'why.stat3.title': 'Erst recherchieren',
+          'why.stat3.body':
+            'Die meisten prüfen Web & Bewertungen, bevor sie ein lokales Angebot wählen.',
+          'why.stat3.source': 'Quelle: Branchenstudien',
           'contact.heading': 'Bereit zum Start?',
           'contact.copy':
             'Schreiben Sie an hello@one-page.studio oder buchen Sie einen Slot. Antwort innerhalb eines Werktags.',
@@ -1656,24 +1697,23 @@
           'modal.email': 'Per E-Mail anfragen',
           'modal.aya.title': 'Künstler-Portfolio — Aya Ito',
           'modal.aya.goal':
-            '<strong>Ziel.</strong> Die Berliner Malerin Aya Ito brauchte ein ruhiges Portfolio, das große Werke hervorhebt, Bio und Presse ordnet und neue Serien ohne Mails an Entwickler:innen ermöglicht.',
+            '<strong>Ziel.</strong> Große Werke klar zeigen, Bio/Presse ordentlich halten und neue Serien ohne Hin und Her ergänzen.',
           'modal.aya.approach':
-            '<strong>Vorgehen.</strong> Ich entwarf einen erzählerischen Scroll mit Statement, Galerie, Ausstellungen und Kontakt und band Decap-CMS-Sammlungen für Hero-Text, Werksdaten, Presse und CV ein. Netlify-Builds liefern Vorschauen, Plausible trackt ohne Cookies.',
+            '<strong>Vorgehen.</strong> Eine ruhige Scroll-Seite: Intro, Galerie, Ausstellungen, Kontakt. Einfacher Editor für Text und Bilder.',
           'modal.aya.outcome':
-            '<strong>Ergebnis.</strong> Die Seite bleibt unter 1&nbsp;MB, lädt mobil sofort und jede Text- oder Galerieänderung geht über einen ruhigen /admin-Editor live. Kurator:innen erhalten einen konsistenten Link, Aya stellt neue Serien Minuten nach den Shootings online.',
-          'modal.aya.tech': 'Tech-Notiz — Decap CMS · Netlify · Plausible',
+            '<strong>Ergebnis.</strong> Schnell auf dem Handy. Die Künstlerin aktualisiert Bilder und Texte in Minuten und teilt einen Link.',
+          'modal.aya.tech': 'Hinweis — einfacher Editor · schnelle Seite',
           'modal.aya.heroAlt': 'Hero-Bild aus dem Portfolio von Aya Ito',
           'modal.aya.galleryAlt': 'Galerieraster aus dem Portfolio von Aya Ito',
           'modal.aya.detailAlt': 'Detailansicht eines Gemäldes von Aya Ito',
           'modal.parallel.title': 'Lokales Studio — Parallel Hair',
           'modal.parallel.goal':
-            '<strong>Ziel.</strong> Parallel Hair wollte Instagram-DMs reduzieren und Kund:innen auf eine Seite mit Leistungen, Öffnungszeiten, Karte und 50-€-Anzahlung führen.',
+            '<strong>Ziel.</strong> Weniger Instagram-DMs und eine klare Buchungsmöglichkeit.',
           'modal.parallel.approach':
-            '<strong>Vorgehen.</strong> Ich strukturierte Bereiche für Hero, Team, Preise, Testimonials und Standort und band ein Netlify-Formular an Supabase an, das Mails verschickt und Leads speichert. Stripe Payment Links übernehmen die Anzahlungen, deployt wird statisch.',
+            '<strong>Vorgehen.</strong> Bereiche für Leistungen, Team, Preise, Stimmen und Karte. Anzahlung per Zahlungslink.',
           'modal.parallel.outcome':
-            '<strong>Ergebnis.</strong> Kund:innen überfliegen Preise, zahlen vor dem Termin und nutzen die eingebettete Karte. Das Team exportiert Anfragen aus Supabase, Buchungen kommen mit weniger Hin und Her an.',
-          'modal.parallel.tech':
-            'Tech-Notiz — Supabase-Formular · Stripe Payment Link · Netlify',
+            '<strong>Ergebnis.</strong> Kund:innen sehen Preise, zahlen an und finden den Weg – Buchungen kommen mit weniger Hin und Her.',
+          'modal.parallel.tech': 'Hinweis — Buchungslink · schnelle Seite',
           'modal.parallel.heroAlt':
             'Hero-Bild aus der Fallstudie Parallel Hair',
           'modal.parallel.galleryAlt':
