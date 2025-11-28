@@ -325,6 +325,51 @@
   <body class="antialiased">
     <header
       class="sticky top-0 z-40 border-b border-black/10 bg-white backdrop-blur">
+      <div
+        id="promoBanner"
+        class="border-b border-black/10 bg-[#0b03e5] text-white">
+        <div
+          class="mx-auto max-w-5xl px-6 py-2 text-center text-xs md:text-sm flex items-center justify-center gap-3">
+          <span data-i18n="promo.copy">20% off when you book by 31 Jan</span>
+          <a
+            class="underline decoration-white/60 hover:decoration-white"
+            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2kCzisWDGyLtAs1PB6T6viBhbJj0zrmA8eXhH6gjrU97a3SBpbOSjFf5HvX-R5x3UyyuLQUZLk?gv=true"
+            target="_blank"
+            rel="noopener"
+            data-i18n="promo.cta"
+            >Book now</a
+          >
+          <button
+            type="button"
+            class="ml-2 rounded-full border border-white/20 px-2 py-0.5 text-[11px] md:text-xs hover:bg-white/10"
+            data-promo-close
+            data-i18n-aria-label="promo.close"
+            aria-label="Hide banner">
+            ×
+          </button>
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const promo = document.getElementById('promoBanner');
+          if (!promo) return;
+          try {
+            if (localStorage.getItem('opsPromoDismissed') === '1') {
+              promo.remove();
+              return;
+            }
+          } catch (e) {}
+          const closeBtn = promo.querySelector('[data-promo-close]');
+          if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+              promo.remove();
+              try {
+                localStorage.setItem('opsPromoDismissed', '1');
+              } catch (e) {}
+            });
+          }
+        });
+      </script>
       <div class="relative mx-auto max-w-5xl px-6 py-3 text-sm">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-3 font-medium tracking-tight">
@@ -857,21 +902,6 @@
                     >Multilingual toggle (EN/DE) with CMS fields</span
                   >
                   <span class="tabular-nums text-black/60">+€150</span>
-                </li>
-              </ul>
-            </div>
-            <div class="rounded-2xl border border-black/10 bg-white/70 p-6">
-              <h3
-                class="text-xs uppercase tracking-[0.25em] text-black/60"
-                data-i18n="packages.terms.heading">
-                Terms & Discounts
-              </h3>
-              <ul class="mt-4 space-y-3">
-                <li data-i18n="packages.terms.item1">
-                  Discounts: −10% cash · −20% first five clients.
-                </li>
-                <li data-i18n="packages.terms.item2">
-                  Payment terms: 50% deposit to book, 50% at launch.
                 </li>
               </ul>
             </div>
@@ -1562,6 +1592,9 @@
           'modal.parallel.galleryAlt':
             'Services section from Parallel Hair page',
           'modal.parallel.detailAlt': 'Interior detail of Parallel Hair studio',
+          'promo.copy': '20% off when you book by 31 Jan',
+          'promo.cta': 'Book now',
+          'promo.close': 'Hide banner',
         },
         de: {
           'meta.title': 'Individuelle One-Pager – schnell, minimal, quelloffen',
@@ -1711,6 +1744,9 @@
             'Leistungsabschnitt der Seite Parallel Hair',
           'modal.parallel.detailAlt':
             'Innenraumdetail des Studios Parallel Hair',
+          'promo.copy': '20 % Rabatt bei Buchung bis 31. Jan',
+          'promo.cta': 'Jetzt buchen',
+          'promo.close': 'Banner ausblenden',
         },
       };
 
